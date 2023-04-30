@@ -1,0 +1,35 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 5
+    },
+    "auditLog": "logs\\.64963e9e6d4cbcbe4edf43e6b73592e902c3ea6a-audit.json",
+    "files": [
+        {
+            "date": 1681810905515,
+            "name": "logs\\ReqRes_2023-04-18.log",
+            "hash": "a680ca8ed2c6b89315077f9887662b0ff1efb1674a7ff25729551cb166f6b7d5"
+        },
+        {
+            "date": 1682139903078,
+            "name": "logs\\ReqRes_2023-04-22.log",
+            "hash": "314810a1f421e1a43000f9549fbcc9917b1d40b66d64c392d1965a05a10de9fd"
+        },
+        {
+            "date": 1682530984820,
+            "name": "logs\\ReqRes_2023-04-26.log",
+            "hash": "4e62cfdb73692202e9497d5ab82575303f17351d1a686851e9ad908beadd8d33"
+        },
+        {
+            "date": 1682533873795,
+            "name": "logs\\ReqRes_2023-04-27.log",
+            "hash": "a21853e99dcdbcbac3b01cdc2c6aad0185a903e15ab53b6bd5e706ae0047d989"
+        },
+        {
+            "date": 1682830522220,
+            "name": "logs\\ReqRes_2023-04-30.log",
+            "hash": "3015bc9630b40f28d7c28d232f937302d95e845f6a1820d72eebcbbe612005cc"
+        }
+    ],
+    "hashType": "sha256"
+}

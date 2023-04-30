@@ -1,0 +1,24 @@
+error and crashes:----
+
+1P:--com.swmansion.rnscreens.ScreenFragment.<init>
+java.lang.IllegalStateException
+
+1Solution:--add mainactivity
+
+import android.os.Bundle;
+
+@Override
+    protected void onCreate(Bundle savedInstanceState) {
+       super.onCreate(null);
+   }
+
+
+
+2prob:-com.facebook.react.modules.core.ExceptionsManagerModule.reportException
+com.facebook.react.common.JavascriptException
+
+2solution:---1
+
+try looking in your code for something like @babel/types; for me, it was to remove import { breakStatement } from '@babel/types'; then everything was working fine
+
+Please check Your MainActivity.java class. If you are using Firebase then check google-Service.json file check package name. this is package name issue ... check all the package name in you app. I think package name is ok then all will be ok thanks..
