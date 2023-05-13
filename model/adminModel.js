@@ -322,7 +322,7 @@ exports.send_message = (
 };
 exports.notification_display = (selected_role_id, logged_user_id, callback) => {
   let cntxtDtls = "Get notification_display api";
-  QRY_TO_EXEC = `select s.message,u.user_name as createdby,s.c_ts as createdtime from send_message_dtl_t as s 
+  QRY_TO_EXEC = `select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
 join users_dtl_t as u on u.id=s.created_by
  where role_id=?  and name=? order by s.id desc;`;
   // let val = [selected_role_id, selected_name, message, logged_user_id]
@@ -336,6 +336,7 @@ join users_dtl_t as u on u.id=s.created_by
         callback(err, 0);
         return;
       } else {
+        console.log(results, ",,,,,,,,");
         callback(err, results);
         return;
       }
@@ -551,24 +552,33 @@ exports.advisor_assign_form_submit = (
 
 exports.admin_csv_upload = (multiple_record_file, callback) => {
   let cntxtDtls = "Get admin_csv_upload api";
-  QRY_TO_EXEC = `LOAD DATA LOCAL INFILE "filestorage/adminCSV/${multiple_record_file}" INTO TABLE reverted_stud_csv_admin_t 
+  query_infile = `SET GLOBAL local_infile=1;`;
+  dbutil.execQuery(
+    sqldb.MySQLConPool,
+    query_infile,
+    cntxtDtls,
+    [],
+    function (err, results18) {
+      QRY_TO_EXEC = `LOAD DATA LOCAL INFILE "filestorage/adminCSV/${multiple_record_file}" INTO TABLE reverted_stud_csv_admin_t 
     FIELDS TERMINATED BY ',' 
     LINES TERMINATED BY '\n' 
     IGNORE 1 LINES
     (Studen_Name, phone_no, email_id, country_interested);`;
-  dbutil.execQuery(
-    sqldb.MySQLConPool,
-    QRY_TO_EXEC,
-    cntxtDtls,
-    [],
-    function (err, results) {
-      if (err) {
-        callback(err, 0);
-        return;
-      } else {
-        callback(err, results);
-        return;
-      }
+      dbutil.execQuery(
+        sqldb.MySQLConPool,
+        QRY_TO_EXEC,
+        cntxtDtls,
+        [],
+        function (err, results) {
+          if (err) {
+            callback(err, 0);
+            return;
+          } else {
+            callback(err, results);
+            return;
+          }
+        }
+      );
     }
   );
 };
@@ -969,10 +979,10 @@ exports.advisor_assignto_consultant = (
 exports.consultant_get_details = (logged_user_id, callback) => {
   let cntxtDtls = "Get advisor_assignto_consultant api";
   // QRY_TO_EXEC = `select * from reverted_stud_csv_admin_t where assigned_to=${logged_user_id}`
-  QRY_TO_EXEC = `SELECT r.id, r.*, u.*, stu.* FROM reverted_stud_csv_admin_t as r
+  QRY_TO_EXEC = `SELECT r.id as primarykey, r.*, u.*, stu.* FROM reverted_stud_csv_admin_t as r
 left join users_dtl_t as u on u.email = r.email_id
 left join student_dtl_t as stu on stu.c_by = u.id
-where student_interest = "Yes" and assign_indicator = 1 and assigned_to =${logged_user_id};`;
+where student_interest = "Yes" and assign_indicator = 1 and track_in_progress=0 and assigned_to =${logged_user_id};`;
   dbutil.execQuery(
     sqldb.MySQLConPool,
     QRY_TO_EXEC,
@@ -1282,6 +1292,96 @@ exports.student_profile_edit = (
 courses="${courses}",course_mark="${marks}",u_ts="${current_timestamp}" where id=${logged_user_id}`;
   // `insert into users_dtl_t(user_name,phone_no,interest_state,passed_year,courses,course_mark,u_ts)
   // values('${name}', '${mobile_number}', '${interest_state}', '${degree_passed_year}', '${courses}', '${marks}');`
+  dbutil.execQuery(
+    sqldb.MySQLConPool,
+    QRY_TO_EXEC,
+    cntxtDtls,
+    [],
+    function (err, results) {
+      if (err) {
+        callback(err, 0);
+        return;
+      } else {
+        callback(err, results);
+        return;
+      }
+    }
+  );
+};
+
+exports.consultant_track_progress_button = (primary_id, callback) => {
+  let cntxtDtls = "Get consultant_track_progress_button api";
+  QRY_TO_EXEC = `update reverted_stud_csv_admin_t set track_in_progress=1 where id=${primary_id};`;
+  dbutil.execQuery(
+    sqldb.MySQLConPool,
+    QRY_TO_EXEC,
+    cntxtDtls,
+    [],
+    function (err, results) {
+      if (err) {
+        callback(err, 0);
+        return;
+      } else {
+        callback(err, results);
+        return;
+      }
+    }
+  );
+};
+
+exports.track_progress_get = (callback) => {
+  let cntxtDtls = "Get track_progress_get api";
+  QRY_TO_EXEC = `SELECT re.id as primaryKey ,re.*, u.* FROM reverted_stud_csv_admin_t as re
+  left join users_dtl_t as u on u.email = re.email_id
+  where track_in_progress=1;`;
+  dbutil.execQuery(
+    sqldb.MySQLConPool,
+    QRY_TO_EXEC,
+    cntxtDtls,
+    [],
+    function (err, results) {
+      if (err) {
+        callback(err, 0);
+        return;
+      } else {
+        callback(err, results);
+        return;
+      }
+    }
+  );
+};
+
+exports.track_progress_save_button = (
+  primary_id,
+  choosen_university,
+  choosen_comments,
+  callback
+) => {
+  let cntxtDtls = "Get track_progress_save_button api";
+  QRY_TO_EXEC = `update reverted_stud_csv_admin_t set track_in_progress=2,choosen_universites="${choosen_university}",choosen_comments="${choosen_comments}"
+   where id=${primary_id};`;
+  dbutil.execQuery(
+    sqldb.MySQLConPool,
+    QRY_TO_EXEC,
+    cntxtDtls,
+    [],
+    function (err, results) {
+      if (err) {
+        callback(err, 0);
+        return;
+      } else {
+        callback(err, results);
+        return;
+      }
+    }
+  );
+};
+
+exports.admin_trackprocess_get = (callback) => {
+  let cntxtDtls = "Get track_progress_get api";
+  QRY_TO_EXEC = `SELECT * FROM reverted_stud_csv_admin_t as re
+  left join users_dtl_t as u on u.email = re.email_id
+  where track_in_progress=2;`;
   dbutil.execQuery(
     sqldb.MySQLConPool,
     QRY_TO_EXEC,

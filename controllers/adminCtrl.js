@@ -818,6 +818,18 @@ exports.consultant_get_details = async (req, res) => {
   );
 };
 
+exports.convet_to_track_progress = async (req, res) => {
+  let student_id = req.body.student_id;
+  let adviser_id = req.body.adviser_id;
+  adminModel.addToTrackProgress(student_id, adviser_id, async (err, result) => {
+    if (err) {
+      res.send({ error: err });
+    } else {
+      console.log("success");
+    }
+  });
+};
+
 exports.student_upload_submit = async (req, res) => {
   let current_timestamp = moment().format("YYYYMMDDHHmmss");
   let logged_user_id = req.body.logged_user_id;
@@ -928,4 +940,81 @@ exports.student_profile_edit = async (req, res) => {
       }
     }
   );
+};
+
+exports.consultant_track_progress_button = async (req, res) => {
+  console.log("hi");
+  // let new_password = req.body.new_password;
+  let primary_id = req.body.primary_id;
+
+  adminModel.consultant_track_progress_button(
+    primary_id,
+    async (err, Data18, flag) => {
+      if (err) {
+        logger.error("Error While Getting edit_profile ", err);
+        res.send({ result: stdCodes.message.serverError.code, message: "" });
+        return;
+      } else {
+        res.send({ result: "success", Data: Data18 });
+        return;
+      }
+    }
+  );
+};
+
+exports.track_progress_get = async (req, res) => {
+  console.log("hi");
+  // let new_password = req.body.new_password;
+  // let primary_id = req.body.primary_id;
+
+  adminModel.track_progress_get(async (err, Data18, flag) => {
+    if (err) {
+      logger.error("Error While Getting edit_profile ", err);
+      res.send({ result: stdCodes.message.serverError.code, message: "" });
+      return;
+    } else {
+      res.send({ result: "success", Data: Data18 });
+      return;
+    }
+  });
+};
+
+exports.track_progress_save_button = async (req, res) => {
+  console.log("hi");
+  let choosen_university = req.body.choosen_university;
+  let primary_id = req.body.primary_id;
+  let choosen_comments = req.body.choosen_comments;
+
+  adminModel.track_progress_save_button(
+    primary_id,
+    choosen_university,
+    choosen_comments,
+    async (err, Data18, flag) => {
+      if (err) {
+        logger.error("Error While Getting edit_profile ", err);
+        res.send({ result: stdCodes.message.serverError.code, message: "" });
+        return;
+      } else {
+        res.send({ result: "success", Data: Data18 });
+        return;
+      }
+    }
+  );
+};
+
+exports.admin_trackprocess_get = async (req, res) => {
+  console.log("hi");
+  // let new_password = req.body.new_password;
+  // let primary_id = req.body.primary_id;
+
+  adminModel.admin_trackprocess_get(async (err, Data18, flag) => {
+    if (err) {
+      logger.error("Error While Getting edit_profile ", err);
+      res.send({ result: stdCodes.message.serverError.code, message: "" });
+      return;
+    } else {
+      res.send({ result: "success", Data: Data18 });
+      return;
+    }
+  });
 };
