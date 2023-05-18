@@ -4823,3 +4823,4 @@ join users_dtl_t as u on u.id=s.created_by
 2023-05-14 23:42:22 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
 join users_dtl_t as u on u.id=s.created_by
  where role_id=2  and name=117 order by s.id desc;
+2023-05-14 23:52:41 [34mdebug[39m: 	CharisPathWay API server is listening at http://:::5555

@@ -28,6 +28,8 @@ exports.login = (email, password, callback) => {
                 callback(err, null, 2);
                 return;
               } else {
+                let course = results1[0].courses;
+                console.log(course, "cccccc");
                 exec = `select * from users_dtl_t where id=${results1[0].c_by}`;
                 dbutil.execQuery(
                   sqldb.MySQLConPool,
@@ -957,7 +959,8 @@ exports.advisor_assignto_consultant = (
   callback
 ) => {
   let cntxtDtls = "Get advisor_assignto_consultant api";
-  QRY_TO_EXEC = `update reverted_stud_csv_admin_t  set assigned_to='${consultant_id}',assigned_by='${logged_user_id}'
+  let current_timestamp = moment().format("YYYY-MM-DD");
+  QRY_TO_EXEC = `update reverted_stud_csv_admin_t  set assigned_to='${consultant_id}',assigned_by='${logged_user_id}', assigned_time="${current_timestamp}"
      where id=${prima};`;
   dbutil.execQuery(
     sqldb.MySQLConPool,
@@ -979,9 +982,10 @@ exports.advisor_assignto_consultant = (
 exports.consultant_get_details = (logged_user_id, callback) => {
   let cntxtDtls = "Get advisor_assignto_consultant api";
   // QRY_TO_EXEC = `select * from reverted_stud_csv_admin_t where assigned_to=${logged_user_id}`
-  QRY_TO_EXEC = `SELECT r.id as primarykey, r.*, u.*, stu.* FROM reverted_stud_csv_admin_t as r
-left join users_dtl_t as u on u.email = r.email_id
-left join student_dtl_t as stu on stu.c_by = u.id
+  QRY_TO_EXEC = ` SELECT r.id as primarykey,u1.role as assigned_role,u1.user_name as assigned_by_name,u1.id as assigned_id,r.assigned_time,r.*, u.*, stu.* FROM reverted_stud_csv_admin_t as r
+  left join users_dtl_t as u on u.email = r.email_id
+  left join users_dtl_t as u1 on u1.id = r.assigned_by
+  left join student_dtl_t as stu on stu.c_by = u.id
 where student_interest = "Yes" and assign_indicator = 1 and track_in_progress=0 and assigned_to =${logged_user_id};`;
   dbutil.execQuery(
     sqldb.MySQLConPool,
@@ -1019,12 +1023,130 @@ where student_interest = "Yes" and assign_indicator = 1 and track_in_progress=0 
 };
 
 exports.student_upload_submit = (
+  SSC,
+  Intermediate,
+  Degree_Btech,
+  Masters,
+  TOFEL,
+  IELTS,
+  GPA,
+  DULINGO,
+  GRE,
+  Others,
   multiple_record_file,
   logged_user_id,
-  indicator,
   callback
 ) => {
   let cntxtDtls = "Get student_upload_submit api";
+  let current_timestamp = moment().format("YYYY-MM-DD HH:mm:ss");
+  let query = `select * from student_dtl_t where c_by=${logged_user_id}`;
+  dbutil.execQuery(
+    sqldb.MySQLConPool,
+    query,
+    cntxtDtls,
+    [],
+    function (err, results) {
+      let ssc_query = "";
+      if (SSC == 1) {
+        let a = "tenth";
+        ssc_query = `,tenth='${multiple_record_file}'`;
+        ssc_queryu = a;
+      }
+      if (Intermediate == 1) {
+        let a = "inter";
+        ssc_query = `,inter='${multiple_record_file}'`;
+        ssc_queryu = a;
+      }
+      if (Degree_Btech == 1) {
+        let a = "deg_btech";
+        ssc_query = `,deg_btech='${multiple_record_file}'`;
+        ssc_queryu = a;
+      }
+      if (Masters == 1) {
+        let a = "masters";
+        ssc_query = `,masters='${multiple_record_file}'`;
+        ssc_queryu = a;
+      }
+      if (TOFEL == 1) {
+        let a = "tofel";
+        ssc_query = `,tofel='${multiple_record_file}'`;
+        ssc_queryu = a;
+      }
+      if (IELTS == 1) {
+        let a = "ielts";
+        ssc_query = `,ielts='${multiple_record_file}'`;
+        ssc_queryu = a;
+      }
+      if (GPA == 1) {
+        let a = "gpa";
+        ssc_query = `,gpa='${multiple_record_file}'`;
+        ssc_queryu = a;
+      }
+      if (DULINGO == 1) {
+        let a = "dulingo";
+        ssc_query = `,dulingo='${multiple_record_file}'`;
+        ssc_queryu = a;
+      }
+      if (GRE == 1) {
+        let a = "gre";
+        ssc_query = `,gre='${multiple_record_file}'`;
+        ssc_queryu = a;
+      }
+      if (Others == 1) {
+        let a = "other_file";
+        ssc_query = `,other_file='${multiple_record_file}'`;
+        ssc_queryu = a;
+      }
+
+      if (results.length > 0) {
+        QRY_TO_EXEC = `update student_dtl_t set c_ts="${current_timestamp}" ${ssc_query} where c_by=${logged_user_id}`;
+      } else {
+        QRY_TO_EXEC = `insert into student_dtl_t (${ssc_queryu},c_by) values(?)`;
+      }
+      let values = [multiple_record_file, logged_user_id];
+      dbutil.execQuery(
+        sqldb.MySQLConPool,
+        QRY_TO_EXEC,
+        cntxtDtls,
+        [values],
+        function (err, results) {
+          if (err) {
+            callback(err, 0);
+            return;
+          } else {
+            query = `select * from student_dtl_t where c_by=${logged_user_id} and
+(tenth is  not null and inter is not null and deg_btech is not null)`;
+            dbutil.execQuery(
+              sqldb.MySQLConPool,
+              query,
+              cntxtDtls,
+              [values],
+              function (err, res18) {
+                if (res18.length == 0) {
+                  callback(err, results);
+                  return;
+                } else {
+                  query = `update student_dtl_t set status="Submitted" where c_by=${logged_user_id}`;
+                  dbutil.execQuery(
+                    sqldb.MySQLConPool,
+                    query,
+                    cntxtDtls,
+                    [values],
+                    function (err, res18) {
+                      callback(err, results);
+                      return;
+                    }
+                  );
+                }
+              }
+            );
+          }
+        }
+      );
+    }
+  );
+
+  return;
   if (indicator == "SSC") {
     let query = `select * from student_dtl_t where c_by=${logged_user_id}`;
     dbutil.execQuery(
@@ -1331,8 +1453,9 @@ exports.consultant_track_progress_button = (primary_id, callback) => {
 
 exports.track_progress_get = (callback) => {
   let cntxtDtls = "Get track_progress_get api";
-  QRY_TO_EXEC = `SELECT re.id as primaryKey ,re.*, u.* FROM reverted_stud_csv_admin_t as re
+  QRY_TO_EXEC = `SELECT re.id as primaryKey,u1.role as assigned_role,u1.user_name as assigned_by_name,u1.id as assigned_id,re.assigned_time,re.*, u.* FROM reverted_stud_csv_admin_t as re
   left join users_dtl_t as u on u.email = re.email_id
+  left join users_dtl_t as u1 on u1.id = re.assigned_by
   where track_in_progress=1;`;
   dbutil.execQuery(
     sqldb.MySQLConPool,
@@ -1351,6 +1474,42 @@ exports.track_progress_get = (callback) => {
   );
 };
 
+exports.track_progress_save = (
+  choosen_universites,
+  choosen_comments,
+  primary_id,
+  callback
+) => {
+  let cntxtDtls = "Get track_progress_save api";
+  QRY_TO_EXEC = `update reverted_stud_csv_admin_t set choosen_universites="${choosen_universites}",choosen_comments="${choosen_comments}" where id=${primary_id}`;
+  dbutil.execQuery(
+    sqldb.MySQLConPool,
+    QRY_TO_EXEC,
+    cntxtDtls,
+    [],
+    function (err, results) {
+      if (err) {
+        callback(err, 0);
+        return;
+      } else {
+        qry = `SELECT re.id as primaryKey,u1.role as assigned_role,u1.user_name as assigned_by_name,u1.id as assigned_id,re.assigned_time,re.*, u.* FROM reverted_stud_csv_admin_t as re
+        left join users_dtl_t as u on u.email = re.email_id
+        left join users_dtl_t as u1 on u1.id = re.assigned_by
+        where track_in_progress=1;`;
+        dbutil.execQuery(
+          sqldb.MySQLConPool,
+          qry,
+          cntxtDtls,
+          [],
+          function (err, results1) {
+            callback(err, results1);
+            return;
+          }
+        );
+      }
+    }
+  );
+};
 exports.track_progress_save_button = (
   primary_id,
   choosen_university,
@@ -1358,7 +1517,8 @@ exports.track_progress_save_button = (
   callback
 ) => {
   let cntxtDtls = "Get track_progress_save_button api";
-  QRY_TO_EXEC = `update reverted_stud_csv_admin_t set track_in_progress=2,choosen_universites="${choosen_university}",choosen_comments="${choosen_comments}"
+  let current_timestamp = moment().format("YYYY-MM-DD");
+  QRY_TO_EXEC = `update reverted_stud_csv_admin_t set track_in_progress=2,choosen_universites="${choosen_university}",choosen_comments="${choosen_comments}",cons_admin_trackdate="${current_timestamp}"
    where id=${primary_id};`;
   dbutil.execQuery(
     sqldb.MySQLConPool,
@@ -1379,8 +1539,10 @@ exports.track_progress_save_button = (
 
 exports.admin_trackprocess_get = (callback) => {
   let cntxtDtls = "Get track_progress_get api";
-  QRY_TO_EXEC = `SELECT * FROM reverted_stud_csv_admin_t as re
+  QRY_TO_EXEC = `  SELECT u2.user_name as consultant_name,u1.user_name as advisor_name,re.assigned_time as advisor_submit_toConsultant,re.cons_admin_trackdate as Consultant_submitted_date_toadmin,u.*,re.* FROM reverted_stud_csv_admin_t as re
   left join users_dtl_t as u on u.email = re.email_id
+    left join users_dtl_t as u1 on u1.id = re.assigned_by
+      left join users_dtl_t as u2 on u2.id = re.assigned_to
   where track_in_progress=2;`;
   dbutil.execQuery(
     sqldb.MySQLConPool,

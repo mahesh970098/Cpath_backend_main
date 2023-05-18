@@ -833,10 +833,20 @@ exports.convet_to_track_progress = async (req, res) => {
 exports.student_upload_submit = async (req, res) => {
   let current_timestamp = moment().format("YYYYMMDDHHmmss");
   let logged_user_id = req.body.logged_user_id;
-  let indicator = req.body.indicator;
+  let SSC = req.body.SSC;
+  let Intermediate=req.body.Intermediate;
+  let Degree_Btech=req.body.Degree_Btech;
+  let Masters = req.body.Masters;
+  let TOFEL=req.body.TOFEL;
+  let IELTS=req.body.IELTS;
+  let GPA = req.body.GPA;
+  let DULINGO=req.body.DULINGO;
+  let GRE=req.body.GRE;
+  let Others = req.body.Others;
+ 
   // console.log(req.files,"files log::::::::")
   let multiple_record_file =
-    indicator +
+    SSC +
     "_" +
     current_timestamp +
     "_" +
@@ -867,10 +877,9 @@ exports.student_upload_submit = async (req, res) => {
         } else {
           console.log("hi", multiple_record_file);
 
-          adminModel.student_upload_submit(
+          adminModel.student_upload_submit(SSC,Intermediate,Degree_Btech,Masters,TOFEL,IELTS,GPA,DULINGO,GRE,Others,
             multiple_record_file,
             logged_user_id,
-            indicator,
             async (err, Data18, flag) => {
               if (err) {
                 logger.error("Error While Getting notification_display ", err);
@@ -974,6 +983,23 @@ exports.track_progress_get = async (req, res) => {
       return;
     } else {
       res.send({ result: "success", Data: Data18 });
+      return;
+    }
+  });
+};
+
+exports.track_progress_save = async (req, res) => {
+  console.log("hi");
+  let choosen_universites = req.body.choosen_universites;
+  let choosen_comments = req.body.choosen_comments;
+  let primary_id = req.body.primary_id;
+  adminModel.track_progress_save(choosen_universites,choosen_comments,primary_id,async (err, Data18, flag) => {
+    if (err) {
+      logger.error("Error While Getting edit_profile ", err);
+      res.send({ result: stdCodes.message.serverError.code, message: "" });
+      return;
+    } else {
+      res.send({ result: "success","message":"Data Saved","data":Data18})
       return;
     }
   });
