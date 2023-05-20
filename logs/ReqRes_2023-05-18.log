@@ -3103,3 +3103,43 @@ TypeError: adminModel.addToTrackProgress is not a function
     at next (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\router\index.js:280:10)
     at Function.handle (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\router\index.js:175:3)
     at router (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\router\index.js:47:12)
+2023-05-18 23:20:51 [32minfo[39m: 	Requested URL : 
+2023-05-18 23:20:51 [32minfo[39m: 	/track_progress_get
+2023-05-18 23:20:51 [32minfo[39m: 	SELECT re.id as primaryKey,u1.role as assigned_role,u1.user_name as assigned_by_name,u1.id as assigned_id,re.assigned_time,re.*, u.* FROM reverted_stud_csv_admin_t as re
+  left join users_dtl_t as u on u.email = re.email_id
+  left join users_dtl_t as u1 on u1.id = re.assigned_by
+  where track_in_progress=1;
+2023-05-18 23:20:56 [32minfo[39m: 	Requested URL : 
+2023-05-18 23:20:56 [32minfo[39m: 	/track_progress_get
+2023-05-18 23:20:56 [32minfo[39m: 	SELECT re.id as primaryKey,u1.role as assigned_role,u1.user_name as assigned_by_name,u1.id as assigned_id,re.assigned_time,re.*, u.* FROM reverted_stud_csv_admin_t as re
+  left join users_dtl_t as u on u.email = re.email_id
+  left join users_dtl_t as u1 on u1.id = re.assigned_by
+  where track_in_progress=1;
+2023-05-18 23:21:01 [32minfo[39m: 	Requested URL : 
+2023-05-18 23:21:01 [32minfo[39m: 	/consultant_get_details
+2023-05-18 23:21:01 [32minfo[39m: 	Requested URL : 
+2023-05-18 23:21:01 [32minfo[39m: 	/consultant_get_details
+2023-05-18 23:21:01 [32minfo[39m: 	 SELECT r.id as primarykey,u1.role as assigned_role,u1.user_name as assigned_by_name,u1.id as assigned_id,r.assigned_time,r.*, u.*, stu.* FROM reverted_stud_csv_admin_t as r
+  left join users_dtl_t as u on u.email = r.email_id
+  left join users_dtl_t as u1 on u1.id = r.assigned_by
+  left join student_dtl_t as stu on stu.c_by = u.id
+where student_interest = "Yes" and assign_indicator = 1 and track_in_progress=0 and assigned_to =116;
+2023-05-18 23:21:03 [31merror[39m: 	uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:278:15)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:162:21)
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\controllers\adminCtrl.js:814:13
+    at Timeout._onTimeout (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:1015:15)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+2023-05-18 23:21:28 [32minfo[39m: 	Requested URL : 
+2023-05-18 23:21:28 [32minfo[39m: 	/consultant_get_details
+2023-05-18 23:21:28 [32minfo[39m: 	 SELECT r.id as primarykey,u1.role as assigned_role,u1.user_name as assigned_by_name,u1.id as assigned_id,r.assigned_time,r.*, u.*, stu.* FROM reverted_stud_csv_admin_t as r
+  left join users_dtl_t as u on u.email = r.email_id
+  left join users_dtl_t as u1 on u1.id = r.assigned_by
+  left join student_dtl_t as stu on stu.c_by = u.id
+where student_interest = "Yes" and assign_indicator = 1 and track_in_progress=0 and assigned_to =103;

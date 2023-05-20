@@ -1044,3 +1044,20 @@ exports.admin_trackprocess_get = async (req, res) => {
     }
   });
 };
+
+exports.student_payment_mode = async (req, res) => {
+  console.log("hi");
+  let logged_user_id = req.body.logged_user_id;
+  let payment_mode = req.body.payment_mode;
+
+  adminModel.student_payment_mode(logged_user_id,payment_mode,async (err, Data18, flag) => {
+    if (err) {
+      logger.error("Error While Getting edit_profile ", err);
+      res.send({ result: stdCodes.message.serverError.code, message: "" });
+      return;
+    } else {
+      res.send({ result: "success", "message":"Payment Updated Successfully"  });
+      return;
+    }
+  });
+};

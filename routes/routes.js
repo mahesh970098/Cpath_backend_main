@@ -122,4 +122,5 @@ router.get("/track_progress_get", adminRoutes.track_progress_get);
 router.post("/track_progress_save",adminRoutes.track_progress_save);
 router.post("/track_progress_save_button",adminRoutes.track_progress_save_button);
 router.get("/admin_trackprocess_get", adminRoutes.admin_trackprocess_get);
+router.post("/student_payment_mode", adminRoutes.student_payment_mode);
 module.exports = router;

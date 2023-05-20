@@ -1408,10 +1408,11 @@ exports.student_profile_edit = (
   callback
 ) => {
   let cntxtDtls = "Get student_profile_edit api";
+  console.log(courses, "courses");
   let current_timestamp = moment().format("YYYY-MM-DD");
   QRY_TO_EXEC = `update users_dtl_t set user_name="${name}",phone_no="${mobile_number}",
     interest_state="${interest_state}",passed_year="${degree_passed_year}",
-courses="${courses}",course_mark="${marks}",u_ts="${current_timestamp}" where id=${logged_user_id}`;
+courses ="${courses}",course_mark="${marks}",u_ts="${current_timestamp}" where id=${logged_user_id}`;
   // `insert into users_dtl_t(user_name,phone_no,interest_state,passed_year,courses,course_mark,u_ts)
   // values('${name}', '${mobile_number}', '${interest_state}', '${degree_passed_year}', '${courses}', '${marks}');`
   dbutil.execQuery(
@@ -1544,6 +1545,27 @@ exports.admin_trackprocess_get = (callback) => {
     left join users_dtl_t as u1 on u1.id = re.assigned_by
       left join users_dtl_t as u2 on u2.id = re.assigned_to
   where track_in_progress=2;`;
+  dbutil.execQuery(
+    sqldb.MySQLConPool,
+    QRY_TO_EXEC,
+    cntxtDtls,
+    [],
+    function (err, results) {
+      if (err) {
+        callback(err, 0);
+        return;
+      } else {
+        callback(err, results);
+        return;
+      }
+    }
+  );
+};
+
+
+exports.student_payment_mode = (logged_user_id,payment_mode,callback) => {
+  let cntxtDtls = "Get student_payment_mode api";
+  QRY_TO_EXEC = `update reverted_stud_csv_admin_t set payment_mode="${payment_mode}" where id=${logged_user_id};`;
   dbutil.execQuery(
     sqldb.MySQLConPool,
     QRY_TO_EXEC,
