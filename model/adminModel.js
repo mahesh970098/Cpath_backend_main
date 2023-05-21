@@ -1023,16 +1023,29 @@ where student_interest = "Yes" and assign_indicator = 1 and track_in_progress=0 
 };
 
 exports.student_upload_submit = (
+  Process_fee,
+  Application_Fee,
   SSC,
   Intermediate,
-  Degree_Btech,
-  Masters,
-  TOFEL,
-  IELTS,
-  GPA,
-  DULINGO,
+  Btech_Degree_PC,
+  Btech_Degree_CMM,
+  Btech_Degree_OD,
+  B_Tech_Sem,
   GRE,
-  Others,
+  LOR,
+  Resume,
+  SOP,
+  Work_Experience,
+  Passport_Front,
+  Passport_back,
+  TOEFL_Doc,
+  GRE_Doc,
+  IELTS_Doc,
+  Duolingo_Doc,
+  other_Language,
+  Bank_statement,
+  fund_letter,
+  Experience_letter,
   multiple_record_file,
   logged_user_id,
   callback
@@ -1047,44 +1060,44 @@ exports.student_upload_submit = (
     [],
     function (err, results) {
       let ssc_query = "";
+      if (Process_fee == 1) {
+        let a = "Process_fee";
+        ssc_query = `,Process_fee='${multiple_record_file}'`;
+        ssc_queryu = a;
+      }
+      if (Application_Fee == 1) {
+        let a = "Application_Fee";
+        ssc_query = `,Application_Fee='${multiple_record_file}'`;
+        ssc_queryu = a;
+      }
       if (SSC == 1) {
-        let a = "tenth";
-        ssc_query = `,tenth='${multiple_record_file}'`;
+        let a = "SSC";
+        ssc_query = `,SSC='${multiple_record_file}'`;
         ssc_queryu = a;
       }
       if (Intermediate == 1) {
-        let a = "inter";
-        ssc_query = `,inter='${multiple_record_file}'`;
+        let a = "Intermediate";
+        ssc_query = `,Intermediate='${multiple_record_file}'`;
         ssc_queryu = a;
       }
-      if (Degree_Btech == 1) {
-        let a = "deg_btech";
-        ssc_query = `,deg_btech='${multiple_record_file}'`;
+      if (Btech_Degree_PC == 1) {
+        let a = "Btech_Degree_PC";
+        ssc_query = `,Btech_Degree_PC='${multiple_record_file}'`;
         ssc_queryu = a;
       }
-      if (Masters == 1) {
-        let a = "masters";
-        ssc_query = `,masters='${multiple_record_file}'`;
+      if (Btech_Degree_CMM == 1) {
+        let a = "Btech_Degree_CMM";
+        ssc_query = `,Btech_Degree_CMM='${multiple_record_file}'`;
         ssc_queryu = a;
       }
-      if (TOFEL == 1) {
-        let a = "tofel";
-        ssc_query = `,tofel='${multiple_record_file}'`;
+      if (Btech_Degree_OD == 1) {
+        let a = "Btech_Degree_OD";
+        ssc_query = `,Btech_Degree_OD='${multiple_record_file}'`;
         ssc_queryu = a;
       }
-      if (IELTS == 1) {
-        let a = "ielts";
-        ssc_query = `,ielts='${multiple_record_file}'`;
-        ssc_queryu = a;
-      }
-      if (GPA == 1) {
-        let a = "gpa";
-        ssc_query = `,gpa='${multiple_record_file}'`;
-        ssc_queryu = a;
-      }
-      if (DULINGO == 1) {
-        let a = "dulingo";
-        ssc_query = `,dulingo='${multiple_record_file}'`;
+      if (B_Tech_Sem == 1) {
+        let a = "B_Tech_Sem";
+        ssc_query = `,B_Tech_Sem='${multiple_record_file}'`;
         ssc_queryu = a;
       }
       if (GRE == 1) {
@@ -1092,9 +1105,75 @@ exports.student_upload_submit = (
         ssc_query = `,gre='${multiple_record_file}'`;
         ssc_queryu = a;
       }
-      if (Others == 1) {
-        let a = "other_file";
-        ssc_query = `,other_file='${multiple_record_file}'`;
+      if (LOR == 1) {
+        let a = "LOR";
+        ssc_query = `,LOR='${multiple_record_file}'`;
+        ssc_queryu = a;
+      }
+      if (Resume == 1) {
+        let a = "Resume";
+        ssc_query = `,Resume='${multiple_record_file}'`;
+        ssc_queryu = a;
+      }
+      if (SOP == 1) {
+        let a = "SOP";
+        ssc_query = `,SOP='${multiple_record_file}'`;
+        ssc_queryu = a;
+      }
+
+      if (Work_Experience == 1) {
+        let a = "Work_Experience";
+        ssc_query = `,Work_Experience='${multiple_record_file}'`;
+        ssc_queryu = a;
+      }
+      if (Passport_Front == 1) {
+        let a = "Passport_Front";
+        ssc_query = `,Passport_Front='${multiple_record_file}'`;
+        ssc_queryu = a;
+      }
+      if (Passport_back == 1) {
+        let a = "Passport_back";
+        ssc_query = `,Passport_back='${multiple_record_file}'`;
+        ssc_queryu = a;
+      }
+      if (TOEFL_Doc == 1) {
+        let a = "TOEFL_Doc";
+        ssc_query = `,TOEFL_Doc='${multiple_record_file}'`;
+        ssc_queryu = a;
+      }
+      if (GRE_Doc == 1) {
+        let a = "GRE_Doc";
+        ssc_query = `,GRE_Doc='${multiple_record_file}'`;
+        ssc_queryu = a;
+      }
+      if (IELTS_Doc == 1) {
+        let a = "IELTS_Doc";
+        ssc_query = `,IELTS_Doc='${multiple_record_file}'`;
+        ssc_queryu = a;
+      }
+      if (Duolingo_Doc == 1) {
+        let a = "Duolingo_Doc";
+        ssc_query = `,Duolingo_Doc='${multiple_record_file}'`;
+        ssc_queryu = a;
+      }
+      if (other_Language == 1) {
+        let a = "other_Language";
+        ssc_query = `,other_Language='${multiple_record_file}'`;
+        ssc_queryu = a;
+      }
+      if (Bank_statement == 1) {
+        let a = "Bank_statement";
+        ssc_query = `,Bank_statement='${multiple_record_file}'`;
+        ssc_queryu = a;
+      }
+      if (fund_letter == 1) {
+        let a = "fund_letter";
+        ssc_query = `,fund_letter='${multiple_record_file}'`;
+        ssc_queryu = a;
+      }
+      if (Experience_letter == 1) {
+        let a = "Experience_letter";
+        ssc_query = `,Experience_letter='${multiple_record_file}'`;
         ssc_queryu = a;
       }
 
@@ -1115,7 +1194,7 @@ exports.student_upload_submit = (
             return;
           } else {
             query = `select * from student_dtl_t where c_by=${logged_user_id} and
-(tenth is  not null and inter is not null and deg_btech is not null)`;
+(SSC is  not null and Intermediate is not null)`;
             dbutil.execQuery(
               sqldb.MySQLConPool,
               query,
@@ -1562,10 +1641,9 @@ exports.admin_trackprocess_get = (callback) => {
   );
 };
 
-
-exports.student_payment_mode = (logged_user_id,payment_mode,callback) => {
+exports.student_payment_mode = (logged_user_id, payment_mode, callback) => {
   let cntxtDtls = "Get student_payment_mode api";
-  QRY_TO_EXEC = `update reverted_stud_csv_admin_t set payment_mode="${payment_mode}" where id=${logged_user_id};`;
+  QRY_TO_EXEC = `update users_dtl_t set payment_mode="${payment_mode}" where id=${logged_user_id};`;
   dbutil.execQuery(
     sqldb.MySQLConPool,
     QRY_TO_EXEC,

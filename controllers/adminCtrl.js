@@ -833,24 +833,33 @@ exports.convet_to_track_progress = async (req, res) => {
 exports.student_upload_submit = async (req, res) => {
   let current_timestamp = moment().format("YYYYMMDDHHmmss");
   let logged_user_id = req.body.logged_user_id;
+  let Process_fee = req.body.Process_fee;
+  let Application_Fee = req.body.Application_Fee;
   let SSC = req.body.SSC;
-  let Intermediate=req.body.Intermediate;
-  let Degree_Btech=req.body.Degree_Btech;
-  let Masters = req.body.Masters;
-  let TOFEL=req.body.TOFEL;
-  let IELTS=req.body.IELTS;
-  let GPA = req.body.GPA;
-  let DULINGO=req.body.DULINGO;
-  let GRE=req.body.GRE;
-  let Others = req.body.Others;
- 
+  let Intermediate = req.body.Intermediate;
+  let Btech_Degree_PC = req.body.Btech_Degree_PC;
+  let Btech_Degree_CMM = req.body.Btech_Degree_CMM;
+  let Btech_Degree_OD = req.body.Btech_Degree_OD;
+  let B_Tech_Sem = req.body.B_Tech_Sem;
+  let GRE = req.body.GRE;
+  let LOR = req.body.LOR;
+  let Resume = req.body.Resume;
+  let SOP = req.body.SOP;
+  let Work_Experience = req.body.Work_Experience;
+  let Passport_Front = req.body.Passport_Front;
+  let Passport_back = req.body.Passport_back;
+  let TOEFL_Doc = req.body.TOEFL_Doc;
+  let GRE_Doc = req.body.GRE_Doc;
+  let IELTS_Doc = req.body.IELTS_Doc;
+  let Duolingo_Doc = req.body.Duolingo_Doc;
+  let other_Language = req.body.other_Language;
+  let Bank_statement = req.body.Bank_statement;
+  let fund_letter = req.body.fund_letter;
+  let Experience_letter = req.body.Experience_letter;
+
   // console.log(req.files,"files log::::::::")
   let multiple_record_file =
-    SSC +
-    "_" +
-    current_timestamp +
-    "_" +
-    req.files.fileupload[0].originalname;
+    SSC + "_" + current_timestamp + "_" + req.files.fileupload[0].originalname;
   console.log(multiple_record_file, "hi");
   // return
   if (req.files) {
@@ -877,7 +886,30 @@ exports.student_upload_submit = async (req, res) => {
         } else {
           console.log("hi", multiple_record_file);
 
-          adminModel.student_upload_submit(SSC,Intermediate,Degree_Btech,Masters,TOFEL,IELTS,GPA,DULINGO,GRE,Others,
+          adminModel.student_upload_submit(
+            Process_fee,
+            Application_Fee,
+            SSC,
+            Intermediate,
+            Btech_Degree_PC,
+            Btech_Degree_CMM,
+            Btech_Degree_OD,
+            B_Tech_Sem,
+            GRE,
+            LOR,
+            Resume,
+            SOP,
+            Work_Experience,
+            Passport_Front,
+            Passport_back,
+            TOEFL_Doc,
+            GRE_Doc,
+            IELTS_Doc,
+            Duolingo_Doc,
+            other_Language,
+            Bank_statement,
+            fund_letter,
+            Experience_letter,
             multiple_record_file,
             logged_user_id,
             async (err, Data18, flag) => {
@@ -993,16 +1025,21 @@ exports.track_progress_save = async (req, res) => {
   let choosen_universites = req.body.choosen_universites;
   let choosen_comments = req.body.choosen_comments;
   let primary_id = req.body.primary_id;
-  adminModel.track_progress_save(choosen_universites,choosen_comments,primary_id,async (err, Data18, flag) => {
-    if (err) {
-      logger.error("Error While Getting edit_profile ", err);
-      res.send({ result: stdCodes.message.serverError.code, message: "" });
-      return;
-    } else {
-      res.send({ result: "success","message":"Data Saved","data":Data18})
-      return;
+  adminModel.track_progress_save(
+    choosen_universites,
+    choosen_comments,
+    primary_id,
+    async (err, Data18, flag) => {
+      if (err) {
+        logger.error("Error While Getting edit_profile ", err);
+        res.send({ result: stdCodes.message.serverError.code, message: "" });
+        return;
+      } else {
+        res.send({ result: "success", message: "Data Saved", data: Data18 });
+        return;
+      }
     }
-  });
+  );
 };
 
 exports.track_progress_save_button = async (req, res) => {
@@ -1050,14 +1087,21 @@ exports.student_payment_mode = async (req, res) => {
   let logged_user_id = req.body.logged_user_id;
   let payment_mode = req.body.payment_mode;
 
-  adminModel.student_payment_mode(logged_user_id,payment_mode,async (err, Data18, flag) => {
-    if (err) {
-      logger.error("Error While Getting edit_profile ", err);
-      res.send({ result: stdCodes.message.serverError.code, message: "" });
-      return;
-    } else {
-      res.send({ result: "success", "message":"Payment Updated Successfully"  });
-      return;
+  adminModel.student_payment_mode(
+    logged_user_id,
+    payment_mode,
+    async (err, Data18, flag) => {
+      if (err) {
+        logger.error("Error While Getting edit_profile ", err);
+        res.send({ result: stdCodes.message.serverError.code, message: "" });
+        return;
+      } else {
+        res.send({
+          result: "success",
+          message: "Payment Updated Successfully",
+        });
+        return;
+      }
     }
-  });
+  );
 };
