@@ -65,7 +65,7 @@ exports.admincreateUser = (
   callback
 ) => {
   let cntxtDtls = "Get admincreateUser api";
-  QRY_TO_EXEC = `SELECT * FROM users_dtl_t where email=? and role=? and phone_no=?;`;
+  QRY_TO_EXEC = `SELECT * FROM users_dtl_t where email=?;`;
   dbutil.execQuery(
     sqldb.MySQLConPool,
     QRY_TO_EXEC,
@@ -120,6 +120,91 @@ exports.admincreateUser = (
     }
   );
 };
+
+exports.advisorCreateStud = (
+  email,
+  password,
+  logged_user_id,
+  array_emails,
+  callback
+) => {
+  let cntxtDtls = "Get admincreateUser api";
+  QRY_TO_EXEC = `SELECT * FROM users_dtl_t where email=?;`;
+  dbutil.execQuery(
+    sqldb.MySQLConPool,
+    QRY_TO_EXEC,
+    cntxtDtls,
+    [email],
+    function (err, results) {
+      if (err) {
+        callback(err, null);
+        return;
+      } else {
+        if (results.length > 0) {
+          callback(0, null, 0);
+          return;
+        } else {
+          console.log(array_emails.includes(email), "%%%%%%%%%%%%%%%%");
+          if (array_emails.includes(email) == false) {
+            callback(err, null, 1);
+            return;
+          } else {
+            QRY_TO_EXEC1 = `SELECT * FROM reverted_stud_csv_admin_t where email_id=?;`;
+            dbutil.execQuery(
+              sqldb.MySQLConPool,
+              QRY_TO_EXEC1,
+              cntxtDtls,
+              [email],
+              function (err, results111) {
+                // console.group()
+                if (results111.length > 0) {
+                  QRY_TO_EXEC = `insert into users_dtl_t (email, pwd, role, user_name, phone_no,c_by) 
+              values("${email}","${password}",4,"${results111[0].Studen_Name}","${results111[0].phone_no}",${logged_user_id});`;
+                  dbutil.execQuery(
+                    sqldb.MySQLConPool,
+                    QRY_TO_EXEC,
+                    cntxtDtls,
+                    [],
+                    function (err, results1) {
+                      console.log(results1.insertId, "^^^^");
+                      QRY_TO_EXEC = `select * from users_dtl_t where id=?;`;
+                      dbutil.execQuery(
+                        sqldb.MySQLConPool,
+                        QRY_TO_EXEC,
+                        cntxtDtls,
+                        [results1.insertId],
+                        function (err, results18) {
+                          exec = `select * from users_dtl_t where id=${results18[0].c_by}`;
+                          dbutil.execQuery(
+                            sqldb.MySQLConPool,
+                            exec,
+                            cntxtDtls,
+                            [],
+                            function (err, results1811) {
+                              results18[0]["creator"] =
+                                results1811[0].user_name;
+                              console.log(results18);
+                              callback(err, results18);
+                              return;
+                            }
+                          );
+                        }
+                      );
+                    }
+                  );
+                } else {
+                  callback(err, null, 1);
+                  return;
+                }
+              }
+            );
+          }
+        }
+      }
+    }
+  );
+};
+
 exports.roles = (callback) => {
   let cntxtDtls = "Get roles api";
   QRY_TO_EXEC = `SELECT * FROM roles_table where status=1;`;
@@ -742,9 +827,9 @@ exports.login_new = (email, password, callback) => {
 
 exports.trackProcess = (advisor_id, callback) => {
   let cntxtDtls = "Get trackProcess api";
-  QRY_TO_EXEC = `SELECT r.id as prima,r.*,u.*,stu.* FROM reverted_stud_csv_admin_t  as r
-left join users_dtl_t as u on u.email=r.email_id
-left join student_dtl_t as stu on stu.c_by=u.id
+  QRY_TO_EXEC = ` SELECT r.id as prima,r.phone_no as pho,r.*,u.*,stu.* FROM reverted_stud_csv_admin_t  as r
+  left join users_dtl_t as u on u.email=r.email_id
+  left join student_dtl_t as stu on stu.c_by=u.id
 where student_interest="Yes" and assign_indicator=1 and assigned_to=?;`;
   dbutil.execQuery(
     sqldb.MySQLConPool,

@@ -107,7 +107,7 @@ exports.admincreateUser = async (req, res) => {
         if (flag == 1) {
           res.send({
             result: "Fail",
-            Message: "User Already Exists for this Role",
+            Message: "Email Already Exists",
           });
           return;
         } else if (flag == 2) {
@@ -119,6 +119,38 @@ exports.admincreateUser = async (req, res) => {
             Message: "User Created Successfully",
             data: Data18,
           });
+          return;
+        }
+      }
+    }
+  );
+};
+
+exports.advisorCreateStud = async (req, res) => {
+  console.log("hi");
+  let email = req.body.email;
+  let password = req.body.password;
+  let logged_user_id = req.body.logged_user_id;
+  let array_emails = req.body.array_emails;
+  adminModel.advisorCreateStud(
+    email,
+    password,
+    logged_user_id,
+    array_emails,
+    async (err, Data18, flag) => {
+      if (err) {
+        logger.error("Error While Getting Meeting Data ", err);
+        res.send({ result: stdCodes.message.serverError.code, message: "" });
+        return;
+      } else {
+        if (flag == 0) {
+          res.send({ result: "Fail", Message: "User Already Created" });
+          return;
+        } else if (flag == 1) {
+          res.send({ result: "Fail", Message: "Please check the Email" });
+          return;
+        } else {
+          res.send({ result: "success", data: Data18 });
           return;
         }
       }

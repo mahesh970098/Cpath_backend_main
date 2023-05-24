@@ -11,6 +11,8 @@ router.post(
   upload.fields([{ name: "offer_letter", maxCount: 1 }]),
   adminRoutes.admincreateUser
 );
+
+router.post("/advisorCreateStud", adminRoutes.advisorCreateStud);
 router.get("/roles", adminRoutes.roles);
 router.post("/creating_task", adminRoutes.creating_task);
 router.post("/view_task", adminRoutes.view_task);
