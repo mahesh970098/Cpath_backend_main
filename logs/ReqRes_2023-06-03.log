@@ -1,0 +1,2057 @@
+2023-06-03 00:01:21 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:01:21 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:01:21 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:01:21 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:01:21 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:01:21 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:01:21 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:01:21 [32minfo[39m: 	/notification_display
+2023-06-03 00:01:21 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:01:21 [32minfo[39m: 	/roles
+2023-06-03 00:01:21 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:01:21 [32minfo[39m: 	/admin_reverted_list_get
+2023-06-03 00:01:21 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:01:21 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:01:21 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:01:21 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:01:21 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:01:21 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:01:21 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:01:21 [32minfo[39m: 	/notification_display
+2023-06-03 00:01:21 [32minfo[39m: 	SELECT * FROM roles_table where status=1;
+2023-06-03 00:01:21 [32minfo[39m: 	SELECT * FROM reverted_stud_csv_admin_t 
+    where  student_interest='Future Followup' and is_active=1 order by checkbox_save desc;
+2023-06-03 00:01:21 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:01:21 [32minfo[39m: 	/notification_display
+2023-06-03 00:01:21 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:01:21 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:01:21 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:01:21 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:01:21 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 00:01:21 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 00:01:21 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=4 and is_active=1;
+2023-06-03 00:01:21 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=1  and name=1 order by s.id desc;
+2023-06-03 00:01:22 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:01:22 [32minfo[39m: 	/notification_display
+2023-06-03 00:01:22 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:01:22 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:01:22 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:01:22 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:01:22 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=2  and name=115 order by s.id desc;
+2023-06-03 00:01:22 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 00:01:22 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 00:01:25 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:01:25 [32minfo[39m: 	/trackProcess
+2023-06-03 00:01:25 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:01:25 [32minfo[39m: 	/trackProcess
+2023-06-03 00:01:25 [32minfo[39m: 	 SELECT r.id as prima,r.phone_no as pho,r.*,u.*,stu.* FROM reverted_stud_csv_admin_t  as r
+  left join users_dtl_t as u on u.email=r.email_id
+  left join student_dtl_t as stu on stu.c_by=u.id
+where student_interest="Yes" and assign_indicator=1 and assigned_to=115;
+2023-06-03 00:01:27 [31merror[39m: 	uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:278:15)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:162:21)
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\controllers\adminCtrl.js:632:13
+    at Timeout._onTimeout (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:859:15)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+2023-06-03 00:01:27 [31merror[39m: 	uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:278:15)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:162:21)
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\controllers\adminCtrl.js:632:13
+    at Timeout._onTimeout (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:859:15)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+2023-06-03 00:01:51 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:01:51 [32minfo[39m: 	/favicon.ico
+2023-06-03 00:08:00 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:08:00 [32minfo[39m: 	/notification_display
+2023-06-03 00:08:00 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:08:00 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:08:00 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:08:00 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:08:00 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:08:00 [32minfo[39m: 	/notification_display
+2023-06-03 00:08:00 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:08:00 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:08:00 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:08:00 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:08:00 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 00:08:00 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 00:08:00 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=2  and name=115 order by s.id desc;
+2023-06-03 00:08:29 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:08:29 [32minfo[39m: 	/notification_display
+2023-06-03 00:08:29 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:08:29 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:08:29 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:08:29 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:08:29 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:08:29 [32minfo[39m: 	/notification_display
+2023-06-03 00:08:29 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:08:29 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:08:29 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:08:29 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:08:29 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=2  and name=115 order by s.id desc;
+2023-06-03 00:08:29 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 00:08:29 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 00:08:35 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:08:35 [32minfo[39m: 	/trackProcess
+2023-06-03 00:08:35 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:08:35 [32minfo[39m: 	/trackProcess
+2023-06-03 00:08:35 [32minfo[39m: 	 SELECT r.id as prima,r.phone_no as pho,r.*,u.*,stu.* FROM reverted_stud_csv_admin_t  as r
+  left join users_dtl_t as u on u.email=r.email_id
+  left join student_dtl_t as stu on stu.c_by=u.id
+where student_interest="Yes" and assign_indicator=1 and assigned_to=115;
+2023-06-03 00:08:37 [31merror[39m: 	uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:278:15)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:162:21)
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\controllers\adminCtrl.js:632:13
+    at Timeout._onTimeout (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:859:15)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+2023-06-03 00:08:37 [31merror[39m: 	uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:278:15)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:162:21)
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\controllers\adminCtrl.js:632:13
+    at Timeout._onTimeout (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:859:15)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+2023-06-03 00:08:57 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:08:57 [32minfo[39m: 	/notification_display
+2023-06-03 00:08:57 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:08:57 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:08:57 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:08:57 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:08:57 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:08:57 [32minfo[39m: 	/notification_display
+2023-06-03 00:08:57 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:08:57 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:08:57 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:08:57 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:08:57 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 00:08:57 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 00:08:57 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=2  and name=115 order by s.id desc;
+2023-06-03 00:09:01 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:09:01 [32minfo[39m: 	/trackProcess
+2023-06-03 00:09:01 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:09:01 [32minfo[39m: 	/trackProcess
+2023-06-03 00:09:01 [32minfo[39m: 	 SELECT r.id as prima,r.phone_no as pho,r.*,u.*,stu.* FROM reverted_stud_csv_admin_t  as r
+  left join users_dtl_t as u on u.email=r.email_id
+  left join student_dtl_t as stu on stu.c_by=u.id
+where student_interest="Yes" and assign_indicator=1 and assigned_to=115;
+2023-06-03 00:09:03 [31merror[39m: 	uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:278:15)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:162:21)
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\controllers\adminCtrl.js:632:13
+    at Timeout._onTimeout (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:859:15)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+2023-06-03 00:09:03 [31merror[39m: 	uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:278:15)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:162:21)
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\controllers\adminCtrl.js:632:13
+    at Timeout._onTimeout (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:859:15)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+2023-06-03 00:09:06 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:09:06 [32minfo[39m: 	/favicon.ico
+2023-06-03 00:10:02 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:10:02 [32minfo[39m: 	/notification_display
+2023-06-03 00:10:02 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:10:02 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:10:02 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:10:02 [32minfo[39m: 	/notification_display
+2023-06-03 00:10:02 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:10:02 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:10:02 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:10:02 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:10:02 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:10:02 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:10:02 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=2  and name=115 order by s.id desc;
+2023-06-03 00:10:02 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 00:10:02 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 00:10:06 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:10:06 [32minfo[39m: 	/trackProcess
+2023-06-03 00:10:06 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:10:06 [32minfo[39m: 	/trackProcess
+2023-06-03 00:10:06 [32minfo[39m: 	 SELECT r.id as prima,r.phone_no as pho,r.*,u.*,stu.* FROM reverted_stud_csv_admin_t  as r
+  left join users_dtl_t as u on u.email=r.email_id
+  left join student_dtl_t as stu on stu.c_by=u.id
+where student_interest="Yes" and assign_indicator=1 and assigned_to=115;
+2023-06-03 00:10:08 [31merror[39m: 	uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:278:15)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:162:21)
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\controllers\adminCtrl.js:632:13
+    at Timeout._onTimeout (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:859:15)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+2023-06-03 00:10:08 [31merror[39m: 	uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:278:15)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:162:21)
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\controllers\adminCtrl.js:632:13
+    at Timeout._onTimeout (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:859:15)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+2023-06-03 00:14:40 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:14:40 [32minfo[39m: 	/notification_display
+2023-06-03 00:14:40 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:14:40 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:14:40 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:14:40 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:14:40 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:14:40 [32minfo[39m: 	/notification_display
+2023-06-03 00:14:40 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:14:40 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:14:40 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:14:40 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:14:40 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 00:14:40 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 00:14:40 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=2  and name=115 order by s.id desc;
+2023-06-03 00:14:44 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:14:44 [32minfo[39m: 	/trackProcess
+2023-06-03 00:14:44 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:14:44 [32minfo[39m: 	/trackProcess
+2023-06-03 00:14:44 [32minfo[39m: 	 SELECT r.id as prima,r.phone_no as pho,r.*,u.*,stu.* FROM reverted_stud_csv_admin_t  as r
+  left join users_dtl_t as u on u.email=r.email_id
+  left join student_dtl_t as stu on stu.c_by=u.id
+where student_interest="Yes" and assign_indicator=1 and assigned_to=115;
+2023-06-03 00:14:46 [31merror[39m: 	uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:278:15)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:162:21)
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\controllers\adminCtrl.js:632:13
+    at Timeout._onTimeout (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:859:15)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+2023-06-03 00:14:46 [31merror[39m: 	uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:278:15)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:162:21)
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\controllers\adminCtrl.js:632:13
+    at Timeout._onTimeout (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:859:15)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+2023-06-03 00:15:53 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:15:53 [32minfo[39m: 	/notification_display
+2023-06-03 00:15:53 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:15:53 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:15:53 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:15:53 [32minfo[39m: 	/notification_display
+2023-06-03 00:15:53 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:15:53 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:15:53 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:15:53 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:15:53 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:15:53 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:15:53 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=2  and name=115 order by s.id desc;
+2023-06-03 00:15:53 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 00:15:53 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 00:15:56 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:15:56 [32minfo[39m: 	/trackProcess
+2023-06-03 00:15:56 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:15:56 [32minfo[39m: 	/trackProcess
+2023-06-03 00:15:56 [32minfo[39m: 	 SELECT r.id as prima,r.phone_no as pho,r.*,u.*,stu.* FROM reverted_stud_csv_admin_t  as r
+  left join users_dtl_t as u on u.email=r.email_id
+  left join student_dtl_t as stu on stu.c_by=u.id
+where student_interest="Yes" and assign_indicator=1 and assigned_to=115;
+2023-06-03 00:15:58 [31merror[39m: 	uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:278:15)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:162:21)
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\controllers\adminCtrl.js:632:13
+    at Timeout._onTimeout (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:859:15)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+2023-06-03 00:15:58 [31merror[39m: 	uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:278:15)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:162:21)
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\controllers\adminCtrl.js:632:13
+    at Timeout._onTimeout (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:859:15)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+2023-06-03 00:18:59 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:18:59 [32minfo[39m: 	/notification_display
+2023-06-03 00:18:59 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:18:59 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:18:59 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:18:59 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:18:59 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:18:59 [32minfo[39m: 	/notification_display
+2023-06-03 00:18:59 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:18:59 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:18:59 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:18:59 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:18:59 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=2  and name=115 order by s.id desc;
+2023-06-03 00:18:59 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 00:18:59 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 00:19:07 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:19:07 [32minfo[39m: 	/notification_display
+2023-06-03 00:19:07 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:19:07 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:19:07 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:19:07 [32minfo[39m: 	/notification_display
+2023-06-03 00:19:07 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:19:07 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:19:07 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:19:07 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:19:07 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:19:07 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:19:07 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=2  and name=115 order by s.id desc;
+2023-06-03 00:19:07 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 00:19:07 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 00:19:12 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:19:12 [32minfo[39m: 	/notification_display
+2023-06-03 00:19:12 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:19:12 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:19:12 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:19:12 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:19:12 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=2  and name=115 order by s.id desc;
+2023-06-03 00:19:12 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 00:19:12 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 00:19:14 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:19:14 [32minfo[39m: 	/trackProcess
+2023-06-03 00:19:14 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:19:14 [32minfo[39m: 	/trackProcess
+2023-06-03 00:19:14 [32minfo[39m: 	 SELECT r.id as prima,r.phone_no as pho,r.*,u.*,stu.* FROM reverted_stud_csv_admin_t  as r
+  left join users_dtl_t as u on u.email=r.email_id
+  left join student_dtl_t as stu on stu.c_by=u.id
+where student_interest="Yes" and assign_indicator=1 and assigned_to=115;
+2023-06-03 00:19:16 [31merror[39m: 	uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:278:15)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:162:21)
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\controllers\adminCtrl.js:632:13
+    at Timeout._onTimeout (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:859:15)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+2023-06-03 00:19:16 [31merror[39m: 	uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:278:15)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:162:21)
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\controllers\adminCtrl.js:632:13
+    at Timeout._onTimeout (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:859:15)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+2023-06-03 00:21:54 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:21:54 [32minfo[39m: 	/notification_display
+2023-06-03 00:21:54 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:21:54 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:21:54 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:21:54 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:21:54 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:21:54 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:21:55 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:21:55 [32minfo[39m: 	/notification_display
+2023-06-03 00:21:55 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:21:55 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:21:55 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 00:21:55 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 00:21:55 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=2  and name=115 order by s.id desc;
+2023-06-03 00:21:57 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:21:57 [32minfo[39m: 	/trackProcess
+2023-06-03 00:21:58 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:21:58 [32minfo[39m: 	/trackProcess
+2023-06-03 00:21:58 [32minfo[39m: 	 SELECT r.id as prima,r.phone_no as pho,r.*,u.*,stu.* FROM reverted_stud_csv_admin_t  as r
+  left join users_dtl_t as u on u.email=r.email_id
+  left join student_dtl_t as stu on stu.c_by=u.id
+where student_interest="Yes" and assign_indicator=1 and assigned_to=115;
+2023-06-03 00:22:00 [31merror[39m: 	uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:278:15)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:162:21)
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\controllers\adminCtrl.js:632:13
+    at Timeout._onTimeout (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:859:15)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+2023-06-03 00:22:00 [31merror[39m: 	uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:278:15)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:162:21)
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\controllers\adminCtrl.js:632:13
+    at Timeout._onTimeout (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:859:15)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+2023-06-03 00:22:33 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:22:33 [32minfo[39m: 	/notification_display
+2023-06-03 00:22:33 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:22:33 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:22:33 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:22:33 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:22:33 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:22:33 [32minfo[39m: 	/notification_display
+2023-06-03 00:22:33 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:22:33 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:22:33 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:22:33 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:22:33 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=2  and name=115 order by s.id desc;
+2023-06-03 00:22:33 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 00:22:33 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 00:22:37 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:22:37 [32minfo[39m: 	/trackProcess
+2023-06-03 00:22:37 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:22:37 [32minfo[39m: 	/trackProcess
+2023-06-03 00:22:37 [32minfo[39m: 	 SELECT r.id as prima,r.phone_no as pho,r.*,u.*,stu.* FROM reverted_stud_csv_admin_t  as r
+  left join users_dtl_t as u on u.email=r.email_id
+  left join student_dtl_t as stu on stu.c_by=u.id
+where student_interest="Yes" and assign_indicator=1 and assigned_to=115;
+2023-06-03 00:22:39 [31merror[39m: 	uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:278:15)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:162:21)
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\controllers\adminCtrl.js:632:13
+    at Timeout._onTimeout (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:859:15)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+2023-06-03 00:22:39 [31merror[39m: 	uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:278:15)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:162:21)
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\controllers\adminCtrl.js:632:13
+    at Timeout._onTimeout (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:859:15)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+2023-06-03 00:25:43 [34mdebug[39m: 	CharisPathWay API server is listening at http://:::5555
+2023-06-03 00:29:41 [34mdebug[39m: 	CharisPathWay API server is listening at http://:::5555
+2023-06-03 00:29:49 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:29:49 [32minfo[39m: 	/notification_display
+2023-06-03 00:29:49 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:29:49 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:29:49 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:29:49 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:29:49 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 00:29:49 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=2  and name=115 order by s.id desc;
+2023-06-03 00:29:49 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 00:29:56 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:29:56 [32minfo[39m: 	/trackProcess
+2023-06-03 00:29:56 [32minfo[39m: 	 SELECT r.id as prima,r.phone_no as pho,r.*,u.*,stu.* FROM reverted_stud_csv_admin_t  as r
+  left join users_dtl_t as u on u.email=r.email_id
+  left join student_dtl_t as stu on stu.c_by=u.id
+where student_interest="Yes" and assign_indicator=1 and assigned_to=115;
+2023-06-03 00:29:58 [31merror[39m: 	uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:278:15)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:162:21)
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\controllers\adminCtrl.js:632:13
+    at Timeout._onTimeout (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:859:15)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+2023-06-03 00:29:58 [31merror[39m: 	uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:278:15)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:162:21)
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\controllers\adminCtrl.js:632:13
+    at Timeout._onTimeout (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:859:15)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+2023-06-03 00:31:08 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:31:08 [32minfo[39m: 	/notification_display
+2023-06-03 00:31:08 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:31:08 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:31:08 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:31:08 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:31:08 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=2  and name=115 order by s.id desc;
+2023-06-03 00:31:08 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 00:31:08 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 00:31:11 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:31:11 [32minfo[39m: 	/trackProcess
+2023-06-03 00:31:11 [32minfo[39m: 	 SELECT r.id as prima,r.phone_no as pho,r.*,u.*,stu.* FROM reverted_stud_csv_admin_t  as r
+  left join users_dtl_t as u on u.email=r.email_id
+  left join student_dtl_t as stu on stu.c_by=u.id
+where student_interest="Yes" and assign_indicator=1 and assigned_to=115;
+2023-06-03 00:31:13 [31merror[39m: 	uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:278:15)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:162:21)
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\controllers\adminCtrl.js:632:13
+    at Timeout._onTimeout (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:859:15)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+2023-06-03 00:31:13 [31merror[39m: 	uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:278:15)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:162:21)
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\controllers\adminCtrl.js:632:13
+    at Timeout._onTimeout (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:859:15)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+2023-06-03 00:32:20 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:32:20 [32minfo[39m: 	/trackProcess
+2023-06-03 00:32:20 [32minfo[39m: 	 SELECT r.id as prima,r.phone_no as pho,r.*,u.*,stu.* FROM reverted_stud_csv_admin_t  as r
+  left join users_dtl_t as u on u.email=r.email_id
+  left join student_dtl_t as stu on stu.c_by=u.id
+where student_interest="Yes" and assign_indicator=1 and assigned_to=115;
+2023-06-03 00:32:22 [31merror[39m: 	uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:278:15)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:162:21)
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\controllers\adminCtrl.js:632:13
+    at Timeout._onTimeout (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:859:15)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+2023-06-03 00:32:22 [31merror[39m: 	uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:278:15)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:162:21)
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\controllers\adminCtrl.js:632:13
+    at Timeout._onTimeout (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:859:15)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+2023-06-03 00:34:44 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:34:44 [32minfo[39m: 	/notification_display
+2023-06-03 00:34:44 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:34:44 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:34:44 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:34:44 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:34:44 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=2  and name=115 order by s.id desc;
+2023-06-03 00:34:44 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 00:34:44 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 00:34:47 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:34:47 [32minfo[39m: 	/trackProcess
+2023-06-03 00:34:47 [32minfo[39m: 	 SELECT r.id as prima,r.phone_no as pho,r.*,u.*,stu.* FROM reverted_stud_csv_admin_t  as r
+  left join users_dtl_t as u on u.email=r.email_id
+  left join student_dtl_t as stu on stu.c_by=u.id
+where student_interest="Yes" and assign_indicator=1 and assigned_to=115;
+2023-06-03 00:34:49 [31merror[39m: 	uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:278:15)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:162:21)
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\controllers\adminCtrl.js:632:13
+    at Timeout._onTimeout (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:859:15)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+2023-06-03 00:34:49 [31merror[39m: 	uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:278:15)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:162:21)
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\controllers\adminCtrl.js:632:13
+    at Timeout._onTimeout (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:859:15)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+2023-06-03 00:34:51 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:34:51 [32minfo[39m: 	/filestorage/student_uploads/230602232625_White%20and%20Black%20Minimalist%20Marketing%20Manager%20Resume.pdf
+2023-06-03 00:35:14 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:35:14 [32minfo[39m: 	/filestorage/student_uploads/230602232625_White%20and%20Black%20Minimalist%20Marketing%20Manager%20Resume.pdf
+2023-06-03 00:35:53 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:35:53 [32minfo[39m: 	/trackProcess
+2023-06-03 00:35:53 [32minfo[39m: 	 SELECT r.id as prima,r.phone_no as pho,r.*,u.*,stu.* FROM reverted_stud_csv_admin_t  as r
+  left join users_dtl_t as u on u.email=r.email_id
+  left join student_dtl_t as stu on stu.c_by=u.id
+where student_interest="Yes" and assign_indicator=1 and assigned_to=115;
+2023-06-03 00:35:55 [31merror[39m: 	uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:278:15)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:162:21)
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\controllers\adminCtrl.js:632:13
+    at Timeout._onTimeout (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:859:15)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+2023-06-03 00:35:55 [31merror[39m: 	uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:278:15)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:162:21)
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\controllers\adminCtrl.js:632:13
+    at Timeout._onTimeout (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:859:15)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+2023-06-03 00:36:14 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:36:14 [32minfo[39m: 	/notification_display
+2023-06-03 00:36:14 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:36:14 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:36:14 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:36:14 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:36:14 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 00:36:14 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=2  and name=115 order by s.id desc;
+2023-06-03 00:36:14 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 00:36:22 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:36:22 [32minfo[39m: 	/trackProcess
+2023-06-03 00:36:22 [32minfo[39m: 	 SELECT r.id as prima,r.phone_no as pho,r.*,u.*,stu.* FROM reverted_stud_csv_admin_t  as r
+  left join users_dtl_t as u on u.email=r.email_id
+  left join student_dtl_t as stu on stu.c_by=u.id
+where student_interest="Yes" and assign_indicator=1 and assigned_to=115;
+2023-06-03 00:36:24 [31merror[39m: 	uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:278:15)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:162:21)
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\controllers\adminCtrl.js:632:13
+    at Timeout._onTimeout (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:859:15)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+2023-06-03 00:36:24 [31merror[39m: 	uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:278:15)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:162:21)
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\controllers\adminCtrl.js:632:13
+    at Timeout._onTimeout (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:859:15)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+2023-06-03 00:36:26 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:36:26 [32minfo[39m: 	/filestorage/student_uploads/230602232625_White%20and%20Black%20Minimalist%20Marketing%20Manager%20Resume.pdf
+2023-06-03 00:37:17 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:37:17 [32minfo[39m: 	/notification_display
+2023-06-03 00:37:17 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:37:17 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:37:17 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:37:17 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:37:17 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=2  and name=115 order by s.id desc;
+2023-06-03 00:37:17 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 00:37:17 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 00:37:22 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:37:22 [32minfo[39m: 	/trackProcess
+2023-06-03 00:37:22 [32minfo[39m: 	 SELECT r.id as prima,r.phone_no as pho,r.*,u.*,stu.* FROM reverted_stud_csv_admin_t  as r
+  left join users_dtl_t as u on u.email=r.email_id
+  left join student_dtl_t as stu on stu.c_by=u.id
+where student_interest="Yes" and assign_indicator=1 and assigned_to=115;
+2023-06-03 00:37:24 [31merror[39m: 	uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:278:15)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:162:21)
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\controllers\adminCtrl.js:632:13
+    at Timeout._onTimeout (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:859:15)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+2023-06-03 00:37:24 [31merror[39m: 	uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:278:15)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:162:21)
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\controllers\adminCtrl.js:632:13
+    at Timeout._onTimeout (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:859:15)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+2023-06-03 00:37:26 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:37:26 [32minfo[39m: 	/filestorage/student_uploads/230602232625_White%20and%20Black%20Minimalist%20Marketing%20Manager%20Resume.pdf
+2023-06-03 00:39:26 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:39:26 [32minfo[39m: 	/notification_display
+2023-06-03 00:39:26 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:39:26 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:39:26 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:39:26 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:39:26 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=2  and name=115 order by s.id desc;
+2023-06-03 00:39:26 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 00:39:26 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 00:39:28 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:39:28 [32minfo[39m: 	/trackProcess
+2023-06-03 00:39:28 [32minfo[39m: 	 SELECT r.id as prima,r.phone_no as pho,r.*,u.*,stu.* FROM reverted_stud_csv_admin_t  as r
+  left join users_dtl_t as u on u.email=r.email_id
+  left join student_dtl_t as stu on stu.c_by=u.id
+where student_interest="Yes" and assign_indicator=1 and assigned_to=115;
+2023-06-03 00:39:30 [31merror[39m: 	uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:278:15)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:162:21)
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\controllers\adminCtrl.js:632:13
+    at Timeout._onTimeout (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:859:15)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+2023-06-03 00:39:30 [31merror[39m: 	uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:278:15)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:162:21)
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\controllers\adminCtrl.js:632:13
+    at Timeout._onTimeout (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:859:15)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+2023-06-03 00:40:13 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:40:13 [32minfo[39m: 	/advisor_approve_reject_documents
+2023-06-03 00:40:14 [32minfo[39m: 	update student_dtl_t  set status='Approved' where c_by=133;
+2023-06-03 00:40:14 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:40:14 [32minfo[39m: 	/trackProcess
+2023-06-03 00:40:14 [32minfo[39m: 	 SELECT r.id as prima,r.phone_no as pho,r.*,u.*,stu.* FROM reverted_stud_csv_admin_t  as r
+  left join users_dtl_t as u on u.email=r.email_id
+  left join student_dtl_t as stu on stu.c_by=u.id
+where student_interest="Yes" and assign_indicator=1 and assigned_to=115;
+2023-06-03 00:40:16 [31merror[39m: 	uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:278:15)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:162:21)
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\controllers\adminCtrl.js:632:13
+    at Timeout._onTimeout (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:859:15)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+2023-06-03 00:40:16 [31merror[39m: 	uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:278:15)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:162:21)
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\controllers\adminCtrl.js:632:13
+    at Timeout._onTimeout (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:859:15)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+2023-06-03 00:40:19 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:40:19 [32minfo[39m: 	/advisor_assignto_consultant
+2023-06-03 00:40:19 [32minfo[39m: 	update reverted_stud_csv_admin_t  set assigned_to='116',assigned_by='115', assigned_time="2023-06-03"
+     where id=9026;
+2023-06-03 00:40:19 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:40:19 [32minfo[39m: 	/trackProcess
+2023-06-03 00:40:19 [32minfo[39m: 	 SELECT r.id as prima,r.phone_no as pho,r.*,u.*,stu.* FROM reverted_stud_csv_admin_t  as r
+  left join users_dtl_t as u on u.email=r.email_id
+  left join student_dtl_t as stu on stu.c_by=u.id
+where student_interest="Yes" and assign_indicator=1 and assigned_to=115;
+2023-06-03 00:40:21 [31merror[39m: 	uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:278:15)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:162:21)
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\controllers\adminCtrl.js:632:13
+    at Timeout._onTimeout (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:859:15)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+2023-06-03 00:40:27 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:40:27 [32minfo[39m: 	/notification_display
+2023-06-03 00:40:27 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=3  and name=116 order by s.id desc;
+2023-06-03 00:40:29 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:40:29 [32minfo[39m: 	/consultant_get_details
+2023-06-03 00:40:29 [32minfo[39m: 	 SELECT r.id as primarykey,u1.role as assigned_role,u1.user_name as assigned_by_name,u1.id as assigned_id,r.assigned_time,r.*, u.*, stu.* FROM reverted_stud_csv_admin_t as r
+  left join users_dtl_t as u on u.email = r.email_id
+  left join users_dtl_t as u1 on u1.id = r.assigned_by
+  left join student_dtl_t as stu on stu.c_by = u.id
+where student_interest = "Yes" and assign_indicator = 1 and track_in_progress=0 and assigned_to =116;
+2023-06-03 00:40:41 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:40:41 [32minfo[39m: 	/filestorage/student_uploads/230602232625_White%20and%20Black%20Minimalist%20Marketing%20Manager%20Resume.pdf
+2023-06-03 00:40:45 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:40:45 [32minfo[39m: 	/consultant_track_progress_button
+2023-06-03 00:40:45 [32minfo[39m: 	update reverted_stud_csv_admin_t set track_in_progress=1 where id=9026;
+2023-06-03 00:40:45 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:40:45 [32minfo[39m: 	/consultant_get_details
+2023-06-03 00:40:45 [32minfo[39m: 	 SELECT r.id as primarykey,u1.role as assigned_role,u1.user_name as assigned_by_name,u1.id as assigned_id,r.assigned_time,r.*, u.*, stu.* FROM reverted_stud_csv_admin_t as r
+  left join users_dtl_t as u on u.email = r.email_id
+  left join users_dtl_t as u1 on u1.id = r.assigned_by
+  left join student_dtl_t as stu on stu.c_by = u.id
+where student_interest = "Yes" and assign_indicator = 1 and track_in_progress=0 and assigned_to =116;
+2023-06-03 00:40:46 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:40:46 [32minfo[39m: 	/track_progress_get
+2023-06-03 00:40:46 [32minfo[39m: 	SELECT re.id as primaryKey,u1.role as assigned_role,u1.user_name as assigned_by_name,u1.id as assigned_id,re.assigned_time,re.*, u.* FROM reverted_stud_csv_admin_t as re
+  left join users_dtl_t as u on u.email = re.email_id
+  left join users_dtl_t as u1 on u1.id = re.assigned_by
+  where track_in_progress=1;
+2023-06-03 00:41:47 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:41:47 [32minfo[39m: 	/notification_display
+2023-06-03 00:41:47 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=3  and name=116 order by s.id desc;
+2023-06-03 00:41:52 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:41:52 [32minfo[39m: 	/notification_display
+2023-06-03 00:41:52 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=3  and name=116 order by s.id desc;
+2023-06-03 00:41:55 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:41:55 [32minfo[39m: 	/track_progress_get
+2023-06-03 00:41:55 [32minfo[39m: 	SELECT re.id as primaryKey,u1.role as assigned_role,u1.user_name as assigned_by_name,u1.id as assigned_id,re.assigned_time,re.*, u.* FROM reverted_stud_csv_admin_t as re
+  left join users_dtl_t as u on u.email = re.email_id
+  left join users_dtl_t as u1 on u1.id = re.assigned_by
+  where track_in_progress=1;
+2023-06-03 00:42:36 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:42:36 [32minfo[39m: 	/notification_display
+2023-06-03 00:42:36 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=2  and name=115 order by s.id desc;
+2023-06-03 00:42:36 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:42:36 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:42:36 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 00:42:36 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:42:36 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:42:36 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 00:42:36 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:42:36 [32minfo[39m: 	/notification_display
+2023-06-03 00:42:36 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=3  and name=116 order by s.id desc;
+2023-06-03 00:42:50 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:42:50 [32minfo[39m: 	/notification_display
+2023-06-03 00:42:50 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=2  and name=115 order by s.id desc;
+2023-06-03 00:42:50 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:42:50 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:42:50 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:42:50 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:42:50 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 00:42:50 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 00:42:53 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:42:53 [32minfo[39m: 	/notification_display
+2023-06-03 00:42:53 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=3  and name=116 order by s.id desc;
+2023-06-03 00:42:57 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:42:57 [32minfo[39m: 	/track_progress_get
+2023-06-03 00:42:57 [32minfo[39m: 	SELECT re.id as primaryKey,u1.role as assigned_role,u1.user_name as assigned_by_name,u1.id as assigned_id,re.assigned_time,re.*, u.* FROM reverted_stud_csv_admin_t as re
+  left join users_dtl_t as u on u.email = re.email_id
+  left join users_dtl_t as u1 on u1.id = re.assigned_by
+  where track_in_progress=1;
+2023-06-03 00:43:00 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:43:00 [32minfo[39m: 	/filestorage/student_uploads/undefined
+2023-06-03 00:43:00 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:43:00 [32minfo[39m: 	/filestorage/student_uploads/undefined
+2023-06-03 00:43:00 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:43:00 [32minfo[39m: 	/filestorage/student_uploads/undefined
+2023-06-03 00:43:00 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:43:00 [32minfo[39m: 	/filestorage/student_uploads/undefined
+2023-06-03 00:43:00 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:43:00 [32minfo[39m: 	/filestorage/student_uploads/undefined
+2023-06-03 00:43:59 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:43:59 [32minfo[39m: 	/track_progress_get
+2023-06-03 00:43:59 [32minfo[39m: 	SELECT re.id as primaryKey,u1.role as assigned_role,u1.user_name as assigned_by_name,u1.id as assigned_id,re.assigned_time,re.*, u.* FROM reverted_stud_csv_admin_t as re
+  left join users_dtl_t as u on u.email = re.email_id
+  left join users_dtl_t as u1 on u1.id = re.assigned_by
+  where track_in_progress=1;
+2023-06-03 00:44:18 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:44:18 [32minfo[39m: 	/track_progress_get
+2023-06-03 00:44:18 [32minfo[39m: 	SELECT re.id as primaryKey,u1.role as assigned_role,u1.user_name as assigned_by_name,u1.id as assigned_id,re.assigned_time,re.*, u.* FROM reverted_stud_csv_admin_t as re
+  left join users_dtl_t as u on u.email = re.email_id
+  left join users_dtl_t as u1 on u1.id = re.assigned_by
+  where track_in_progress=1;
+2023-06-03 00:44:38 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:44:38 [32minfo[39m: 	/consultant_get_details
+2023-06-03 00:44:38 [32minfo[39m: 	 SELECT r.id as primarykey,u1.role as assigned_role,u1.user_name as assigned_by_name,u1.id as assigned_id,r.assigned_time,r.*, u.*, stu.* FROM reverted_stud_csv_admin_t as r
+  left join users_dtl_t as u on u.email = r.email_id
+  left join users_dtl_t as u1 on u1.id = r.assigned_by
+  left join student_dtl_t as stu on stu.c_by = u.id
+where student_interest = "Yes" and assign_indicator = 1 and track_in_progress=0 and assigned_to =116;
+2023-06-03 00:44:42 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:44:42 [32minfo[39m: 	/track_progress_get
+2023-06-03 00:44:42 [32minfo[39m: 	SELECT re.id as primaryKey,u1.role as assigned_role,u1.user_name as assigned_by_name,u1.id as assigned_id,re.assigned_time,re.*, u.* FROM reverted_stud_csv_admin_t as re
+  left join users_dtl_t as u on u.email = re.email_id
+  left join users_dtl_t as u1 on u1.id = re.assigned_by
+  where track_in_progress=1;
+2023-06-03 00:45:12 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:45:12 [32minfo[39m: 	/trackProcess
+2023-06-03 00:45:12 [32minfo[39m: 	 SELECT r.id as prima,r.phone_no as pho,r.*,u.*,stu.* FROM reverted_stud_csv_admin_t  as r
+  left join users_dtl_t as u on u.email=r.email_id
+  left join student_dtl_t as stu on stu.c_by=u.id
+where student_interest="Yes" and assign_indicator=1 and assigned_to=115;
+2023-06-03 00:45:14 [31merror[39m: 	uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:278:15)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:162:21)
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\controllers\adminCtrl.js:632:13
+    at Timeout._onTimeout (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:859:15)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+2023-06-03 00:45:18 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:45:18 [32minfo[39m: 	/trackProcess
+2023-06-03 00:45:18 [32minfo[39m: 	 SELECT r.id as prima,r.phone_no as pho,r.*,u.*,stu.* FROM reverted_stud_csv_admin_t  as r
+  left join users_dtl_t as u on u.email=r.email_id
+  left join student_dtl_t as stu on stu.c_by=u.id
+where student_interest="Yes" and assign_indicator=1 and assigned_to=115;
+2023-06-03 00:45:20 [31merror[39m: 	uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:278:15)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:162:21)
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\controllers\adminCtrl.js:632:13
+    at Timeout._onTimeout (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:859:15)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+2023-06-03 00:45:27 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:45:27 [32minfo[39m: 	/advisorCreateStud
+2023-06-03 00:45:27 [32minfo[39m: 	SELECT * FROM users_dtl_t where email='17jg1a0533.rathod@gvpcew.ac.in';
+2023-06-03 00:45:27 [32minfo[39m: 	SELECT * FROM reverted_stud_csv_admin_t where email_id='17jg1a0533.rathod@gvpcew.ac.in';
+2023-06-03 00:45:27 [32minfo[39m: 	insert into users_dtl_t (email, pwd, role, user_name, phone_no,c_by) 
+              values("17jg1a0533.rathod@gvpcew.ac.in","lUb0Z#iB0T",4,"Rathod","9381566619",115);
+2023-06-03 00:45:27 [32minfo[39m: 	select * from users_dtl_t where id=134;
+2023-06-03 00:45:27 [32minfo[39m: 	select * from users_dtl_t where id=115
+2023-06-03 00:45:50 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:45:50 [32minfo[39m: 	/login
+2023-06-03 00:45:50 [32minfo[39m: 	SELECT * FROM users_dtl_t where email='17jg1a0533.rathod@gvpcew.ac.in'
+2023-06-03 00:45:50 [32minfo[39m: 	SELECT * FROM users_dtl_t where email='17jg1a0533.rathod@gvpcew.ac.in' and pwd='lUb0Z#iB0T' 
+2023-06-03 00:45:50 [32minfo[39m: 	select * from users_dtl_t where id=115
+2023-06-03 00:45:51 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:45:51 [32minfo[39m: 	/notification_display
+2023-06-03 00:45:51 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:45:51 [32minfo[39m: 	/student_profile_get
+2023-06-03 00:45:51 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=4  and name=134 order by s.id desc;
+2023-06-03 00:45:51 [32minfo[39m: 	SELECT us.email,us.phone_no,r.country_interested,us.passed_year,
+  TOFEL_SCORE,IELTS_SCORE,GPA_SCORE,DULINGO_SCORE,GRE_SCORE,us.c_by,
+  r.assigned_to as assign_consultant,r.assigned_by as assigned_advisor
+  FROM users_dtl_t as us
+  join reverted_stud_csv_admin_t as r on r.email_id=us.email
+  left join student_dtl_t as s on s.c_by=us.id
+  where us.email="17jg1a0533.rathod@gvpcew.ac.in";
+2023-06-03 00:45:51 [32minfo[39m: 	select user_name from users_dtl_t where id=115;
+        select user_name from users_dtl_t where id=1
+2023-06-03 00:45:58 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:45:58 [32minfo[39m: 	/student_payment_mode
+2023-06-03 00:45:58 [32minfo[39m: 	update users_dtl_t set payment_mode="Standard" where id=134;
+2023-06-03 00:46:00 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:46:00 [32minfo[39m: 	/student_upload_get
+2023-06-03 00:46:00 [32minfo[39m: 	select * from student_dtl_t where c_by='134'
+2023-06-03 00:46:09 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:46:09 [32minfo[39m: 	/student_upload_submit
+2023-06-03 00:46:09 [32minfo[39m: 	select * from student_dtl_t where c_by=134
+2023-06-03 00:46:09 [32minfo[39m: 	insert into student_dtl_t (Process_fee,c_by) values('20230603004609_White and Black Minimalist Marketing Manager Resume.pdf', '134')
+2023-06-03 00:46:09 [32minfo[39m: 	select * from student_dtl_t where c_by=134 and
+(SSC is  not null and Intermediate is not null)
+2023-06-03 00:46:09 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:46:09 [32minfo[39m: 	/student_upload_get
+2023-06-03 00:46:09 [32minfo[39m: 	select * from student_dtl_t where c_by='134'
+2023-06-03 00:46:09 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:46:09 [32minfo[39m: 	/student_upload_get
+2023-06-03 00:46:09 [32minfo[39m: 	select * from student_dtl_t where c_by='134'
+2023-06-03 00:46:18 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:46:18 [32minfo[39m: 	/student_upload_submit
+2023-06-03 00:46:18 [32minfo[39m: 	select * from student_dtl_t where c_by=134
+2023-06-03 00:46:18 [32minfo[39m: 	update student_dtl_t set c_ts="2023-06-03 00:46:18" ,Application_Fee='20230603004618_White and Black Minimalist Marketing Manager Resume.pdf' where c_by=134
+2023-06-03 00:46:18 [32minfo[39m: 	select * from student_dtl_t where c_by=134 and
+(SSC is  not null and Intermediate is not null)
+2023-06-03 00:46:18 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:46:18 [32minfo[39m: 	/student_upload_get
+2023-06-03 00:46:18 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:46:18 [32minfo[39m: 	/student_upload_get
+2023-06-03 00:46:18 [32minfo[39m: 	select * from student_dtl_t where c_by='134'
+2023-06-03 00:46:18 [32minfo[39m: 	select * from student_dtl_t where c_by='134'
+2023-06-03 00:46:27 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:46:27 [32minfo[39m: 	/student_upload_submit
+2023-06-03 00:46:27 [32minfo[39m: 	select * from student_dtl_t where c_by=134
+2023-06-03 00:46:27 [32minfo[39m: 	update student_dtl_t set c_ts="2023-06-03 00:46:27" ,SSC='20230603004627_White and Black Minimalist Marketing Manager Resume.pdf' where c_by=134
+2023-06-03 00:46:27 [32minfo[39m: 	select * from student_dtl_t where c_by=134 and
+(SSC is  not null and Intermediate is not null)
+2023-06-03 00:46:27 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:46:27 [32minfo[39m: 	/student_upload_get
+2023-06-03 00:46:27 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:46:27 [32minfo[39m: 	/student_upload_get
+2023-06-03 00:46:27 [32minfo[39m: 	select * from student_dtl_t where c_by='134'
+2023-06-03 00:46:27 [32minfo[39m: 	select * from student_dtl_t where c_by='134'
+2023-06-03 00:46:41 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:46:41 [32minfo[39m: 	/student_upload_submit
+2023-06-03 00:46:41 [32minfo[39m: 	select * from student_dtl_t where c_by=134
+2023-06-03 00:46:41 [32minfo[39m: 	update student_dtl_t set c_ts="2023-06-03 00:46:41" ,Intermediate='20230603004641_White and Black Minimalist Marketing Manager Resume.pdf' where c_by=134
+2023-06-03 00:46:41 [32minfo[39m: 	select * from student_dtl_t where c_by=134 and
+(SSC is  not null and Intermediate is not null)
+2023-06-03 00:46:41 [32minfo[39m: 	update student_dtl_t set status="Submitted" where c_by=134
+2023-06-03 00:46:41 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:46:41 [32minfo[39m: 	/student_upload_get
+2023-06-03 00:46:41 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:46:41 [32minfo[39m: 	/student_upload_get
+2023-06-03 00:46:41 [32minfo[39m: 	select * from student_dtl_t where c_by='134'
+2023-06-03 00:46:41 [32minfo[39m: 	select * from student_dtl_t where c_by='134'
+2023-06-03 00:46:51 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:46:51 [32minfo[39m: 	/student_upload_submit
+2023-06-03 00:46:51 [32minfo[39m: 	select * from student_dtl_t where c_by=134
+2023-06-03 00:46:51 [32minfo[39m: 	update student_dtl_t set c_ts="2023-06-03 00:46:51" ,Btech_Degree_PC='20230603004651_White and Black Minimalist Marketing Manager Resume.pdf' where c_by=134
+2023-06-03 00:46:51 [32minfo[39m: 	select * from student_dtl_t where c_by=134 and
+(SSC is  not null and Intermediate is not null)
+2023-06-03 00:46:51 [32minfo[39m: 	update student_dtl_t set status="Submitted" where c_by=134
+2023-06-03 00:46:51 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:46:51 [32minfo[39m: 	/student_upload_get
+2023-06-03 00:46:51 [32minfo[39m: 	select * from student_dtl_t where c_by='134'
+2023-06-03 00:46:51 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:46:51 [32minfo[39m: 	/student_upload_get
+2023-06-03 00:46:51 [32minfo[39m: 	select * from student_dtl_t where c_by='134'
+2023-06-03 00:46:55 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:46:55 [32minfo[39m: 	/trackProcess
+2023-06-03 00:46:55 [32minfo[39m: 	 SELECT r.id as prima,r.phone_no as pho,r.*,u.*,stu.* FROM reverted_stud_csv_admin_t  as r
+  left join users_dtl_t as u on u.email=r.email_id
+  left join student_dtl_t as stu on stu.c_by=u.id
+where student_interest="Yes" and assign_indicator=1 and assigned_to=115;
+2023-06-03 00:46:57 [31merror[39m: 	uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:278:15)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:162:21)
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\controllers\adminCtrl.js:632:13
+    at Timeout._onTimeout (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:859:15)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+2023-06-03 00:47:27 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:47:27 [32minfo[39m: 	/advisor_approve_reject_documents
+2023-06-03 00:47:27 [32minfo[39m: 	update student_dtl_t  set status='Approved' where c_by=134;
+2023-06-03 00:47:27 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:47:27 [32minfo[39m: 	/trackProcess
+2023-06-03 00:47:27 [32minfo[39m: 	 SELECT r.id as prima,r.phone_no as pho,r.*,u.*,stu.* FROM reverted_stud_csv_admin_t  as r
+  left join users_dtl_t as u on u.email=r.email_id
+  left join student_dtl_t as stu on stu.c_by=u.id
+where student_interest="Yes" and assign_indicator=1 and assigned_to=115;
+2023-06-03 00:47:29 [31merror[39m: 	uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:278:15)
+    at ServerResponse.send (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\express\lib\response.js:162:21)
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\controllers\adminCtrl.js:632:13
+    at Timeout._onTimeout (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:859:15)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+2023-06-03 00:47:33 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:47:33 [32minfo[39m: 	/advisor_assignto_consultant
+2023-06-03 00:47:33 [32minfo[39m: 	update reverted_stud_csv_admin_t  set assigned_to='116',assigned_by='115', assigned_time="2023-06-03"
+     where id=9027;
+2023-06-03 00:47:33 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:47:33 [32minfo[39m: 	/trackProcess
+2023-06-03 00:47:33 [32minfo[39m: 	 SELECT r.id as prima,r.phone_no as pho,r.*,u.*,stu.* FROM reverted_stud_csv_admin_t  as r
+  left join users_dtl_t as u on u.email=r.email_id
+  left join student_dtl_t as stu on stu.c_by=u.id
+where student_interest="Yes" and assign_indicator=1 and assigned_to=115;
+2023-06-03 00:47:40 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:47:40 [32minfo[39m: 	/consultant_get_details
+2023-06-03 00:47:40 [32minfo[39m: 	 SELECT r.id as primarykey,u1.role as assigned_role,u1.user_name as assigned_by_name,u1.id as assigned_id,r.assigned_time,r.*, u.*, stu.* FROM reverted_stud_csv_admin_t as r
+  left join users_dtl_t as u on u.email = r.email_id
+  left join users_dtl_t as u1 on u1.id = r.assigned_by
+  left join student_dtl_t as stu on stu.c_by = u.id
+where student_interest = "Yes" and assign_indicator = 1 and track_in_progress=0 and assigned_to =116;
+2023-06-03 00:48:32 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:48:32 [32minfo[39m: 	/notification_display
+2023-06-03 00:48:32 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=3  and name=116 order by s.id desc;
+2023-06-03 00:48:34 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:48:34 [32minfo[39m: 	/consultant_get_details
+2023-06-03 00:48:34 [32minfo[39m: 	 SELECT r.id as primarykey,u1.role as assigned_role,u1.user_name as assigned_by_name,u1.id as assigned_id,r.assigned_time,r.*, u.*, stu.* FROM reverted_stud_csv_admin_t as r
+  left join users_dtl_t as u on u.email = r.email_id
+  left join users_dtl_t as u1 on u1.id = r.assigned_by
+  left join student_dtl_t as stu on stu.c_by = u.id
+where student_interest = "Yes" and assign_indicator = 1 and track_in_progress=0 and assigned_to =116;
+2023-06-03 00:48:41 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:48:41 [32minfo[39m: 	/notification_display
+2023-06-03 00:48:41 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=4  and name=134 order by s.id desc;
+2023-06-03 00:48:41 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:48:41 [32minfo[39m: 	/student_profile_get
+2023-06-03 00:48:41 [32minfo[39m: 	SELECT us.email,us.phone_no,r.country_interested,us.passed_year,
+  TOFEL_SCORE,IELTS_SCORE,GPA_SCORE,DULINGO_SCORE,GRE_SCORE,us.c_by,
+  r.assigned_to as assign_consultant,r.assigned_by as assigned_advisor
+  FROM users_dtl_t as us
+  join reverted_stud_csv_admin_t as r on r.email_id=us.email
+  left join student_dtl_t as s on s.c_by=us.id
+  where us.email="17jg1a0533.rathod@gvpcew.ac.in";
+2023-06-03 00:48:41 [32minfo[39m: 	select user_name from users_dtl_t where id=116;
+        select user_name from users_dtl_t where id=115
+2023-06-03 00:48:44 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:48:44 [32minfo[39m: 	/notification_display
+2023-06-03 00:48:44 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:48:44 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:48:44 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:48:44 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:48:44 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=2  and name=115 order by s.id desc;
+2023-06-03 00:48:44 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 00:48:44 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 00:51:57 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:51:57 [32minfo[39m: 	/notification_display
+2023-06-03 00:51:57 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:51:57 [32minfo[39m: 	/student_profile_get
+2023-06-03 00:51:57 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=4  and name=134 order by s.id desc;
+2023-06-03 00:51:57 [32minfo[39m: 	SELECT us.email,us.phone_no,r.country_interested,us.passed_year,
+  TOFEL_SCORE,IELTS_SCORE,GPA_SCORE,DULINGO_SCORE,GRE_SCORE,us.c_by,
+  r.assigned_to as assign_consultant,r.assigned_by as assigned_advisor
+  FROM users_dtl_t as us
+  join reverted_stud_csv_admin_t as r on r.email_id=us.email
+  left join student_dtl_t as s on s.c_by=us.id
+  where us.email="17jg1a0533.rathod@gvpcew.ac.in";
+2023-06-03 00:51:57 [32minfo[39m: 	select user_name from users_dtl_t where id=116;
+        select user_name from users_dtl_t where id=115
+2023-06-03 00:52:01 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:52:01 [32minfo[39m: 	/notification_display
+2023-06-03 00:52:01 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:52:01 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:52:01 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:52:01 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:52:01 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=2  and name=115 order by s.id desc;
+2023-06-03 00:52:01 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 00:52:01 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 00:52:02 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:52:02 [32minfo[39m: 	/notification_display
+2023-06-03 00:52:02 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=3  and name=116 order by s.id desc;
+2023-06-03 00:52:07 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:52:07 [32minfo[39m: 	/track_progress_get
+2023-06-03 00:52:07 [32minfo[39m: 	SELECT re.id as primaryKey,u1.role as assigned_role,u1.user_name as assigned_by_name,u1.id as assigned_id,re.assigned_time,re.*, u.* FROM reverted_stud_csv_admin_t as re
+  left join users_dtl_t as u on u.email = re.email_id
+  left join users_dtl_t as u1 on u1.id = re.assigned_by
+  where track_in_progress=1;
+2023-06-03 00:52:08 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:52:08 [32minfo[39m: 	/consultant_get_details
+2023-06-03 00:52:09 [32minfo[39m: 	 SELECT r.id as primarykey,u1.role as assigned_role,u1.user_name as assigned_by_name,u1.id as assigned_id,r.assigned_time,r.*, u.*, stu.* FROM reverted_stud_csv_admin_t as r
+  left join users_dtl_t as u on u.email = r.email_id
+  left join users_dtl_t as u1 on u1.id = r.assigned_by
+  left join student_dtl_t as stu on stu.c_by = u.id
+where student_interest = "Yes" and assign_indicator = 1 and track_in_progress=0 and assigned_to =116;
+2023-06-03 00:53:25 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:53:25 [32minfo[39m: 	/notification_display
+2023-06-03 00:53:25 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=3  and name=116 order by s.id desc;
+2023-06-03 00:53:28 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:53:28 [32minfo[39m: 	/consultant_get_details
+2023-06-03 00:53:28 [32minfo[39m: 	 SELECT r.id as primarykey,u1.role as assigned_role,u1.user_name as assigned_by_name,u1.id as assigned_id,r.assigned_time,r.*, u.*, stu.* FROM reverted_stud_csv_admin_t as r
+  left join users_dtl_t as u on u.email = r.email_id
+  left join users_dtl_t as u1 on u1.id = r.assigned_by
+  left join student_dtl_t as stu on stu.c_by = u.id
+where student_interest = "Yes" and assign_indicator = 1 and track_in_progress=0 and assigned_to =116;
+2023-06-03 00:53:32 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:53:32 [32minfo[39m: 	/notification_display
+2023-06-03 00:53:32 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:53:32 [32minfo[39m: 	/student_profile_get
+2023-06-03 00:53:32 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=4  and name=134 order by s.id desc;
+2023-06-03 00:53:32 [32minfo[39m: 	SELECT us.email,us.phone_no,r.country_interested,us.passed_year,
+  TOFEL_SCORE,IELTS_SCORE,GPA_SCORE,DULINGO_SCORE,GRE_SCORE,us.c_by,
+  r.assigned_to as assign_consultant,r.assigned_by as assigned_advisor
+  FROM users_dtl_t as us
+  join reverted_stud_csv_admin_t as r on r.email_id=us.email
+  left join student_dtl_t as s on s.c_by=us.id
+  where us.email="17jg1a0533.rathod@gvpcew.ac.in";
+2023-06-03 00:53:32 [32minfo[39m: 	select user_name from users_dtl_t where id=116;
+        select user_name from users_dtl_t where id=115
+2023-06-03 00:53:36 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:53:36 [32minfo[39m: 	/notification_display
+2023-06-03 00:53:36 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=2  and name=115 order by s.id desc;
+2023-06-03 00:53:36 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:53:36 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:53:36 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 00:53:36 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:53:36 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:53:36 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 00:53:43 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:53:43 [32minfo[39m: 	/consultant_track_progress_button
+2023-06-03 00:53:43 [32minfo[39m: 	update reverted_stud_csv_admin_t set track_in_progress=1 where id=9027;
+2023-06-03 00:53:43 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:53:43 [32minfo[39m: 	/consultant_get_details
+2023-06-03 00:53:43 [32minfo[39m: 	 SELECT r.id as primarykey,u1.role as assigned_role,u1.user_name as assigned_by_name,u1.id as assigned_id,r.assigned_time,r.*, u.*, stu.* FROM reverted_stud_csv_admin_t as r
+  left join users_dtl_t as u on u.email = r.email_id
+  left join users_dtl_t as u1 on u1.id = r.assigned_by
+  left join student_dtl_t as stu on stu.c_by = u.id
+where student_interest = "Yes" and assign_indicator = 1 and track_in_progress=0 and assigned_to =116;
+2023-06-03 00:53:45 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:53:45 [32minfo[39m: 	/track_progress_get
+2023-06-03 00:53:45 [32minfo[39m: 	SELECT re.id as primaryKey,u1.role as assigned_role,u1.user_name as assigned_by_name,u1.id as assigned_id,re.assigned_time,re.*, u.* FROM reverted_stud_csv_admin_t as re
+  left join users_dtl_t as u on u.email = re.email_id
+  left join users_dtl_t as u1 on u1.id = re.assigned_by
+  where track_in_progress=1;
+2023-06-03 00:57:41 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:57:41 [32minfo[39m: 	/notification_display
+2023-06-03 00:57:41 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:57:41 [32minfo[39m: 	/student_profile_get
+2023-06-03 00:57:41 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=4  and name=134 order by s.id desc;
+2023-06-03 00:57:41 [32minfo[39m: 	SELECT us.email,us.phone_no,r.country_interested,us.passed_year,
+  TOFEL_SCORE,IELTS_SCORE,GPA_SCORE,DULINGO_SCORE,GRE_SCORE,us.c_by,
+  r.assigned_to as assign_consultant,r.assigned_by as assigned_advisor
+  FROM users_dtl_t as us
+  join reverted_stud_csv_admin_t as r on r.email_id=us.email
+  left join student_dtl_t as s on s.c_by=us.id
+  where us.email="17jg1a0533.rathod@gvpcew.ac.in";
+2023-06-03 00:57:41 [32minfo[39m: 	select user_name from users_dtl_t where id=116;
+        select user_name from users_dtl_t where id=115
+2023-06-03 00:57:51 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:57:51 [32minfo[39m: 	/notification_display
+2023-06-03 00:57:51 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=2  and name=115 order by s.id desc;
+2023-06-03 00:57:51 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:57:51 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:57:51 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 00:57:51 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:57:51 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:57:51 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 00:57:53 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:57:53 [32minfo[39m: 	/notification_display
+2023-06-03 00:57:53 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=3  and name=116 order by s.id desc;
+2023-06-03 00:58:08 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:58:08 [32minfo[39m: 	/student_profile_edit
+2023-06-03 00:58:08 [32minfo[39m: 	update users_dtl_t set user_name="Rathod",phone_no="9381566619",
+    interest_state="uSa",passed_year="2020",TOFEL_SCORE="1.2",IELTS_SCORE="1.1",GPA_SCORE="2.2",DULINGO_SCORE="1.2",GRE_SCORE="1.2",u_ts="2023-06-03" where id=134;
+2023-06-03 00:58:10 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:58:10 [32minfo[39m: 	/notification_display
+2023-06-03 00:58:10 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:58:10 [32minfo[39m: 	/student_profile_get
+2023-06-03 00:58:10 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=4  and name=134 order by s.id desc;
+2023-06-03 00:58:10 [32minfo[39m: 	SELECT us.email,us.phone_no,r.country_interested,us.passed_year,
+  TOFEL_SCORE,IELTS_SCORE,GPA_SCORE,DULINGO_SCORE,GRE_SCORE,us.c_by,
+  r.assigned_to as assign_consultant,r.assigned_by as assigned_advisor
+  FROM users_dtl_t as us
+  join reverted_stud_csv_admin_t as r on r.email_id=us.email
+  left join student_dtl_t as s on s.c_by=us.id
+  where us.email="17jg1a0533.rathod@gvpcew.ac.in";
+2023-06-03 00:58:10 [32minfo[39m: 	select user_name from users_dtl_t where id=116;
+        select user_name from users_dtl_t where id=115
+2023-06-03 00:58:17 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:58:17 [32minfo[39m: 	/trackProcess
+2023-06-03 00:58:17 [32minfo[39m: 	 SELECT r.id as prima,r.phone_no as pho,r.*,u.*,stu.* FROM reverted_stud_csv_admin_t  as r
+  left join users_dtl_t as u on u.email=r.email_id
+  left join student_dtl_t as stu on stu.c_by=u.id
+where student_interest="Yes" and assign_indicator=1 and assigned_to=115;
+2023-06-03 00:58:23 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:58:23 [32minfo[39m: 	/track_progress_get
+2023-06-03 00:58:23 [32minfo[39m: 	SELECT re.id as primaryKey,u1.role as assigned_role,u1.user_name as assigned_by_name,u1.id as assigned_id,re.assigned_time,re.*, u.* FROM reverted_stud_csv_admin_t as re
+  left join users_dtl_t as u on u.email = re.email_id
+  left join users_dtl_t as u1 on u1.id = re.assigned_by
+  where track_in_progress=1;
+2023-06-03 00:58:31 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:58:31 [32minfo[39m: 	/track_progress_save
+2023-06-03 00:58:31 [32minfo[39m: 	update reverted_stud_csv_admin_t set choosen_universites="ak.jsnd;jas,asdasd",choosen_comments="asdmnasd,asdasd" where id=9027
+2023-06-03 00:58:31 [32minfo[39m: 	SELECT re.id as primaryKey,u1.role as assigned_role,u1.user_name as assigned_by_name,u1.id as assigned_id,re.assigned_time,re.*, u.* FROM reverted_stud_csv_admin_t as re
+        left join users_dtl_t as u on u.email = re.email_id
+        left join users_dtl_t as u1 on u1.id = re.assigned_by
+        where track_in_progress=1;
+2023-06-03 00:58:33 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:58:33 [32minfo[39m: 	/track_progress_get
+2023-06-03 00:58:33 [32minfo[39m: 	SELECT re.id as primaryKey,u1.role as assigned_role,u1.user_name as assigned_by_name,u1.id as assigned_id,re.assigned_time,re.*, u.* FROM reverted_stud_csv_admin_t as re
+  left join users_dtl_t as u on u.email = re.email_id
+  left join users_dtl_t as u1 on u1.id = re.assigned_by
+  where track_in_progress=1;
+2023-06-03 00:59:04 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:59:04 [32minfo[39m: 	/track_progress_save
+2023-06-03 00:59:04 [32minfo[39m: 	update reverted_stud_csv_admin_t set choosen_universites="",choosen_comments="" where id=9026
+2023-06-03 00:59:04 [32minfo[39m: 	SELECT re.id as primaryKey,u1.role as assigned_role,u1.user_name as assigned_by_name,u1.id as assigned_id,re.assigned_time,re.*, u.* FROM reverted_stud_csv_admin_t as re
+        left join users_dtl_t as u on u.email = re.email_id
+        left join users_dtl_t as u1 on u1.id = re.assigned_by
+        where track_in_progress=1;
+2023-06-03 00:59:05 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:59:05 [32minfo[39m: 	/track_progress_get
+2023-06-03 00:59:05 [32minfo[39m: 	SELECT re.id as primaryKey,u1.role as assigned_role,u1.user_name as assigned_by_name,u1.id as assigned_id,re.assigned_time,re.*, u.* FROM reverted_stud_csv_admin_t as re
+  left join users_dtl_t as u on u.email = re.email_id
+  left join users_dtl_t as u1 on u1.id = re.assigned_by
+  where track_in_progress=1;
+2023-06-03 00:59:28 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:59:28 [32minfo[39m: 	/track_progress_save_button
+2023-06-03 00:59:28 [32minfo[39m: 	update reverted_stud_csv_admin_t set track_in_progress=2,choosen_universites="ak.jsnd;jas,asdasd",choosen_comments="asdmnasd,asdasd",cons_admin_trackdate="2023-06-03"
+   where id=9027;
+2023-06-03 00:59:28 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:59:28 [32minfo[39m: 	/track_progress_get
+2023-06-03 00:59:28 [32minfo[39m: 	SELECT re.id as primaryKey,u1.role as assigned_role,u1.user_name as assigned_by_name,u1.id as assigned_id,re.assigned_time,re.*, u.* FROM reverted_stud_csv_admin_t as re
+  left join users_dtl_t as u on u.email = re.email_id
+  left join users_dtl_t as u1 on u1.id = re.assigned_by
+  where track_in_progress=1;
+2023-06-03 00:59:47 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:59:47 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:59:47 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:59:47 [32minfo[39m: 	/roles
+2023-06-03 00:59:47 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:59:47 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:59:47 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:59:47 [32minfo[39m: 	/admin_reverted_list_get
+2023-06-03 00:59:47 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 00:59:47 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:59:47 [32minfo[39m: 	/names_basedon_role
+2023-06-03 00:59:47 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:59:47 [32minfo[39m: 	/notification_display
+2023-06-03 00:59:47 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 00:59:47 [32minfo[39m: 	SELECT * FROM roles_table where status=1;
+2023-06-03 00:59:47 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=4 and is_active=1;
+2023-06-03 00:59:47 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=1  and name=1 order by s.id desc;
+2023-06-03 00:59:47 [32minfo[39m: 	SELECT * FROM reverted_stud_csv_admin_t 
+    where  student_interest='Future Followup' and is_active=1 order by checkbox_save desc;
+2023-06-03 00:59:49 [32minfo[39m: 	Requested URL : 
+2023-06-03 00:59:49 [32minfo[39m: 	/admin_trackprocess_get
+2023-06-03 00:59:50 [32minfo[39m: 	  SELECT u2.user_name as consultant_name,u1.user_name as advisor_name,re.assigned_time as advisor_submit_toConsultant,re.cons_admin_trackdate as Consultant_submitted_date_toadmin,u.*,re.* FROM reverted_stud_csv_admin_t as re
+  left join users_dtl_t as u on u.email = re.email_id
+    left join users_dtl_t as u1 on u1.id = re.assigned_by
+      left join users_dtl_t as u2 on u2.id = re.assigned_to
+  where track_in_progress=2;
+2023-06-03 01:01:04 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:01:04 [32minfo[39m: 	/notification_display
+2023-06-03 01:01:04 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:01:04 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:01:04 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:01:04 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:01:04 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=2  and name=115 order by s.id desc;
+2023-06-03 01:01:04 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 01:01:04 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 01:01:06 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:01:06 [32minfo[39m: 	/notification_display
+2023-06-03 01:01:06 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:01:06 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:01:06 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:01:06 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:01:06 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=2  and name=115 order by s.id desc;
+2023-06-03 01:01:06 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 01:01:06 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 01:01:46 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:01:46 [32minfo[39m: 	/student_upload_get
+2023-06-03 01:01:46 [32minfo[39m: 	select * from student_dtl_t where c_by='134'
+2023-06-03 01:07:06 [34mdebug[39m: 	CharisPathWay API server is listening at http://:::5555
+2023-06-03 01:07:12 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:07:12 [32minfo[39m: 	/admin_trackprocess_get
+2023-06-03 01:07:12 [32minfo[39m: 	  SELECT u2.user_name as consultant_name,u1.user_name as advisor_name,re.assigned_time as advisor_submit_toConsultant,re.cons_admin_trackdate as Consultant_submitted_date_toadmin,u.*,re.* FROM reverted_stud_csv_admin_t as re
+  left join users_dtl_t as u on u.email = re.email_id
+    left join users_dtl_t as u1 on u1.id = re.assigned_by
+      left join users_dtl_t as u2 on u2.id = re.assigned_to
+      left join student_dtl_t as stu on stu.c_by = u.id
+  where track_in_progress=2;
+2023-06-03 01:08:46 [34mdebug[39m: 	CharisPathWay API server is listening at http://:::5555
+2023-06-03 01:08:52 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:08:52 [32minfo[39m: 	/admin_trackprocess_get
+2023-06-03 01:08:52 [32minfo[39m: 	  SELECT u2.user_name as consultant_name,u1.user_name as advisor_name,re.assigned_time as advisor_submit_toConsultant,re.cons_admin_trackdate as Consultant_submitted_date_toadmin,u.*,re.* FROM reverted_stud_csv_admin_t as re
+  left join users_dtl_t as u on u.email = re.email_id
+    left join users_dtl_t as u1 on u1.id = re.assigned_by
+      left join users_dtl_t as u2 on u2.id = re.assigned_to
+      left join student_dtl_t as stu on stu.c_by = u.id
+  where track_in_progress=2;
+2023-06-03 01:09:04 [34mdebug[39m: 	CharisPathWay API server is listening at http://:::5555
+2023-06-03 01:11:03 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:11:03 [32minfo[39m: 	/assigned_stud_list_csv
+2023-06-03 01:11:03 [32minfo[39m: 	select * from reverted_stud_csv_admin_t where is_active=1 and assigned_to is null
+2023-06-03 01:11:13 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:11:13 [32minfo[39m: 	/admin_csv_upload
+2023-06-03 01:11:13 [32minfo[39m: 	SET GLOBAL local_infile=1;
+2023-06-03 01:11:13 [32minfo[39m: 	LOAD DATA LOCAL INFILE "filestorage/adminCSV/20230603011113_Bookcopy.csv" INTO TABLE reverted_stud_csv_admin_t 
+    FIELDS TERMINATED BY ',' 
+    LINES TERMINATED BY '
+' 
+    IGNORE 1 LINES
+    (Studen_Name, phone_no, email_id, country_interested);
+2023-06-03 01:11:14 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:11:14 [32minfo[39m: 	/assigned_stud_list_csv
+2023-06-03 01:11:14 [32minfo[39m: 	select * from reverted_stud_csv_admin_t where is_active=1 and assigned_to is null
+2023-06-03 01:11:17 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:11:17 [32minfo[39m: 	/assigned_stud_list_csv
+2023-06-03 01:11:17 [32minfo[39m: 	select * from reverted_stud_csv_admin_t where is_active=1 and assigned_to is null
+2023-06-03 01:11:39 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:11:39 [32minfo[39m: 	/assigned_stud_list_csv
+2023-06-03 01:11:39 [32minfo[39m: 	select * from reverted_stud_csv_admin_t where is_active=1 and assigned_to is null
+2023-06-03 01:11:44 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:11:44 [32minfo[39m: 	/admin_csv_upload
+2023-06-03 01:11:44 [32minfo[39m: 	SET GLOBAL local_infile=1;
+2023-06-03 01:11:44 [32minfo[39m: 	LOAD DATA LOCAL INFILE "filestorage/adminCSV/20230603011144_latest_csv.csv" INTO TABLE reverted_stud_csv_admin_t 
+    FIELDS TERMINATED BY ',' 
+    LINES TERMINATED BY '
+' 
+    IGNORE 1 LINES
+    (Studen_Name, phone_no, email_id, country_interested);
+2023-06-03 01:11:45 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:11:45 [32minfo[39m: 	/assigned_stud_list_csv
+2023-06-03 01:11:45 [32minfo[39m: 	select * from reverted_stud_csv_admin_t where is_active=1 and assigned_to is null
+2023-06-03 01:13:43 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:13:43 [32minfo[39m: 	/student_upload_get
+2023-06-03 01:13:43 [32minfo[39m: 	select * from student_dtl_t where c_by='134'
+2023-06-03 01:13:48 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:13:48 [32minfo[39m: 	/student_upload_get
+2023-06-03 01:13:48 [32minfo[39m: 	select * from student_dtl_t where c_by='134'
+2023-06-03 01:13:50 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:13:50 [32minfo[39m: 	/student_upload_get
+2023-06-03 01:13:50 [32minfo[39m: 	select * from student_dtl_t where c_by='134'
+2023-06-03 01:15:09 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:15:09 [32minfo[39m: 	/notification_display
+2023-06-03 01:15:09 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:15:09 [32minfo[39m: 	/student_profile_get
+2023-06-03 01:15:09 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=4  and name=134 order by s.id desc;
+2023-06-03 01:15:09 [32minfo[39m: 	SELECT us.email,us.phone_no,r.country_interested,us.passed_year,
+  TOFEL_SCORE,IELTS_SCORE,GPA_SCORE,DULINGO_SCORE,GRE_SCORE,us.c_by,
+  r.assigned_to as assign_consultant,r.assigned_by as assigned_advisor
+  FROM users_dtl_t as us
+  join reverted_stud_csv_admin_t as r on r.email_id=us.email
+  left join student_dtl_t as s on s.c_by=us.id
+  where us.email="17jg1a0533.rathod@gvpcew.ac.in";
+2023-06-03 01:15:09 [31merror[39m: 	uncaughtException: Cannot read properties of undefined (reading 'assign_consultant')
+TypeError: Cannot read properties of undefined (reading 'assign_consultant')
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:1588:22
+    at Query.<anonymous> (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\utils\dbutils.js:26:23)
+    at Query.<anonymous> (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\Connection.js:526:10)
+    at Query._callback (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\Connection.js:488:16)
+    at Sequence.end (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Query._handleFinalResultPacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Query.js:149:8)
+    at Query.EofPacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Query.js:133:8)
+    at Protocol._parsePacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Parser.js:43:10)
+2023-06-03 01:15:10 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:15:10 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:15:10 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:15:10 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:15:10 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:15:10 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:15:10 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 01:15:10 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 01:15:10 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:15:10 [32minfo[39m: 	/notification_display
+2023-06-03 01:15:10 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:15:10 [32minfo[39m: 	/roles
+2023-06-03 01:15:10 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:15:10 [32minfo[39m: 	/admin_reverted_list_get
+2023-06-03 01:15:10 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=1  and name=1 order by s.id desc;
+2023-06-03 01:15:10 [32minfo[39m: 	SELECT * FROM roles_table where status=1;
+2023-06-03 01:15:11 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=4 and is_active=1;
+2023-06-03 01:15:11 [32minfo[39m: 	SELECT * FROM reverted_stud_csv_admin_t 
+    where  student_interest='Future Followup' and is_active=1 order by checkbox_save desc;
+2023-06-03 01:15:11 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:15:11 [32minfo[39m: 	/student_upload_get
+2023-06-03 01:15:11 [32minfo[39m: 	select * from student_dtl_t where c_by='134'
+2023-06-03 01:15:13 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:15:13 [32minfo[39m: 	/notification_display
+2023-06-03 01:15:13 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:15:13 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:15:13 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:15:13 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:15:13 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=2  and name=115 order by s.id desc;
+2023-06-03 01:15:13 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 01:15:13 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 01:15:13 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:15:13 [32minfo[39m: 	/notification_display
+2023-06-03 01:15:13 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=3  and name=116 order by s.id desc;
+2023-06-03 01:15:43 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:15:43 [32minfo[39m: 	/notification_display
+2023-06-03 01:15:43 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:15:43 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:15:43 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:15:43 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:15:43 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=2  and name=115 order by s.id desc;
+2023-06-03 01:15:43 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 01:15:43 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 01:15:43 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:15:43 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:15:43 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:15:43 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:15:43 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:15:43 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:15:43 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:15:43 [32minfo[39m: 	/notification_display
+2023-06-03 01:15:43 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 01:15:43 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 01:15:43 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=4 and is_active=1;
+2023-06-03 01:15:43 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=1  and name=1 order by s.id desc;
+2023-06-03 01:15:43 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:15:43 [32minfo[39m: 	/roles
+2023-06-03 01:15:43 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:15:43 [32minfo[39m: 	/admin_reverted_list_get
+2023-06-03 01:15:43 [32minfo[39m: 	SELECT * FROM roles_table where status=1;
+2023-06-03 01:15:43 [32minfo[39m: 	SELECT * FROM reverted_stud_csv_admin_t 
+    where  student_interest='Future Followup' and is_active=1 order by checkbox_save desc;
+2023-06-03 01:15:44 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:15:44 [32minfo[39m: 	/notification_display
+2023-06-03 01:15:44 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:15:44 [32minfo[39m: 	/student_profile_get
+2023-06-03 01:15:44 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=4  and name=134 order by s.id desc;
+2023-06-03 01:15:44 [32minfo[39m: 	SELECT us.email,us.phone_no,r.country_interested,us.passed_year,
+  TOFEL_SCORE,IELTS_SCORE,GPA_SCORE,DULINGO_SCORE,GRE_SCORE,us.c_by,
+  r.assigned_to as assign_consultant,r.assigned_by as assigned_advisor
+  FROM users_dtl_t as us
+  join reverted_stud_csv_admin_t as r on r.email_id=us.email
+  left join student_dtl_t as s on s.c_by=us.id
+  where us.email="17jg1a0533.rathod@gvpcew.ac.in";
+2023-06-03 01:15:44 [31merror[39m: 	uncaughtException: Cannot read properties of undefined (reading 'assign_consultant')
+TypeError: Cannot read properties of undefined (reading 'assign_consultant')
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:1588:22
+    at Query.<anonymous> (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\utils\dbutils.js:26:23)
+    at Query.<anonymous> (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\Connection.js:526:10)
+    at Query._callback (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\Connection.js:488:16)
+    at Sequence.end (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Query._handleFinalResultPacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Query.js:149:8)
+    at Query.EofPacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Query.js:133:8)
+    at Protocol._parsePacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Parser.js:43:10)
+2023-06-03 01:15:45 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:15:45 [32minfo[39m: 	/notification_display
+2023-06-03 01:15:45 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=3  and name=116 order by s.id desc;
+2023-06-03 01:15:47 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:15:47 [32minfo[39m: 	/student_upload_get
+2023-06-03 01:15:47 [32minfo[39m: 	select * from student_dtl_t where c_by='134'
+2023-06-03 01:16:35 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:16:35 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:16:35 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:16:35 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:16:35 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:16:35 [32minfo[39m: 	/roles
+2023-06-03 01:16:35 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:16:35 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:16:35 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:16:35 [32minfo[39m: 	/admin_reverted_list_get
+2023-06-03 01:16:35 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 01:16:35 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 01:16:35 [32minfo[39m: 	SELECT * FROM roles_table where status=1;
+2023-06-03 01:16:35 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=4 and is_active=1;
+2023-06-03 01:16:35 [32minfo[39m: 	SELECT * FROM reverted_stud_csv_admin_t 
+    where  student_interest='Future Followup' and is_active=1 order by checkbox_save desc;
+2023-06-03 01:16:36 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:16:36 [32minfo[39m: 	/notification_display
+2023-06-03 01:16:36 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:16:36 [32minfo[39m: 	/student_profile_get
+2023-06-03 01:16:36 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=4  and name=134 order by s.id desc;
+2023-06-03 01:16:36 [32minfo[39m: 	SELECT us.email,us.phone_no,r.country_interested,us.passed_year,
+  TOFEL_SCORE,IELTS_SCORE,GPA_SCORE,DULINGO_SCORE,GRE_SCORE,us.c_by,
+  r.assigned_to as assign_consultant,r.assigned_by as assigned_advisor
+  FROM users_dtl_t as us
+  join reverted_stud_csv_admin_t as r on r.email_id=us.email
+  left join student_dtl_t as s on s.c_by=us.id
+  where us.email="17jg1a0533.rathod@gvpcew.ac.in";
+2023-06-03 01:16:36 [31merror[39m: 	uncaughtException: Cannot read properties of undefined (reading 'assign_consultant')
+TypeError: Cannot read properties of undefined (reading 'assign_consultant')
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:1588:22
+    at Query.<anonymous> (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\utils\dbutils.js:26:23)
+    at Query.<anonymous> (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\Connection.js:526:10)
+    at Query._callback (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\Connection.js:488:16)
+    at Sequence.end (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Query._handleFinalResultPacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Query.js:149:8)
+    at Query.EofPacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Query.js:133:8)
+    at Protocol._parsePacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Parser.js:43:10)
+2023-06-03 01:16:37 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:16:37 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:16:37 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:16:37 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:16:37 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 01:16:37 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 01:16:37 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:16:37 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:16:37 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=4 and is_active=1;
+2023-06-03 01:16:37 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:16:37 [32minfo[39m: 	/notification_display
+2023-06-03 01:16:37 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=1  and name=1 order by s.id desc;
+2023-06-03 01:16:37 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:16:37 [32minfo[39m: 	/admin_reverted_list_get
+2023-06-03 01:16:37 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:16:37 [32minfo[39m: 	/roles
+2023-06-03 01:16:37 [32minfo[39m: 	SELECT * FROM roles_table where status=1;
+2023-06-03 01:16:37 [32minfo[39m: 	SELECT * FROM reverted_stud_csv_admin_t 
+    where  student_interest='Future Followup' and is_active=1 order by checkbox_save desc;
+2023-06-03 01:16:38 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:16:38 [32minfo[39m: 	/notification_display
+2023-06-03 01:16:38 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:16:38 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:16:38 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:16:38 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:16:38 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=2  and name=115 order by s.id desc;
+2023-06-03 01:16:38 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 01:16:38 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 01:16:38 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:16:38 [32minfo[39m: 	/student_upload_get
+2023-06-03 01:16:38 [32minfo[39m: 	select * from student_dtl_t where c_by='134'
+2023-06-03 01:16:40 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:16:40 [32minfo[39m: 	/notification_display
+2023-06-03 01:16:40 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=3  and name=116 order by s.id desc;
+2023-06-03 01:16:49 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:16:49 [32minfo[39m: 	/notification_display
+2023-06-03 01:16:49 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:16:49 [32minfo[39m: 	/student_profile_get
+2023-06-03 01:16:49 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=4  and name=134 order by s.id desc;
+2023-06-03 01:16:49 [32minfo[39m: 	SELECT us.email,us.phone_no,r.country_interested,us.passed_year,
+  TOFEL_SCORE,IELTS_SCORE,GPA_SCORE,DULINGO_SCORE,GRE_SCORE,us.c_by,
+  r.assigned_to as assign_consultant,r.assigned_by as assigned_advisor
+  FROM users_dtl_t as us
+  join reverted_stud_csv_admin_t as r on r.email_id=us.email
+  left join student_dtl_t as s on s.c_by=us.id
+  where us.email="17jg1a0533.rathod@gvpcew.ac.in";
+2023-06-03 01:16:49 [31merror[39m: 	uncaughtException: Cannot read properties of undefined (reading 'assign_consultant')
+TypeError: Cannot read properties of undefined (reading 'assign_consultant')
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:1588:22
+    at Query.<anonymous> (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\utils\dbutils.js:26:23)
+    at Query.<anonymous> (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\Connection.js:526:10)
+    at Query._callback (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\Connection.js:488:16)
+    at Sequence.end (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Query._handleFinalResultPacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Query.js:149:8)
+    at Query.EofPacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Query.js:133:8)
+    at Protocol._parsePacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Parser.js:43:10)
+2023-06-03 01:16:50 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:16:50 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:16:50 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:16:50 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:16:50 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:16:50 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:16:50 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:16:50 [32minfo[39m: 	/notification_display
+2023-06-03 01:16:50 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 01:16:50 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 01:16:50 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=4 and is_active=1;
+2023-06-03 01:16:50 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=1  and name=1 order by s.id desc;
+2023-06-03 01:16:50 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:16:50 [32minfo[39m: 	/roles
+2023-06-03 01:16:50 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:16:50 [32minfo[39m: 	/admin_reverted_list_get
+2023-06-03 01:16:50 [32minfo[39m: 	SELECT * FROM roles_table where status=1;
+2023-06-03 01:16:50 [32minfo[39m: 	SELECT * FROM reverted_stud_csv_admin_t 
+    where  student_interest='Future Followup' and is_active=1 order by checkbox_save desc;
+2023-06-03 01:16:51 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:16:51 [32minfo[39m: 	/student_upload_get
+2023-06-03 01:16:51 [32minfo[39m: 	select * from student_dtl_t where c_by='134'
+2023-06-03 01:16:52 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:16:52 [32minfo[39m: 	/notification_display
+2023-06-03 01:16:52 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=2  and name=115 order by s.id desc;
+2023-06-03 01:16:52 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:16:52 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:16:52 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:16:52 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:16:52 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 01:16:52 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 01:16:52 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:16:52 [32minfo[39m: 	/notification_display
+2023-06-03 01:16:52 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=3  and name=116 order by s.id desc;
+2023-06-03 01:17:30 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:17:30 [32minfo[39m: 	/assigned_stud_list_csv
+2023-06-03 01:17:30 [32minfo[39m: 	select * from reverted_stud_csv_admin_t where is_active=1 and assigned_to is null
+2023-06-03 01:17:33 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:17:33 [32minfo[39m: 	/admin_trackprocess_get
+2023-06-03 01:17:33 [32minfo[39m: 	  SELECT u2.user_name as consultant_name,u1.user_name as advisor_name,re.assigned_time as advisor_submit_toConsultant,re.cons_admin_trackdate as Consultant_submitted_date_toadmin,u.*,re.* FROM reverted_stud_csv_admin_t as re
+  left join users_dtl_t as u on u.email = re.email_id
+    left join users_dtl_t as u1 on u1.id = re.assigned_by
+      left join users_dtl_t as u2 on u2.id = re.assigned_to
+  where track_in_progress=2;
+2023-06-03 01:17:37 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:17:37 [32minfo[39m: 	/manage_roles_get
+2023-06-03 01:17:37 [32minfo[39m: 	SELECT u.id,user_name,role,r.role_name,email,pwd,designation,c_ts as joined_date,phone_no,u.is_active
+FROM users_dtl_t as u
+join roles_table as r on r.id=u.role where role!=1 and u.is_active=1;
+2023-06-03 01:17:39 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:17:39 [32minfo[39m: 	/view_task
+2023-06-03 01:17:39 [32minfo[39m: 	SELECT * FROM tasks_dlt_t where c_by=1 and status="In Progress" and is_active=1 order by id desc;
+2023-06-03 01:17:43 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:17:43 [32minfo[39m: 	/view_task
+2023-06-03 01:17:43 [32minfo[39m: 	SELECT * FROM tasks_dlt_t where c_by=1 and status="In Progress" and is_active=1 order by id desc;
+2023-06-03 01:18:35 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:18:35 [32minfo[39m: 	/view_task
+2023-06-03 01:18:35 [32minfo[39m: 	SELECT * FROM tasks_dlt_t where c_by=1 and status="In Progress" and is_active=1 order by id desc;
+2023-06-03 01:18:44 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:18:44 [32minfo[39m: 	/view_task
+2023-06-03 01:18:44 [32minfo[39m: 	SELECT * FROM tasks_dlt_t where c_by=1 and status="In Progress" and is_active=1 order by id desc;
+2023-06-03 01:18:54 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:18:54 [32minfo[39m: 	/view_task
+2023-06-03 01:18:54 [32minfo[39m: 	SELECT * FROM tasks_dlt_t where c_by=1  and   is_active=1 and year(c_ts)='2023' and status='Progress' order by id desc;
+2023-06-03 01:19:54 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:19:54 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:19:55 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:19:55 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:19:55 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:19:55 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:19:55 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:19:55 [32minfo[39m: 	/roles
+2023-06-03 01:19:55 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 01:19:55 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:19:55 [32minfo[39m: 	/notification_display
+2023-06-03 01:19:55 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:19:55 [32minfo[39m: 	/admin_reverted_list_get
+2023-06-03 01:19:55 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=4 and is_active=1;
+2023-06-03 01:19:55 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 01:19:55 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=1  and name=1 order by s.id desc;
+2023-06-03 01:19:55 [32minfo[39m: 	SELECT * FROM roles_table where status=1;
+2023-06-03 01:19:55 [32minfo[39m: 	SELECT * FROM reverted_stud_csv_admin_t 
+    where  student_interest='Future Followup' and is_active=1 order by checkbox_save desc;
+2023-06-03 01:19:57 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:19:57 [32minfo[39m: 	/notification_display
+2023-06-03 01:19:57 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:19:57 [32minfo[39m: 	/student_profile_get
+2023-06-03 01:19:57 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=4  and name=134 order by s.id desc;
+2023-06-03 01:19:57 [32minfo[39m: 	SELECT us.email,us.phone_no,r.country_interested,us.passed_year,
+  TOFEL_SCORE,IELTS_SCORE,GPA_SCORE,DULINGO_SCORE,GRE_SCORE,us.c_by,
+  r.assigned_to as assign_consultant,r.assigned_by as assigned_advisor
+  FROM users_dtl_t as us
+  join reverted_stud_csv_admin_t as r on r.email_id=us.email
+  left join student_dtl_t as s on s.c_by=us.id
+  where us.email="17jg1a0533.rathod@gvpcew.ac.in";
+2023-06-03 01:19:57 [31merror[39m: 	uncaughtException: Cannot read properties of undefined (reading 'assign_consultant')
+TypeError: Cannot read properties of undefined (reading 'assign_consultant')
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:1588:22
+    at Query.<anonymous> (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\utils\dbutils.js:26:23)
+    at Query.<anonymous> (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\Connection.js:526:10)
+    at Query._callback (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\Connection.js:488:16)
+    at Sequence.end (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Query._handleFinalResultPacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Query.js:149:8)
+    at Query.EofPacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Query.js:133:8)
+    at Protocol._parsePacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Parser.js:43:10)
+2023-06-03 01:19:57 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:19:57 [32minfo[39m: 	/notification_display
+2023-06-03 01:19:57 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=2  and name=115 order by s.id desc;
+2023-06-03 01:19:57 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:19:57 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:19:57 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:19:57 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:19:57 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 01:19:57 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 01:19:58 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:19:58 [32minfo[39m: 	/view_task
+2023-06-03 01:19:58 [32minfo[39m: 	SELECT * FROM tasks_dlt_t where c_by=1 and status="In Progress" and is_active=1 order by id desc;
+2023-06-03 01:19:58 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:19:58 [32minfo[39m: 	/notification_display
+2023-06-03 01:19:58 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=3  and name=116 order by s.id desc;
+2023-06-03 01:20:02 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:20:02 [32minfo[39m: 	/view_task
+2023-06-03 01:20:02 [32minfo[39m: 	SELECT * FROM tasks_dlt_t where c_by=1  and   is_active=1 and year(c_ts)='2023' and status='Progress' order by id desc;
+2023-06-03 01:20:08 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:20:08 [32minfo[39m: 	/view_task
+2023-06-03 01:20:08 [32minfo[39m: 	SELECT * FROM tasks_dlt_t where c_by=1 and status="In Progress" and is_active=1 order by id desc;
+2023-06-03 01:20:14 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:20:14 [32minfo[39m: 	/view_task
+2023-06-03 01:20:14 [32minfo[39m: 	SELECT * FROM tasks_dlt_t where c_by=1 and status="In Progress" and is_active=1 order by id desc;
+2023-06-03 01:20:17 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:20:17 [32minfo[39m: 	/view_task
+2023-06-03 01:20:17 [32minfo[39m: 	SELECT * FROM tasks_dlt_t where c_by=1 and status="In Progress" and is_active=1 order by id desc;
+2023-06-03 01:20:22 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:20:22 [32minfo[39m: 	/creating_task
+2023-06-03 01:20:22 [32minfo[39m: 	select * from tasks_dlt_t where task_name='asd' and task_desc='asdasd'
+2023-06-03 01:20:22 [32minfo[39m: 	insert into tasks_dlt_t(task_name, task_desc, created_role_id, c_by) values('asd', 'asdasd', 1, 1)
+2023-06-03 01:20:22 [32minfo[39m: 	select * from tasks_dlt_t where id=84
+2023-06-03 01:20:23 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:20:23 [32minfo[39m: 	/view_task
+2023-06-03 01:20:23 [32minfo[39m: 	SELECT * FROM tasks_dlt_t where c_by=1 and status="In Progress" and is_active=1 order by id desc;
+2023-06-03 01:20:27 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:20:27 [32minfo[39m: 	/view_task_status_update
+2023-06-03 01:20:27 [32minfo[39m: 	update tasks_dlt_t set status='progress' ,u_by =1 where id=84;
+2023-06-03 01:20:27 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:20:27 [32minfo[39m: 	/view_task
+2023-06-03 01:20:27 [32minfo[39m: 	SELECT * FROM tasks_dlt_t where c_by=1 and status="In Progress" and is_active=1 order by id desc;
+2023-06-03 01:20:29 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:20:29 [32minfo[39m: 	/view_task
+2023-06-03 01:20:29 [32minfo[39m: 	SELECT * FROM tasks_dlt_t where c_by=1  and   is_active=1 and year(c_ts)='2023' and status='Progress' order by id desc;
+2023-06-03 01:20:34 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:20:34 [32minfo[39m: 	/view_task_status_update
+2023-06-03 01:20:34 [32minfo[39m: 	update tasks_dlt_t set status='Done' ,u_by =1 where id=84;
+2023-06-03 01:20:34 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:20:34 [32minfo[39m: 	/view_task
+2023-06-03 01:20:34 [32minfo[39m: 	SELECT * FROM tasks_dlt_t where c_by=1 and status="In Progress" and is_active=1 order by id desc;
+2023-06-03 01:20:39 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:20:39 [32minfo[39m: 	/view_task
+2023-06-03 01:20:39 [32minfo[39m: 	SELECT * FROM tasks_dlt_t where c_by=1 and status="In Progress" and is_active=1 order by id desc;
+2023-06-03 01:20:43 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:20:43 [32minfo[39m: 	/view_task
+2023-06-03 01:20:43 [32minfo[39m: 	SELECT * FROM tasks_dlt_t where c_by=1 and status="In Progress" and is_active=1 order by id desc;
+2023-06-03 01:20:47 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:20:47 [32minfo[39m: 	/view_task
+2023-06-03 01:20:47 [32minfo[39m: 	SELECT * FROM tasks_dlt_t where c_by=1 and status="In Progress" and is_active=1 order by id desc;
+2023-06-03 01:21:25 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:21:25 [32minfo[39m: 	/notification_display
+2023-06-03 01:21:25 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=4  and name=134 order by s.id desc;
+2023-06-03 01:21:25 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:21:25 [32minfo[39m: 	/student_profile_get
+2023-06-03 01:21:25 [32minfo[39m: 	SELECT us.email,us.phone_no,r.country_interested,us.passed_year,
+  TOFEL_SCORE,IELTS_SCORE,GPA_SCORE,DULINGO_SCORE,GRE_SCORE,us.c_by,
+  r.assigned_to as assign_consultant,r.assigned_by as assigned_advisor
+  FROM users_dtl_t as us
+  join reverted_stud_csv_admin_t as r on r.email_id=us.email
+  left join student_dtl_t as s on s.c_by=us.id
+  where us.email="17jg1a0533.rathod@gvpcew.ac.in";
+2023-06-03 01:21:25 [31merror[39m: 	uncaughtException: Cannot read properties of undefined (reading 'assign_consultant')
+TypeError: Cannot read properties of undefined (reading 'assign_consultant')
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:1588:22
+    at Query.<anonymous> (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\utils\dbutils.js:26:23)
+    at Query.<anonymous> (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\Connection.js:526:10)
+    at Query._callback (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\Connection.js:488:16)
+    at Sequence.end (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Query._handleFinalResultPacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Query.js:149:8)
+    at Query.EofPacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Query.js:133:8)
+    at Protocol._parsePacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Parser.js:43:10)
+2023-06-03 01:21:26 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:21:26 [32minfo[39m: 	/notification_display
+2023-06-03 01:21:26 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:21:26 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:21:26 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 01:21:26 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=2  and name=115 order by s.id desc;
+2023-06-03 01:21:26 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:21:26 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:21:26 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 01:21:27 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:21:27 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:21:27 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:21:27 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:21:27 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:21:27 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:21:27 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 01:21:27 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 01:21:27 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=4 and is_active=1;
+2023-06-03 01:21:27 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:21:27 [32minfo[39m: 	/roles
+2023-06-03 01:21:27 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:21:27 [32minfo[39m: 	/notification_display
+2023-06-03 01:21:27 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:21:27 [32minfo[39m: 	/admin_reverted_list_get
+2023-06-03 01:21:27 [32minfo[39m: 	SELECT * FROM roles_table where status=1;
+2023-06-03 01:21:27 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=1  and name=1 order by s.id desc;
+2023-06-03 01:21:27 [32minfo[39m: 	SELECT * FROM reverted_stud_csv_admin_t 
+    where  student_interest='Future Followup' and is_active=1 order by checkbox_save desc;
+2023-06-03 01:21:27 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:21:27 [32minfo[39m: 	/notification_display
+2023-06-03 01:21:27 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=3  and name=116 order by s.id desc;
+2023-06-03 01:21:30 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:21:30 [32minfo[39m: 	/view_task
+2023-06-03 01:21:30 [32minfo[39m: 	SELECT * FROM tasks_dlt_t where c_by=1 and status="In Progress" and is_active=1 order by id desc;
+2023-06-03 01:21:35 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:21:35 [32minfo[39m: 	/view_task
+2023-06-03 01:21:35 [32minfo[39m: 	SELECT * FROM tasks_dlt_t where c_by=1 and status="In Progress" and is_active=1 order by id desc;
+2023-06-03 01:21:38 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:21:38 [32minfo[39m: 	/view_task
+2023-06-03 01:21:38 [32minfo[39m: 	SELECT * FROM tasks_dlt_t where c_by=1  and   is_active=1 and year(c_ts)='2023' and status='Progress' order by id desc;
+2023-06-03 01:21:41 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:21:41 [32minfo[39m: 	/view_task
+2023-06-03 01:21:41 [32minfo[39m: 	SELECT * FROM tasks_dlt_t where c_by=1  and   is_active=1 and year(c_ts)='2023' and status='Done' order by id desc;
+2023-06-03 01:21:45 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:21:45 [32minfo[39m: 	/view_task
+2023-06-03 01:21:45 [32minfo[39m: 	SELECT * FROM tasks_dlt_t where c_by=1 and status="In Progress" and is_active=1 order by id desc;
+2023-06-03 01:21:50 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:21:50 [32minfo[39m: 	/creating_task
+2023-06-03 01:21:50 [32minfo[39m: 	select * from tasks_dlt_t where task_name='asd' and task_desc='as'
+2023-06-03 01:21:50 [32minfo[39m: 	insert into tasks_dlt_t(task_name, task_desc, created_role_id, c_by) values('asd', 'as', 1, 1)
+2023-06-03 01:21:50 [32minfo[39m: 	select * from tasks_dlt_t where id=85
+2023-06-03 01:21:52 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:21:52 [32minfo[39m: 	/view_task
+2023-06-03 01:21:52 [32minfo[39m: 	SELECT * FROM tasks_dlt_t where c_by=1 and status="In Progress" and is_active=1 order by id desc;

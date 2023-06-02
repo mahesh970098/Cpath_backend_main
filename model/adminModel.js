@@ -1561,22 +1561,74 @@ exports.student_upload_get = (logged_user_id, callback) => {
   );
 };
 
+exports.student_profile_get = (email, callback) => {
+  let cntxtDtls = "Get student_profile_get api";
+  // console.log(courses, "courses");
+  let current_timestamp = moment().format("YYYY-MM-DD");
+  QRY_TO_EXEC = `SELECT us.email,us.phone_no,r.country_interested,us.passed_year,
+  TOFEL_SCORE,IELTS_SCORE,GPA_SCORE,DULINGO_SCORE,GRE_SCORE,us.c_by,
+  r.assigned_to as assign_consultant,r.assigned_by as assigned_advisor
+  FROM users_dtl_t as us
+  join reverted_stud_csv_admin_t as r on r.email_id=us.email
+  left join student_dtl_t as s on s.c_by=us.id
+  where us.email="${email}";`;
+  dbutil.execQuery(
+    sqldb.MySQLConPool,
+    QRY_TO_EXEC,
+    cntxtDtls,
+    [],
+    function (err, results) {
+      if (err) {
+        callback(err, 0);
+        return;
+      } else {
+        console.log(
+          results[0],
+          "%%%%%%%%%%",
+          results[0].assign_consultant,
+          results[0].assigned_advisor
+        );
+        // return
+        QRY_TO_EXEC1 = `select user_name from users_dtl_t where id=${results[0].assign_consultant};
+        select user_name from users_dtl_t where id=${results[0].assigned_advisor}`;
+        dbutil.execQuery(
+          sqldb.MySQLConPool,
+          QRY_TO_EXEC1,
+          cntxtDtls,
+          [],
+          function (err, results11) {
+            console.log(results11, "%%%%%");
+            setTimeout(() => {
+              results[0]["Assigned_Consultant"] = results11[0][0].user_name;
+              results[0]["Assigned_Advisor"] = results11[1][0].user_name;
+              console.log(results11[0].user_name);
+              callback(err, results);
+              return;
+            }, 3000);
+          }
+        );
+      }
+    }
+  );
+};
 exports.student_profile_edit = (
   name,
   mobile_number,
   interest_state,
   degree_passed_year,
-  courses,
-  marks,
   logged_user_id,
+  TOFEL_SCORE,
+  IELTS_SCORE,
+  GPA_SCORE,
+  DULINGO_SCORE,
+  GRE_SCORE,
   callback
 ) => {
   let cntxtDtls = "Get student_profile_edit api";
-  console.log(courses, "courses");
+  // console.log(courses, "courses");
   let current_timestamp = moment().format("YYYY-MM-DD");
   QRY_TO_EXEC = `update users_dtl_t set user_name="${name}",phone_no="${mobile_number}",
-    interest_state="${interest_state}",passed_year="${degree_passed_year}",
-courses ="${courses}",course_mark="${marks}",u_ts="${current_timestamp}" where id=${logged_user_id}`;
+    interest_state="${interest_state}",passed_year="${degree_passed_year}",TOFEL_SCORE="${TOFEL_SCORE}",IELTS_SCORE="${IELTS_SCORE}",GPA_SCORE="${GPA_SCORE}",DULINGO_SCORE="${DULINGO_SCORE}",GRE_SCORE="${GRE_SCORE}",u_ts="${current_timestamp}" where id=${logged_user_id};`;
   // `insert into users_dtl_t(user_name,phone_no,interest_state,passed_year,courses,course_mark,u_ts)
   // values('${name}', '${mobile_number}', '${interest_state}', '${degree_passed_year}', '${courses}', '${marks}');`
   dbutil.execQuery(

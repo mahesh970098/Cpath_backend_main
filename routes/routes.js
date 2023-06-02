@@ -111,6 +111,7 @@ router.post(
 );
 
 router.post("/student_upload_get", adminRoutes.student_upload_get);
+router.post("/student_profile_get", adminRoutes.student_profile_get);
 router.post("/student_profile_edit", adminRoutes.student_profile_edit);
 
 router.post("/login_new", adminRoutes.login_new);

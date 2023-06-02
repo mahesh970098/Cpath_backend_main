@@ -891,7 +891,7 @@ exports.student_upload_submit = async (req, res) => {
 
   // console.log(req.files,"files log::::::::")
   let multiple_record_file =
-    SSC + "_" + current_timestamp + "_" + req.files.fileupload[0].originalname;
+    current_timestamp + "_" + req.files.fileupload[0].originalname;
   console.log(multiple_record_file, "hi");
   // return
   if (req.files) {
@@ -984,24 +984,55 @@ exports.student_upload_get = async (req, res) => {
   });
 };
 
+exports.student_profile_get = async (req, res) => {
+  console.log("hi");
+  let email = req.body.email;
+  // let mobile_number = req.body.mobile_number;
+  // let interest_state = req.body.interest_state;
+  // let degree_passed_year = req.body.degree_passed_year;
+  // let courses = req.body.courses;
+  // let marks = req.body.marks;
+  // let logged_user_id = req.body.logged_user_id;
+  adminModel.student_profile_get(email, async (err, Data18, flag) => {
+    if (err) {
+      logger.error("Error While Getting edit_profile ", err);
+      res.send({ result: stdCodes.message.serverError.code, message: "" });
+      return;
+    } else {
+      res.send({
+        result: "success",
+        Message: "Transcation Success",
+        data: Data18,
+      });
+      return;
+    }
+  });
+};
+
 exports.student_profile_edit = async (req, res) => {
   console.log("hi");
   let name = req.body.name;
   let mobile_number = req.body.mobile_number;
   let interest_state = req.body.interest_state;
   let degree_passed_year = req.body.degree_passed_year;
-  let courses = req.body.courses;
-  let marks = req.body.marks;
   let logged_user_id = req.body.logged_user_id;
+  let TOFEL_SCORE = req.body.TOFEL_SCORE;
+  let IELTS_SCORE = req.body.IELTS_SCORE;
+  let GPA_SCORE = req.body.GPA_SCORE;
+  let DULINGO_SCORE = req.body.DULINGO_SCORE;
+  let GRE_SCORE = req.body.GRE_SCORE;
 
   adminModel.student_profile_edit(
     name,
     mobile_number,
     interest_state,
     degree_passed_year,
-    courses,
-    marks,
     logged_user_id,
+    TOFEL_SCORE,
+    IELTS_SCORE,
+    GPA_SCORE,
+    DULINGO_SCORE,
+    GRE_SCORE,
     async (err, Data18, flag) => {
       if (err) {
         logger.error("Error While Getting edit_profile ", err);

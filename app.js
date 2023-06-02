@@ -1,7 +1,12 @@
 const express = require("express");
 global.validate = require("express-validation");
 global.env = require("dotenv").config();
+
+const cors = require("cors");
 const app = express();
+
+app.use(cors());
+
 global.fs = require("fs");
 global.stdCodes = require("./config/error_codes"); //Error Codes Config File
 global.jwt = require("jsonwebtoken");
@@ -52,6 +57,19 @@ app.use(function (req, res, next) {
 // app.use(express.static('public'));
 // app.use(logErrors);
 
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "http://localhost:4200");
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+  );
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "X-Requested-With,content-type"
+  );
+  res.setHeader("Access-Control-Allow-Credentials", true);
+  next();
+});
 app.use("/", require("./routes/routes"));
 app.use((err, req, res, next) => {
   if (err instanceof validate.ValidationError) {

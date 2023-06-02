@@ -1,7 +1,0 @@
-2023-05-25 00:01:08 [32minfo[39m: 	Requested URL : 
-2023-05-25 00:01:08 [32minfo[39m: 	/notification_display
-2023-05-25 00:01:08 [32minfo[39m: 	Requested URL : 
-2023-05-25 00:01:08 [32minfo[39m: 	/notification_display
-2023-05-25 00:01:08 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
-join users_dtl_t as u on u.id=s.created_by
- where role_id=3  and name=116 order by s.id desc;
