@@ -2055,3 +2055,315 @@ join users_dtl_t as u on u.id=s.created_by
 2023-06-03 01:21:52 [32minfo[39m: 	Requested URL : 
 2023-06-03 01:21:52 [32minfo[39m: 	/view_task
 2023-06-03 01:21:52 [32minfo[39m: 	SELECT * FROM tasks_dlt_t where c_by=1 and status="In Progress" and is_active=1 order by id desc;
+2023-06-03 01:37:08 [34mdebug[39m: 	CharisPathWay API server is listening at http://:::5555
+2023-06-03 01:38:01 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:38:01 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:38:01 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:38:01 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:38:01 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:38:01 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:38:01 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:38:01 [32minfo[39m: 	/roles
+2023-06-03 01:38:01 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:38:01 [32minfo[39m: 	/admin_reverted_list_get
+2023-06-03 01:38:01 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:38:01 [32minfo[39m: 	/notification_display
+2023-06-03 01:38:01 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=1  and name=1 order by s.id desc;
+2023-06-03 01:38:01 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 01:38:01 [32minfo[39m: 	SELECT * FROM reverted_stud_csv_admin_t 
+    where  student_interest='Future Followup' and is_active=1 order by checkbox_save desc;
+2023-06-03 01:38:01 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 01:38:01 [32minfo[39m: 	SELECT * FROM roles_table where status=1;
+2023-06-03 01:38:01 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=4 and is_active=1;
+2023-06-03 01:38:03 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:38:03 [32minfo[39m: 	/assigned_stud_list_csv
+2023-06-03 01:38:03 [32minfo[39m: 	select * from reverted_stud_csv_admin_t where is_active=1 and assigned_to is null
+2023-06-03 01:38:11 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:38:11 [32minfo[39m: 	/assigned_stud_save_button
+2023-06-03 01:38:11 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:38:11 [32minfo[39m: 	/assigned_stud_save_button
+2023-06-03 01:38:11 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:38:11 [32minfo[39m: 	/assigned_stud_save_button
+2023-06-03 01:38:11 [32minfo[39m: 	update reverted_stud_csv_admin_t set is_active=1, assigned_to=115,assigned_by=1
+    where id in (10993);
+2023-06-03 01:38:11 [32minfo[39m: 	update reverted_stud_csv_admin_t set is_active=1, assigned_to=115,assigned_by=1
+    where id in (10992);
+2023-06-03 01:38:11 [32minfo[39m: 	update reverted_stud_csv_admin_t set is_active=1, assigned_to=115,assigned_by=1
+    where id in (10991);
+2023-06-03 01:38:11 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:38:11 [32minfo[39m: 	/assigned_stud_list_csv
+2023-06-03 01:38:11 [32minfo[39m: 	select * from reverted_stud_csv_admin_t where is_active=1 and assigned_to is null
+2023-06-03 01:38:11 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:38:11 [32minfo[39m: 	/assigned_stud_list_csv
+2023-06-03 01:38:11 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:38:11 [32minfo[39m: 	/assigned_stud_list_csv
+2023-06-03 01:38:11 [32minfo[39m: 	select * from reverted_stud_csv_admin_t where is_active=1 and assigned_to is null
+2023-06-03 01:38:11 [32minfo[39m: 	select * from reverted_stud_csv_admin_t where is_active=1 and assigned_to is null
+2023-06-03 01:38:19 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:38:19 [32minfo[39m: 	/assigned_stud_list_csv
+2023-06-03 01:38:19 [32minfo[39m: 	 select case when assign_indicator=0 then "true" when assign_indicator=1 then '' else '' end as checked,a.*
+        from reverted_stud_csv_admin_t as a 
+        where   is_active=1 and assigned_to=115 and (student_interest is null or (student_interest='Yes' and assign_indicator=0));
+2023-06-03 01:38:24 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:38:24 [32minfo[39m: 	/advisor_todo_row_save
+2023-06-03 01:38:24 [32minfo[39m: 	update reverted_stud_csv_admin_t set row_time_save='2023-06-03',u_ts='2023-06-03',student_interest='Yes',assign_indicator='1',comments=NULL where id in (10991)
+2023-06-03 01:38:24 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:38:24 [32minfo[39m: 	/assigned_stud_list_csv
+2023-06-03 01:38:24 [32minfo[39m: 	 select case when assign_indicator=0 then "true" when assign_indicator=1 then '' else '' end as checked,a.*
+        from reverted_stud_csv_admin_t as a 
+        where   is_active=1 and assigned_to=115 and (student_interest is null or (student_interest='Yes' and assign_indicator=0));
+2023-06-03 01:38:26 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:38:26 [32minfo[39m: 	/trackProcess
+2023-06-03 01:38:26 [32minfo[39m: 	 SELECT r.id as prima,r.phone_no as pho,r.*,u.*,stu.* FROM reverted_stud_csv_admin_t  as r
+  left join users_dtl_t as u on u.email=r.email_id
+  left join student_dtl_t as stu on stu.c_by=u.id
+where student_interest="Yes" and assign_indicator=1 and assigned_to=115;
+2023-06-03 01:38:34 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:38:34 [32minfo[39m: 	/trackProcess
+2023-06-03 01:38:34 [32minfo[39m: 	 SELECT r.id as prima,r.phone_no as pho,r.*,u.*,stu.* FROM reverted_stud_csv_admin_t  as r
+  left join users_dtl_t as u on u.email=r.email_id
+  left join student_dtl_t as stu on stu.c_by=u.id
+where student_interest="Yes" and assign_indicator=1 and assigned_to=115;
+2023-06-03 01:38:41 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:38:41 [32minfo[39m: 	/advisorCreateStud
+2023-06-03 01:38:41 [32minfo[39m: 	SELECT * FROM users_dtl_t where email='17jg1a0533.rathod@gvpcew.ac.in';
+2023-06-03 01:38:41 [32minfo[39m: 	SELECT * FROM reverted_stud_csv_admin_t where email_id='17jg1a0533.rathod@gvpcew.ac.in';
+2023-06-03 01:38:41 [32minfo[39m: 	insert into users_dtl_t (email, pwd, role, user_name, phone_no,c_by) 
+              values("17jg1a0533.rathod@gvpcew.ac.in","bfcf62~SoM",4,"Rathod","9381566619",115);
+2023-06-03 01:38:41 [32minfo[39m: 	select * from users_dtl_t where id=135;
+2023-06-03 01:38:41 [32minfo[39m: 	select * from users_dtl_t where id=115
+2023-06-03 01:39:27 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:39:27 [32minfo[39m: 	/login
+2023-06-03 01:39:27 [32minfo[39m: 	SELECT * FROM users_dtl_t where email='17jg1a0533.rathod@gvpcew.ac.in'
+2023-06-03 01:39:27 [32minfo[39m: 	SELECT * FROM users_dtl_t where email='17jg1a0533.rathod@gvpcew.ac.in' and pwd='bfcf62~SoM' 
+2023-06-03 01:39:27 [32minfo[39m: 	select * from users_dtl_t where id=115
+2023-06-03 01:39:28 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:39:28 [32minfo[39m: 	/notification_display
+2023-06-03 01:39:28 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:39:28 [32minfo[39m: 	/student_profile_get
+2023-06-03 01:39:28 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=4  and name=135 order by s.id desc;
+2023-06-03 01:39:28 [32minfo[39m: 	SELECT us.email,us.phone_no,r.country_interested,us.passed_year,
+  TOFEL_SCORE,IELTS_SCORE,GPA_SCORE,DULINGO_SCORE,GRE_SCORE,us.c_by,
+  r.assigned_to as assign_consultant,r.assigned_by as assigned_advisor
+  FROM users_dtl_t as us
+  join reverted_stud_csv_admin_t as r on r.email_id=us.email
+  left join student_dtl_t as s on s.c_by=us.id
+  where us.email="17jg1a0533.rathod@gvpcew.ac.in";
+2023-06-03 01:39:28 [32minfo[39m: 	select user_name from users_dtl_t where id=115;
+        select user_name from users_dtl_t where id=1
+2023-06-03 01:39:31 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:39:31 [32minfo[39m: 	/student_upload_get
+2023-06-03 01:39:31 [32minfo[39m: 	select * from student_dtl_t where c_by='135'
+2023-06-03 01:39:34 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:39:34 [32minfo[39m: 	/student_upload_get
+2023-06-03 01:39:34 [32minfo[39m: 	select * from student_dtl_t where c_by='135'
+2023-06-03 01:39:38 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:39:38 [32minfo[39m: 	/notification_display
+2023-06-03 01:39:38 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:39:38 [32minfo[39m: 	/student_profile_get
+2023-06-03 01:39:38 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=4  and name=135 order by s.id desc;
+2023-06-03 01:39:38 [32minfo[39m: 	SELECT us.email,us.phone_no,r.country_interested,us.passed_year,
+  TOFEL_SCORE,IELTS_SCORE,GPA_SCORE,DULINGO_SCORE,GRE_SCORE,us.c_by,
+  r.assigned_to as assign_consultant,r.assigned_by as assigned_advisor
+  FROM users_dtl_t as us
+  join reverted_stud_csv_admin_t as r on r.email_id=us.email
+  left join student_dtl_t as s on s.c_by=us.id
+  where us.email="17jg1a0533.rathod@gvpcew.ac.in";
+2023-06-03 01:39:38 [32minfo[39m: 	select user_name from users_dtl_t where id=115;
+        select user_name from users_dtl_t where id=1
+2023-06-03 01:39:43 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:39:43 [32minfo[39m: 	/student_upload_get
+2023-06-03 01:39:43 [32minfo[39m: 	select * from student_dtl_t where c_by='135'
+2023-06-03 01:39:52 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:39:52 [32minfo[39m: 	/notification_display
+2023-06-03 01:39:52 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=2  and name=115 order by s.id desc;
+2023-06-03 01:39:52 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:39:52 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:39:52 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:39:52 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:39:52 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 01:39:52 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 01:39:53 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:39:53 [32minfo[39m: 	/student_upload_submit
+2023-06-03 01:39:53 [32minfo[39m: 	select * from student_dtl_t where c_by=135
+2023-06-03 01:39:53 [32minfo[39m: 	insert into student_dtl_t (Process_fee,c_by) values('20230603013953_rohit.pdf', '135')
+2023-06-03 01:39:53 [32minfo[39m: 	select * from student_dtl_t where c_by=135 and
+(SSC is  not null and Intermediate is not null)
+2023-06-03 01:39:53 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:39:53 [32minfo[39m: 	/student_upload_get
+2023-06-03 01:39:53 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:39:53 [32minfo[39m: 	/student_upload_get
+2023-06-03 01:39:53 [32minfo[39m: 	select * from student_dtl_t where c_by='135'
+2023-06-03 01:39:53 [32minfo[39m: 	select * from student_dtl_t where c_by='135'
+2023-06-03 01:39:56 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:39:56 [32minfo[39m: 	/notification_display
+2023-06-03 01:39:56 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=3  and name=116 order by s.id desc;
+2023-06-03 01:39:58 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:39:58 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:39:58 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:39:58 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:39:58 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:39:58 [32minfo[39m: 	/names_basedon_role
+2023-06-03 01:39:58 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-03 01:39:58 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-03 01:39:58 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=4 and is_active=1;
+2023-06-03 01:39:58 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:39:58 [32minfo[39m: 	/roles
+2023-06-03 01:39:58 [32minfo[39m: 	SELECT * FROM roles_table where status=1;
+2023-06-03 01:39:58 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:39:58 [32minfo[39m: 	/notification_display
+2023-06-03 01:39:58 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:39:58 [32minfo[39m: 	/admin_reverted_list_get
+2023-06-03 01:39:58 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=1  and name=1 order by s.id desc;
+2023-06-03 01:39:58 [32minfo[39m: 	SELECT * FROM reverted_stud_csv_admin_t 
+    where  student_interest='Future Followup' and is_active=1 order by checkbox_save desc;
+2023-06-03 01:40:02 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:40:02 [32minfo[39m: 	/student_upload_submit
+2023-06-03 01:40:02 [32minfo[39m: 	select * from student_dtl_t where c_by=135
+2023-06-03 01:40:02 [32minfo[39m: 	update student_dtl_t set c_ts="2023-06-03 01:40:02" ,Application_Fee='20230603014002_rohit.pdf' where c_by=135
+2023-06-03 01:40:02 [32minfo[39m: 	select * from student_dtl_t where c_by=135 and
+(SSC is  not null and Intermediate is not null)
+2023-06-03 01:40:03 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:40:03 [32minfo[39m: 	/student_upload_get
+2023-06-03 01:40:03 [32minfo[39m: 	select * from student_dtl_t where c_by='135'
+2023-06-03 01:40:03 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:40:03 [32minfo[39m: 	/student_upload_get
+2023-06-03 01:40:03 [32minfo[39m: 	select * from student_dtl_t where c_by='135'
+2023-06-03 01:40:11 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:40:11 [32minfo[39m: 	/student_upload_submit
+2023-06-03 01:40:11 [32minfo[39m: 	select * from student_dtl_t where c_by=135
+2023-06-03 01:40:11 [32minfo[39m: 	update student_dtl_t set c_ts="2023-06-03 01:40:11" ,SSC='20230603014011_rohit.pdf' where c_by=135
+2023-06-03 01:40:11 [32minfo[39m: 	select * from student_dtl_t where c_by=135 and
+(SSC is  not null and Intermediate is not null)
+2023-06-03 01:40:11 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:40:11 [32minfo[39m: 	/student_upload_get
+2023-06-03 01:40:11 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:40:11 [32minfo[39m: 	/student_upload_get
+2023-06-03 01:40:11 [32minfo[39m: 	select * from student_dtl_t where c_by='135'
+2023-06-03 01:40:11 [32minfo[39m: 	select * from student_dtl_t where c_by='135'
+2023-06-03 01:40:19 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:40:19 [32minfo[39m: 	/student_upload_submit
+2023-06-03 01:40:19 [32minfo[39m: 	select * from student_dtl_t where c_by=135
+2023-06-03 01:40:19 [32minfo[39m: 	update student_dtl_t set c_ts="2023-06-03 01:40:19" ,Intermediate='20230603014019_rohit.pdf' where c_by=135
+2023-06-03 01:40:19 [32minfo[39m: 	select * from student_dtl_t where c_by=135 and
+(SSC is  not null and Intermediate is not null)
+2023-06-03 01:40:19 [32minfo[39m: 	update student_dtl_t set status="Submitted" where c_by=135
+2023-06-03 01:40:19 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:40:19 [32minfo[39m: 	/student_upload_get
+2023-06-03 01:40:19 [32minfo[39m: 	select * from student_dtl_t where c_by='135'
+2023-06-03 01:40:19 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:40:19 [32minfo[39m: 	/student_upload_get
+2023-06-03 01:40:19 [32minfo[39m: 	select * from student_dtl_t where c_by='135'
+2023-06-03 01:40:26 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:40:26 [32minfo[39m: 	/student_upload_submit
+2023-06-03 01:40:26 [32minfo[39m: 	select * from student_dtl_t where c_by=135
+2023-06-03 01:40:26 [32minfo[39m: 	update student_dtl_t set c_ts="2023-06-03 01:40:26" ,Btech_Degree_PC='20230603014026_rohit.pdf' where c_by=135
+2023-06-03 01:40:26 [32minfo[39m: 	select * from student_dtl_t where c_by=135 and
+(SSC is  not null and Intermediate is not null)
+2023-06-03 01:40:26 [32minfo[39m: 	update student_dtl_t set status="Submitted" where c_by=135
+2023-06-03 01:40:26 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:40:26 [32minfo[39m: 	/student_upload_get
+2023-06-03 01:40:26 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:40:26 [32minfo[39m: 	/student_upload_get
+2023-06-03 01:40:26 [32minfo[39m: 	select * from student_dtl_t where c_by='135'
+2023-06-03 01:40:26 [32minfo[39m: 	select * from student_dtl_t where c_by='135'
+2023-06-03 01:40:29 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:40:29 [32minfo[39m: 	/student_upload_get
+2023-06-03 01:40:29 [32minfo[39m: 	select * from student_dtl_t where c_by='135'
+2023-06-03 01:40:38 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:40:38 [32minfo[39m: 	/trackProcess
+2023-06-03 01:40:38 [32minfo[39m: 	 SELECT r.id as prima,r.phone_no as pho,r.*,u.*,stu.* FROM reverted_stud_csv_admin_t  as r
+  left join users_dtl_t as u on u.email=r.email_id
+  left join student_dtl_t as stu on stu.c_by=u.id
+where student_interest="Yes" and assign_indicator=1 and assigned_to=115;
+2023-06-03 01:40:47 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:40:47 [32minfo[39m: 	/advisor_approve_reject_documents
+2023-06-03 01:40:47 [32minfo[39m: 	update student_dtl_t  set status='Approved' where c_by=135;
+2023-06-03 01:40:47 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:40:47 [32minfo[39m: 	/trackProcess
+2023-06-03 01:40:47 [32minfo[39m: 	 SELECT r.id as prima,r.phone_no as pho,r.*,u.*,stu.* FROM reverted_stud_csv_admin_t  as r
+  left join users_dtl_t as u on u.email=r.email_id
+  left join student_dtl_t as stu on stu.c_by=u.id
+where student_interest="Yes" and assign_indicator=1 and assigned_to=115;
+2023-06-03 01:40:52 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:40:52 [32minfo[39m: 	/advisor_assignto_consultant
+2023-06-03 01:40:52 [32minfo[39m: 	update reverted_stud_csv_admin_t  set assigned_to='116',assigned_by='115', assigned_time="2023-06-03"
+     where id=10991;
+2023-06-03 01:40:52 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:40:52 [32minfo[39m: 	/trackProcess
+2023-06-03 01:40:52 [32minfo[39m: 	 SELECT r.id as prima,r.phone_no as pho,r.*,u.*,stu.* FROM reverted_stud_csv_admin_t  as r
+  left join users_dtl_t as u on u.email=r.email_id
+  left join student_dtl_t as stu on stu.c_by=u.id
+where student_interest="Yes" and assign_indicator=1 and assigned_to=115;
+2023-06-03 01:40:55 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:40:55 [32minfo[39m: 	/consultant_get_details
+2023-06-03 01:40:55 [32minfo[39m: 	 SELECT r.id as primarykey,u1.role as assigned_role,u1.user_name as assigned_by_name,u1.id as assigned_id,r.assigned_time,r.*, u.*, stu.* FROM reverted_stud_csv_admin_t as r
+  left join users_dtl_t as u on u.email = r.email_id
+  left join users_dtl_t as u1 on u1.id = r.assigned_by
+  left join student_dtl_t as stu on stu.c_by = u.id
+where student_interest = "Yes" and assign_indicator = 1 and track_in_progress=0 and assigned_to =116;
+2023-06-03 01:41:03 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:41:03 [32minfo[39m: 	/consultant_get_details
+2023-06-03 01:41:03 [32minfo[39m: 	 SELECT r.id as primarykey,u1.role as assigned_role,u1.user_name as assigned_by_name,u1.id as assigned_id,r.assigned_time,r.*, u.*, stu.* FROM reverted_stud_csv_admin_t as r
+  left join users_dtl_t as u on u.email = r.email_id
+  left join users_dtl_t as u1 on u1.id = r.assigned_by
+  left join student_dtl_t as stu on stu.c_by = u.id
+where student_interest = "Yes" and assign_indicator = 1 and track_in_progress=0 and assigned_to =116;
+2023-06-03 01:41:15 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:41:15 [32minfo[39m: 	/consultant_track_progress_button
+2023-06-03 01:41:15 [32minfo[39m: 	update reverted_stud_csv_admin_t set track_in_progress=1 where id=10991;
+2023-06-03 01:41:15 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:41:15 [32minfo[39m: 	/consultant_get_details
+2023-06-03 01:41:15 [32minfo[39m: 	 SELECT r.id as primarykey,u1.role as assigned_role,u1.user_name as assigned_by_name,u1.id as assigned_id,r.assigned_time,r.*, u.*, stu.* FROM reverted_stud_csv_admin_t as r
+  left join users_dtl_t as u on u.email = r.email_id
+  left join users_dtl_t as u1 on u1.id = r.assigned_by
+  left join student_dtl_t as stu on stu.c_by = u.id
+where student_interest = "Yes" and assign_indicator = 1 and track_in_progress=0 and assigned_to =116;
+2023-06-03 01:41:17 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:41:17 [32minfo[39m: 	/track_progress_get
+2023-06-03 01:41:17 [32minfo[39m: 	SELECT re.id as primaryKey,u1.role as assigned_role,u1.user_name as assigned_by_name,u1.id as assigned_id,re.assigned_time,re.*, u.* FROM reverted_stud_csv_admin_t as re
+  left join users_dtl_t as u on u.email = re.email_id
+  left join users_dtl_t as u1 on u1.id = re.assigned_by
+  where track_in_progress=1;
+2023-06-03 01:41:22 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:41:22 [32minfo[39m: 	/track_progress_save
+2023-06-03 01:41:22 [32minfo[39m: 	update reverted_stud_csv_admin_t set choosen_universites="asd",choosen_comments="asd" where id=10991
+2023-06-03 01:41:22 [32minfo[39m: 	SELECT re.id as primaryKey,u1.role as assigned_role,u1.user_name as assigned_by_name,u1.id as assigned_id,re.assigned_time,re.*, u.* FROM reverted_stud_csv_admin_t as re
+        left join users_dtl_t as u on u.email = re.email_id
+        left join users_dtl_t as u1 on u1.id = re.assigned_by
+        where track_in_progress=1;
+2023-06-03 01:41:24 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:41:24 [32minfo[39m: 	/track_progress_get
+2023-06-03 01:41:24 [32minfo[39m: 	SELECT re.id as primaryKey,u1.role as assigned_role,u1.user_name as assigned_by_name,u1.id as assigned_id,re.assigned_time,re.*, u.* FROM reverted_stud_csv_admin_t as re
+  left join users_dtl_t as u on u.email = re.email_id
+  left join users_dtl_t as u1 on u1.id = re.assigned_by
+  where track_in_progress=1;
+2023-06-03 01:41:30 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:41:30 [32minfo[39m: 	/track_progress_save_button
+2023-06-03 01:41:30 [32minfo[39m: 	update reverted_stud_csv_admin_t set track_in_progress=2,choosen_universites="asd",choosen_comments="asd",cons_admin_trackdate="2023-06-03"
+   where id=10991;
+2023-06-03 01:41:30 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:41:30 [32minfo[39m: 	/track_progress_get
+2023-06-03 01:41:30 [32minfo[39m: 	SELECT re.id as primaryKey,u1.role as assigned_role,u1.user_name as assigned_by_name,u1.id as assigned_id,re.assigned_time,re.*, u.* FROM reverted_stud_csv_admin_t as re
+  left join users_dtl_t as u on u.email = re.email_id
+  left join users_dtl_t as u1 on u1.id = re.assigned_by
+  where track_in_progress=1;
+2023-06-03 01:41:34 [32minfo[39m: 	Requested URL : 
+2023-06-03 01:41:34 [32minfo[39m: 	/admin_trackprocess_get
+2023-06-03 01:41:34 [32minfo[39m: 	  SELECT u2.user_name as consultant_name,u1.user_name as advisor_name,re.assigned_time as advisor_submit_toConsultant,re.cons_admin_trackdate as Consultant_submitted_date_toadmin,u.*,re.* FROM reverted_stud_csv_admin_t as re
+  left join users_dtl_t as u on u.email = re.email_id
+    left join users_dtl_t as u1 on u1.id = re.assigned_by
+      left join users_dtl_t as u2 on u2.id = re.assigned_to
+  where track_in_progress=2;

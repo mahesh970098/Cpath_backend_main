@@ -1670,9 +1670,10 @@ exports.consultant_track_progress_button = (primary_id, callback) => {
 
 exports.track_progress_get = (callback) => {
   let cntxtDtls = "Get track_progress_get api";
-  QRY_TO_EXEC = `SELECT re.id as primaryKey,u1.role as assigned_role,u1.user_name as assigned_by_name,u1.id as assigned_id,re.assigned_time,re.*, u.* FROM reverted_stud_csv_admin_t as re
+  QRY_TO_EXEC = `SELECT re.id as primaryKey,u1.role as assigned_role,u1.user_name as assigned_by_name,u1.id as assigned_id,re.assigned_time,re.*, u.*,stu.* FROM reverted_stud_csv_admin_t as re
   left join users_dtl_t as u on u.email = re.email_id
   left join users_dtl_t as u1 on u1.id = re.assigned_by
+  left join student_dtl_t as stu on stu.c_by = u.id
   where track_in_progress=1;`;
   dbutil.execQuery(
     sqldb.MySQLConPool,
@@ -1756,11 +1757,14 @@ exports.track_progress_save_button = (
 
 exports.admin_trackprocess_get = (callback) => {
   let cntxtDtls = "Get track_progress_get api";
-  QRY_TO_EXEC = `  SELECT u2.user_name as consultant_name,u1.user_name as advisor_name,re.assigned_time as advisor_submit_toConsultant,re.cons_admin_trackdate as Consultant_submitted_date_toadmin,u.*,re.* FROM reverted_stud_csv_admin_t as re
-  left join users_dtl_t as u on u.email = re.email_id
-    left join users_dtl_t as u1 on u1.id = re.assigned_by
-      left join users_dtl_t as u2 on u2.id = re.assigned_to
-  where track_in_progress=2;`;
+  QRY_TO_EXEC = `   SELECT u2.user_name as consultant_name,u1.user_name as advisor_name,re.assigned_time as 
+  advisor_submit_toConsultant,re.cons_admin_trackdate as Consultant_submitted_date_toadmin,u.*,re.* ,stu.*
+  FROM reverted_stud_csv_admin_t as re
+   left join users_dtl_t as u on u.email = re.email_id
+     left join users_dtl_t as u1 on u1.id = re.assigned_by
+       left join users_dtl_t as u2 on u2.id = re.assigned_to
+       left join student_dtl_t as stu on stu.c_by=u.id
+   where track_in_progress=2;`;
   dbutil.execQuery(
     sqldb.MySQLConPool,
     QRY_TO_EXEC,
