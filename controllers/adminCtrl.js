@@ -874,7 +874,11 @@ exports.student_upload_submit = async (req, res) => {
   let Btech_Degree_OD = req.body.Btech_Degree_OD;
   let B_Tech_Sem = req.body.B_Tech_Sem;
   let GRE = req.body.GRE;
-  let LOR = req.body.LOR;
+  let LOR1 = req.body.LOR1;
+  let LOR2 = req.body.LOR2;
+  let LOR3 = req.body.LOR3;
+  let MYIIEEE_WES = req.body.MYIIEEE_WES;
+  let Concern = req.body.Concern;
   let Resume = req.body.Resume;
   let SOP = req.body.SOP;
   let Work_Experience = req.body.Work_Experience;
@@ -928,7 +932,11 @@ exports.student_upload_submit = async (req, res) => {
             Btech_Degree_OD,
             B_Tech_Sem,
             GRE,
-            LOR,
+            LOR1,
+            LOR2,
+            LOR3,
+            MYIIEEE_WES,
+            Concern,
             Resume,
             SOP,
             Work_Experience,
@@ -1167,4 +1175,65 @@ exports.student_payment_mode = async (req, res) => {
       }
     }
   );
+};
+exports.payment_base_ddown_studProfile = async (req, res) => {
+  let logged_user_id = req.body.logged_user_id;
+  adminModel.payment_base_ddown_studProfile(
+    logged_user_id,
+    async (err, Data18, flag) => {
+      if (err) {
+        logger.error("Error While Getting edit_profile ", err);
+        res.send({ result: stdCodes.message.serverError.code, message: "" });
+        return;
+      } else {
+        res.send({
+          result: "success",
+          message: "Transcation Successfully",
+          data: Data18,
+        });
+        return;
+      }
+    }
+  );
+};
+
+exports.apply_leave = async (req, res) => {
+  let from_date = req.body.from_date;
+  let to_date = req.body.to_date;
+  let reason = req.body.reason;
+  let logged_user_id = req.body.logged_user_id;
+
+  adminModel.apply_leave(
+    from_date,
+    to_date,
+    reason,
+    logged_user_id,
+    async (err, Data18, flag) => {
+      if (err) {
+        logger.error("Error While Getting edit_profile ", err);
+        res.send({ result: stdCodes.message.serverError.code, message: "" });
+        return;
+      } else {
+        res.send({ result: "success", message: "Applied Successfully" });
+        return;
+      }
+    }
+  );
+};
+
+exports.get_apply_leaves = async (req, res) => {
+  adminModel.get_apply_leaves(async (err, Data18, flag) => {
+    if (err) {
+      logger.error("Error While Getting edit_profile ", err);
+      res.send({ result: stdCodes.message.serverError.code, message: "" });
+      return;
+    } else {
+      res.send({
+        result: "success",
+        message: "Transcation Successfully",
+        data: Data18,
+      });
+      return;
+    }
+  });
 };

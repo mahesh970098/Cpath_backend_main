@@ -1117,7 +1117,11 @@ exports.student_upload_submit = (
   Btech_Degree_OD,
   B_Tech_Sem,
   GRE,
-  LOR,
+  LOR1,
+  LOR2,
+  LOR3,
+  MYIIEEE_WES,
+  Concern,
   Resume,
   SOP,
   Work_Experience,
@@ -1190,9 +1194,29 @@ exports.student_upload_submit = (
         ssc_query = `,gre='${multiple_record_file}'`;
         ssc_queryu = a;
       }
-      if (LOR == 1) {
-        let a = "LOR";
-        ssc_query = `,LOR='${multiple_record_file}'`;
+      if (LOR1 == 1) {
+        let a = "LOR1";
+        ssc_query = `,1LOR='${multiple_record_file}'`;
+        ssc_queryu = a;
+      }
+      if (LOR2 == 1) {
+        let a = "LOR2";
+        ssc_query = `,2LOR='${multiple_record_file}'`;
+        ssc_queryu = a;
+      }
+      if (LOR3 == 1) {
+        let a = "LOR3";
+        ssc_query = `,3LOR='${multiple_record_file}'`;
+        ssc_queryu = a;
+      }
+      if (MYIIEEE_WES == 1) {
+        let a = "MYIIEEE_WES";
+        ssc_query = `,Myiieee_wes='${multiple_record_file}'`;
+        ssc_queryu = a;
+      }
+      if (Concern == 1) {
+        let a = "Concern";
+        ssc_query = `,concern='${multiple_record_file}'`;
         ssc_queryu = a;
       }
       if (Resume == 1) {
@@ -1543,7 +1567,9 @@ exports.student_upload_submit = (
 
 exports.student_upload_get = (logged_user_id, callback) => {
   let cntxtDtls = "Get student_upload_get api";
-  QRY_TO_EXEC = `select * from student_dtl_t where c_by='${logged_user_id}'`;
+  QRY_TO_EXEC = `select u.payment_mode,s.* from student_dtl_t as s
+  join users_dtl_t as u on u.id=s.c_by
+  where s.c_by='${logged_user_id}'`;
   dbutil.execQuery(
     sqldb.MySQLConPool,
     QRY_TO_EXEC,
@@ -1628,7 +1654,8 @@ exports.student_profile_edit = (
   // console.log(courses, "courses");
   let current_timestamp = moment().format("YYYY-MM-DD");
   QRY_TO_EXEC = `update users_dtl_t set user_name="${name}",phone_no="${mobile_number}",
-    interest_state="${interest_state}",passed_year="${degree_passed_year}",TOFEL_SCORE="${TOFEL_SCORE}",IELTS_SCORE="${IELTS_SCORE}",GPA_SCORE="${GPA_SCORE}",DULINGO_SCORE="${DULINGO_SCORE}",GRE_SCORE="${GRE_SCORE}",u_ts="${current_timestamp}" where id=${logged_user_id};`;
+    interest_state="${interest_state}",passed_year="${degree_passed_year}",u_ts="${current_timestamp}" where id=${logged_user_id};
+    update student_dtl_t set TOFEL_SCORE="${TOFEL_SCORE}",IELTS_SCORE="${IELTS_SCORE}",GPA_SCORE="${GPA_SCORE}",DULINGO_SCORE="${DULINGO_SCORE}",GRE_SCORE="${GRE_SCORE}" where c_by=${logged_user_id}`;
   // `insert into users_dtl_t(user_name,phone_no,interest_state,passed_year,courses,course_mark,u_ts)
   // values('${name}', '${mobile_number}', '${interest_state}', '${degree_passed_year}', '${courses}', '${marks}');`
   dbutil.execQuery(
@@ -1670,10 +1697,9 @@ exports.consultant_track_progress_button = (primary_id, callback) => {
 
 exports.track_progress_get = (callback) => {
   let cntxtDtls = "Get track_progress_get api";
-  QRY_TO_EXEC = `SELECT re.id as primaryKey,u1.role as assigned_role,u1.user_name as assigned_by_name,u1.id as assigned_id,re.assigned_time,re.*, u.*,stu.* FROM reverted_stud_csv_admin_t as re
+  QRY_TO_EXEC = `SELECT re.id as primaryKey,u1.role as assigned_role,u1.user_name as assigned_by_name,u1.id as assigned_id,re.assigned_time,re.*, u.* FROM reverted_stud_csv_admin_t as re
   left join users_dtl_t as u on u.email = re.email_id
   left join users_dtl_t as u1 on u1.id = re.assigned_by
-  left join student_dtl_t as stu on stu.c_by = u.id
   where track_in_progress=1;`;
   dbutil.execQuery(
     sqldb.MySQLConPool,
@@ -1757,14 +1783,11 @@ exports.track_progress_save_button = (
 
 exports.admin_trackprocess_get = (callback) => {
   let cntxtDtls = "Get track_progress_get api";
-  QRY_TO_EXEC = `   SELECT u2.user_name as consultant_name,u1.user_name as advisor_name,re.assigned_time as 
-  advisor_submit_toConsultant,re.cons_admin_trackdate as Consultant_submitted_date_toadmin,u.*,re.* ,stu.*
-  FROM reverted_stud_csv_admin_t as re
-   left join users_dtl_t as u on u.email = re.email_id
-     left join users_dtl_t as u1 on u1.id = re.assigned_by
-       left join users_dtl_t as u2 on u2.id = re.assigned_to
-       left join student_dtl_t as stu on stu.c_by=u.id
-   where track_in_progress=2;`;
+  QRY_TO_EXEC = `  SELECT u2.user_name as consultant_name,u1.user_name as advisor_name,re.assigned_time as advisor_submit_toConsultant,re.cons_admin_trackdate as Consultant_submitted_date_toadmin,u.*,re.* FROM reverted_stud_csv_admin_t as re
+  left join users_dtl_t as u on u.email = re.email_id
+    left join users_dtl_t as u1 on u1.id = re.assigned_by
+      left join users_dtl_t as u2 on u2.id = re.assigned_to
+  where track_in_progress=2;`;
   dbutil.execQuery(
     sqldb.MySQLConPool,
     QRY_TO_EXEC,
@@ -1785,6 +1808,73 @@ exports.admin_trackprocess_get = (callback) => {
 exports.student_payment_mode = (logged_user_id, payment_mode, callback) => {
   let cntxtDtls = "Get student_payment_mode api";
   QRY_TO_EXEC = `update users_dtl_t set payment_mode="${payment_mode}" where id=${logged_user_id};`;
+  dbutil.execQuery(
+    sqldb.MySQLConPool,
+    QRY_TO_EXEC,
+    cntxtDtls,
+    [],
+    function (err, results) {
+      if (err) {
+        callback(err, 0);
+        return;
+      } else {
+        callback(err, results);
+        return;
+      }
+    }
+  );
+};
+exports.payment_base_ddown_studProfile = (logged_user_id, callback) => {
+  let cntxtDtls = "Get payment_base_ddown_studProfile api";
+  QRY_TO_EXEC = `SELECT email,role,user_name,payment_mode FROM charispathway.users_dtl_t where id=${logged_user_id}  `;
+  dbutil.execQuery(
+    sqldb.MySQLConPool,
+    QRY_TO_EXEC,
+    cntxtDtls,
+    [],
+    function (err, results) {
+      if (err) {
+        callback(err, 0);
+        return;
+      } else {
+        callback(err, results);
+        return;
+      }
+    }
+  );
+};
+exports.apply_leave = (
+  from_date,
+  to_date,
+  reason,
+  logged_user_id,
+  callback
+) => {
+  let current_timestamp = moment().format("YYYY-MM-DD HH:mm:ss");
+  let cntxtDtls = "Get apply_leave api";
+  QRY_TO_EXEC = `insert into emp_leaves(from_date, to_date, reason, emp_num, i_ts) values(?,?,?,?,?)`;
+  dbutil.execQuery(
+    sqldb.MySQLConPool,
+    QRY_TO_EXEC,
+    cntxtDtls,
+    [from_date, to_date, reason, logged_user_id, current_timestamp],
+    function (err, results) {
+      if (err) {
+        callback(err, 0);
+        return;
+      } else {
+        callback(err, results);
+        return;
+      }
+    }
+  );
+};
+
+exports.get_apply_leaves = (callback) => {
+  let cntxtDtls = "Get get_apply_leaves api";
+  QRY_TO_EXEC = `SELECT date_format(from_date,"%d-%m-%Y") as from_date,date_format(to_date,"%d-%m-%Y") as to_date,reason,u.user_name as Applied_by, date_format(e.i_ts,"%d-%m-%Y %H:%i:%s") as Applied_at,u.email
+  FROM charispathway.emp_leaves as e
+  left join users_dtl_t as u on u.id=e.emp_num;`;
   dbutil.execQuery(
     sqldb.MySQLConPool,
     QRY_TO_EXEC,

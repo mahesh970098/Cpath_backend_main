@@ -1,0 +1,729 @@
+2023-06-18 00:00:03 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:00:03 [32minfo[39m: 	/student_upload_get
+2023-06-18 00:00:03 [32minfo[39m: 	select u.payment_mode,s.* from student_dtl_t as s
+  join users_dtl_t as u on u.id=s.c_by
+  where s.c_by='139'
+2023-06-18 00:00:20 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:00:20 [32minfo[39m: 	/notification_display
+2023-06-18 00:00:20 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:00:20 [32minfo[39m: 	/student_profile_get
+2023-06-18 00:00:20 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=4  and name=139 order by s.id desc;
+2023-06-18 00:00:20 [32minfo[39m: 	SELECT us.email,us.phone_no,r.country_interested,us.passed_year,
+  TOFEL_SCORE,IELTS_SCORE,GPA_SCORE,DULINGO_SCORE,GRE_SCORE,us.c_by,
+  r.assigned_to as assign_consultant,r.assigned_by as assigned_advisor
+  FROM users_dtl_t as us
+  join reverted_stud_csv_admin_t as r on r.email_id=us.email
+  left join student_dtl_t as s on s.c_by=us.id
+  where us.email="Lekha.charispathway@gmail.com";
+2023-06-18 00:00:20 [31merror[39m: 	uncaughtException: Cannot read properties of undefined (reading 'assign_consultant')
+TypeError: Cannot read properties of undefined (reading 'assign_consultant')
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:1614:22
+    at Query.<anonymous> (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\utils\dbutils.js:26:23)
+    at Query.<anonymous> (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\Connection.js:526:10)
+    at Query._callback (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\Connection.js:488:16)
+    at Sequence.end (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Query._handleFinalResultPacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Query.js:149:8)
+    at Query.EofPacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Query.js:133:8)
+    at Protocol._parsePacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Parser.js:43:10)
+2023-06-18 00:00:24 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:00:25 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:00:25 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:00:25 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:00:25 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:00:25 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:00:25 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:00:25 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:00:25 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:00:25 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:00:25 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-18 00:00:25 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-18 00:00:25 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=4 and is_active=1;
+2023-06-18 00:00:25 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-18 00:00:25 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-18 00:00:25 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:00:25 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:00:25 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:00:25 [32minfo[39m: 	/roles
+2023-06-18 00:00:25 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=4 and is_active=1;
+2023-06-18 00:00:25 [32minfo[39m: 	SELECT * FROM roles_table where status=1;
+2023-06-18 00:00:25 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:00:25 [32minfo[39m: 	/admin_reverted_list_get
+2023-06-18 00:00:25 [32minfo[39m: 	SELECT * FROM reverted_stud_csv_admin_t 
+    where  student_interest='Future Followup' and is_active=1 order by checkbox_save desc;
+2023-06-18 00:00:25 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:00:25 [32minfo[39m: 	/roles
+2023-06-18 00:00:25 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:00:25 [32minfo[39m: 	/admin_reverted_list_get
+2023-06-18 00:00:25 [32minfo[39m: 	SELECT * FROM roles_table where status=1;
+2023-06-18 00:00:25 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:00:25 [32minfo[39m: 	/notification_display
+2023-06-18 00:00:25 [32minfo[39m: 	SELECT * FROM reverted_stud_csv_admin_t 
+    where  student_interest='Future Followup' and is_active=1 order by checkbox_save desc;
+2023-06-18 00:00:25 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=1  and name=1 order by s.id desc;
+2023-06-18 00:00:25 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:00:25 [32minfo[39m: 	/notification_display
+2023-06-18 00:00:25 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=1  and name=1 order by s.id desc;
+2023-06-18 00:01:11 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:01:11 [32minfo[39m: 	/student_upload_get
+2023-06-18 00:01:11 [32minfo[39m: 	select u.payment_mode,s.* from student_dtl_t as s
+  join users_dtl_t as u on u.id=s.c_by
+  where s.c_by='139'
+2023-06-18 00:01:54 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:01:54 [32minfo[39m: 	/notification_display
+2023-06-18 00:01:54 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:01:54 [32minfo[39m: 	/student_profile_get
+2023-06-18 00:01:54 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=4  and name=139 order by s.id desc;
+2023-06-18 00:01:55 [32minfo[39m: 	SELECT us.email,us.phone_no,r.country_interested,us.passed_year,
+  TOFEL_SCORE,IELTS_SCORE,GPA_SCORE,DULINGO_SCORE,GRE_SCORE,us.c_by,
+  r.assigned_to as assign_consultant,r.assigned_by as assigned_advisor
+  FROM users_dtl_t as us
+  join reverted_stud_csv_admin_t as r on r.email_id=us.email
+  left join student_dtl_t as s on s.c_by=us.id
+  where us.email="Lekha.charispathway@gmail.com";
+2023-06-18 00:01:55 [31merror[39m: 	uncaughtException: Cannot read properties of undefined (reading 'assign_consultant')
+TypeError: Cannot read properties of undefined (reading 'assign_consultant')
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:1614:22
+    at Query.<anonymous> (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\utils\dbutils.js:26:23)
+    at Query.<anonymous> (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\Connection.js:526:10)
+    at Query._callback (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\Connection.js:488:16)
+    at Sequence.end (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Query._handleFinalResultPacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Query.js:149:8)
+    at Query.EofPacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Query.js:133:8)
+    at Protocol._parsePacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Parser.js:43:10)
+2023-06-18 00:01:58 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:01:58 [32minfo[39m: 	/student_upload_get
+2023-06-18 00:01:58 [32minfo[39m: 	select u.payment_mode,s.* from student_dtl_t as s
+  join users_dtl_t as u on u.id=s.c_by
+  where s.c_by='139'
+2023-06-18 00:02:00 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:02:00 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:02:00 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:02:00 [32minfo[39m: 	/roles
+2023-06-18 00:02:00 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-18 00:02:00 [32minfo[39m: 	SELECT * FROM roles_table where status=1;
+2023-06-18 00:02:00 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:02:00 [32minfo[39m: 	/admin_reverted_list_get
+2023-06-18 00:02:01 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:02:01 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:02:01 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:02:01 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:02:01 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:02:01 [32minfo[39m: 	/notification_display
+2023-06-18 00:02:01 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-18 00:02:01 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=4 and is_active=1;
+2023-06-18 00:02:01 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=1  and name=1 order by s.id desc;
+2023-06-18 00:02:01 [32minfo[39m: 	SELECT * FROM reverted_stud_csv_admin_t 
+    where  student_interest='Future Followup' and is_active=1 order by checkbox_save desc;
+2023-06-18 00:02:03 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:02:03 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:02:03 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:02:03 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:02:03 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:02:03 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:02:03 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:02:03 [32minfo[39m: 	/notification_display
+2023-06-18 00:02:03 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-18 00:02:03 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-18 00:02:03 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=4 and is_active=1;
+2023-06-18 00:02:04 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=1  and name=1 order by s.id desc;
+2023-06-18 00:02:04 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:02:04 [32minfo[39m: 	/roles
+2023-06-18 00:02:04 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:02:04 [32minfo[39m: 	/admin_reverted_list_get
+2023-06-18 00:02:04 [32minfo[39m: 	SELECT * FROM roles_table where status=1;
+2023-06-18 00:02:04 [32minfo[39m: 	SELECT * FROM reverted_stud_csv_admin_t 
+    where  student_interest='Future Followup' and is_active=1 order by checkbox_save desc;
+2023-06-18 00:02:57 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:02:57 [32minfo[39m: 	/notification_display
+2023-06-18 00:02:57 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=4  and name=139 order by s.id desc;
+2023-06-18 00:02:57 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:02:57 [32minfo[39m: 	/student_profile_get
+2023-06-18 00:02:57 [32minfo[39m: 	SELECT us.email,us.phone_no,r.country_interested,us.passed_year,
+  TOFEL_SCORE,IELTS_SCORE,GPA_SCORE,DULINGO_SCORE,GRE_SCORE,us.c_by,
+  r.assigned_to as assign_consultant,r.assigned_by as assigned_advisor
+  FROM users_dtl_t as us
+  join reverted_stud_csv_admin_t as r on r.email_id=us.email
+  left join student_dtl_t as s on s.c_by=us.id
+  where us.email="Lekha.charispathway@gmail.com";
+2023-06-18 00:02:57 [31merror[39m: 	uncaughtException: Cannot read properties of undefined (reading 'assign_consultant')
+TypeError: Cannot read properties of undefined (reading 'assign_consultant')
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:1614:22
+    at Query.<anonymous> (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\utils\dbutils.js:26:23)
+    at Query.<anonymous> (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\Connection.js:526:10)
+    at Query._callback (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\Connection.js:488:16)
+    at Sequence.end (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Query._handleFinalResultPacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Query.js:149:8)
+    at Query.EofPacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Query.js:133:8)
+    at Protocol._parsePacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Parser.js:43:10)
+2023-06-18 00:02:59 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:02:59 [32minfo[39m: 	/student_upload_get
+2023-06-18 00:02:59 [32minfo[39m: 	select u.payment_mode,s.* from student_dtl_t as s
+  join users_dtl_t as u on u.id=s.c_by
+  where s.c_by='139'
+2023-06-18 00:03:00 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:03:00 [32minfo[39m: 	/student_upload_get
+2023-06-18 00:03:00 [32minfo[39m: 	select u.payment_mode,s.* from student_dtl_t as s
+  join users_dtl_t as u on u.id=s.c_by
+  where s.c_by='139'
+2023-06-18 00:03:10 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:03:10 [32minfo[39m: 	/roles
+2023-06-18 00:03:10 [32minfo[39m: 	SELECT * FROM roles_table where status=1;
+2023-06-18 00:03:10 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:03:10 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:03:10 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:03:10 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:03:10 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:03:10 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:03:10 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:03:10 [32minfo[39m: 	/notification_display
+2023-06-18 00:03:10 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:03:10 [32minfo[39m: 	/admin_reverted_list_get
+2023-06-18 00:03:10 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-18 00:03:10 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-18 00:03:10 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=4 and is_active=1;
+2023-06-18 00:03:10 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=1  and name=1 order by s.id desc;
+2023-06-18 00:03:10 [32minfo[39m: 	SELECT * FROM reverted_stud_csv_admin_t 
+    where  student_interest='Future Followup' and is_active=1 order by checkbox_save desc;
+2023-06-18 00:03:11 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:03:11 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:03:11 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:03:11 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:03:11 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:03:11 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:03:11 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:03:11 [32minfo[39m: 	/notification_display
+2023-06-18 00:03:11 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-18 00:03:11 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-18 00:03:11 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:03:11 [32minfo[39m: 	/roles
+2023-06-18 00:03:11 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=4 and is_active=1;
+2023-06-18 00:03:11 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:03:11 [32minfo[39m: 	/admin_reverted_list_get
+2023-06-18 00:03:11 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=1  and name=1 order by s.id desc;
+2023-06-18 00:03:11 [32minfo[39m: 	SELECT * FROM roles_table where status=1;
+2023-06-18 00:03:11 [32minfo[39m: 	SELECT * FROM reverted_stud_csv_admin_t 
+    where  student_interest='Future Followup' and is_active=1 order by checkbox_save desc;
+2023-06-18 00:04:00 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:04:00 [32minfo[39m: 	/student_profile_get
+2023-06-18 00:04:00 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:04:00 [32minfo[39m: 	/notification_display
+2023-06-18 00:04:00 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=4  and name=139 order by s.id desc;
+2023-06-18 00:04:00 [32minfo[39m: 	SELECT us.email,us.phone_no,r.country_interested,us.passed_year,
+  TOFEL_SCORE,IELTS_SCORE,GPA_SCORE,DULINGO_SCORE,GRE_SCORE,us.c_by,
+  r.assigned_to as assign_consultant,r.assigned_by as assigned_advisor
+  FROM users_dtl_t as us
+  join reverted_stud_csv_admin_t as r on r.email_id=us.email
+  left join student_dtl_t as s on s.c_by=us.id
+  where us.email="Lekha.charispathway@gmail.com";
+2023-06-18 00:04:00 [31merror[39m: 	uncaughtException: Cannot read properties of undefined (reading 'assign_consultant')
+TypeError: Cannot read properties of undefined (reading 'assign_consultant')
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:1614:22
+    at Query.<anonymous> (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\utils\dbutils.js:26:23)
+    at Query.<anonymous> (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\Connection.js:526:10)
+    at Query._callback (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\Connection.js:488:16)
+    at Sequence.end (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Query._handleFinalResultPacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Query.js:149:8)
+    at Query.EofPacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Query.js:133:8)
+    at Protocol._parsePacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Parser.js:43:10)
+2023-06-18 00:04:02 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:04:02 [32minfo[39m: 	/student_upload_get
+2023-06-18 00:04:02 [32minfo[39m: 	select u.payment_mode,s.* from student_dtl_t as s
+  join users_dtl_t as u on u.id=s.c_by
+  where s.c_by='139'
+2023-06-18 00:04:11 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:04:11 [32minfo[39m: 	/roles
+2023-06-18 00:04:11 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:04:11 [32minfo[39m: 	/admin_reverted_list_get
+2023-06-18 00:04:11 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:04:11 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:04:11 [32minfo[39m: 	SELECT * FROM roles_table where status=1;
+2023-06-18 00:04:11 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-18 00:04:11 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:04:11 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:04:11 [32minfo[39m: 	SELECT * FROM reverted_stud_csv_admin_t 
+    where  student_interest='Future Followup' and is_active=1 order by checkbox_save desc;
+2023-06-18 00:04:11 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-18 00:04:11 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:04:11 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:04:11 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-18 00:04:11 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:04:11 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:04:11 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:04:11 [32minfo[39m: 	/notification_display
+2023-06-18 00:04:11 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=4 and is_active=1;
+2023-06-18 00:04:11 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=1  and name=1 order by s.id desc;
+2023-06-18 00:04:11 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:04:11 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:04:11 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:04:11 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:04:11 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-18 00:04:11 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=4 and is_active=1;
+2023-06-18 00:04:11 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:04:11 [32minfo[39m: 	/roles
+2023-06-18 00:04:11 [32minfo[39m: 	SELECT * FROM roles_table where status=1;
+2023-06-18 00:04:12 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:04:12 [32minfo[39m: 	/notification_display
+2023-06-18 00:04:12 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:04:12 [32minfo[39m: 	/admin_reverted_list_get
+2023-06-18 00:04:12 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=1  and name=1 order by s.id desc;
+2023-06-18 00:04:12 [32minfo[39m: 	SELECT * FROM reverted_stud_csv_admin_t 
+    where  student_interest='Future Followup' and is_active=1 order by checkbox_save desc;
+2023-06-18 00:04:55 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:04:55 [32minfo[39m: 	/notification_display
+2023-06-18 00:04:55 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=4  and name=139 order by s.id desc;
+2023-06-18 00:04:56 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:04:56 [32minfo[39m: 	/student_profile_get
+2023-06-18 00:04:56 [32minfo[39m: 	SELECT us.email,us.phone_no,r.country_interested,us.passed_year,
+  TOFEL_SCORE,IELTS_SCORE,GPA_SCORE,DULINGO_SCORE,GRE_SCORE,us.c_by,
+  r.assigned_to as assign_consultant,r.assigned_by as assigned_advisor
+  FROM users_dtl_t as us
+  join reverted_stud_csv_admin_t as r on r.email_id=us.email
+  left join student_dtl_t as s on s.c_by=us.id
+  where us.email="Lekha.charispathway@gmail.com";
+2023-06-18 00:04:56 [31merror[39m: 	uncaughtException: Cannot read properties of undefined (reading 'assign_consultant')
+TypeError: Cannot read properties of undefined (reading 'assign_consultant')
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:1614:22
+    at Query.<anonymous> (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\utils\dbutils.js:26:23)
+    at Query.<anonymous> (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\Connection.js:526:10)
+    at Query._callback (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\Connection.js:488:16)
+    at Sequence.end (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Query._handleFinalResultPacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Query.js:149:8)
+    at Query.EofPacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Query.js:133:8)
+    at Protocol._parsePacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Parser.js:43:10)
+2023-06-18 00:05:05 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:05:05 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:05:05 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:05:05 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:05:05 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-18 00:05:05 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-18 00:05:05 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:05:05 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:05:05 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=4 and is_active=1;
+2023-06-18 00:05:05 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:05:05 [32minfo[39m: 	/roles
+2023-06-18 00:05:05 [32minfo[39m: 	SELECT * FROM roles_table where status=1;
+2023-06-18 00:05:05 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:05:05 [32minfo[39m: 	/admin_reverted_list_get
+2023-06-18 00:05:05 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:05:05 [32minfo[39m: 	/notification_display
+2023-06-18 00:05:05 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=1  and name=1 order by s.id desc;
+2023-06-18 00:05:05 [32minfo[39m: 	SELECT * FROM reverted_stud_csv_admin_t 
+    where  student_interest='Future Followup' and is_active=1 order by checkbox_save desc;
+2023-06-18 00:05:06 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:05:06 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:05:06 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:05:06 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:05:06 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:05:06 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:05:06 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-18 00:05:06 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-18 00:05:06 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=4 and is_active=1;
+2023-06-18 00:05:06 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:05:06 [32minfo[39m: 	/roles
+2023-06-18 00:05:06 [32minfo[39m: 	SELECT * FROM roles_table where status=1;
+2023-06-18 00:05:06 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:05:06 [32minfo[39m: 	/notification_display
+2023-06-18 00:05:06 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:05:06 [32minfo[39m: 	/admin_reverted_list_get
+2023-06-18 00:05:06 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=1  and name=1 order by s.id desc;
+2023-06-18 00:05:06 [32minfo[39m: 	SELECT * FROM reverted_stud_csv_admin_t 
+    where  student_interest='Future Followup' and is_active=1 order by checkbox_save desc;
+2023-06-18 00:05:41 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:05:41 [32minfo[39m: 	/notification_display
+2023-06-18 00:05:41 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=4  and name=139 order by s.id desc;
+2023-06-18 00:05:41 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:05:41 [32minfo[39m: 	/student_profile_get
+2023-06-18 00:05:41 [32minfo[39m: 	SELECT us.email,us.phone_no,r.country_interested,us.passed_year,
+  TOFEL_SCORE,IELTS_SCORE,GPA_SCORE,DULINGO_SCORE,GRE_SCORE,us.c_by,
+  r.assigned_to as assign_consultant,r.assigned_by as assigned_advisor
+  FROM users_dtl_t as us
+  join reverted_stud_csv_admin_t as r on r.email_id=us.email
+  left join student_dtl_t as s on s.c_by=us.id
+  where us.email="Lekha.charispathway@gmail.com";
+2023-06-18 00:05:41 [31merror[39m: 	uncaughtException: Cannot read properties of undefined (reading 'assign_consultant')
+TypeError: Cannot read properties of undefined (reading 'assign_consultant')
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:1614:22
+    at Query.<anonymous> (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\utils\dbutils.js:26:23)
+    at Query.<anonymous> (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\Connection.js:526:10)
+    at Query._callback (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\Connection.js:488:16)
+    at Sequence.end (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Query._handleFinalResultPacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Query.js:149:8)
+    at Query.EofPacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Query.js:133:8)
+    at Protocol._parsePacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Parser.js:43:10)
+2023-06-18 00:05:47 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:05:47 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:05:47 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:05:47 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:05:47 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:05:47 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:05:47 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-18 00:05:47 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:05:47 [32minfo[39m: 	/roles
+2023-06-18 00:05:47 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-18 00:05:47 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:05:47 [32minfo[39m: 	/notification_display
+2023-06-18 00:05:47 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=4 and is_active=1;
+2023-06-18 00:05:47 [32minfo[39m: 	SELECT * FROM roles_table where status=1;
+2023-06-18 00:05:47 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:05:47 [32minfo[39m: 	/admin_reverted_list_get
+2023-06-18 00:05:47 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=1  and name=1 order by s.id desc;
+2023-06-18 00:05:47 [32minfo[39m: 	SELECT * FROM reverted_stud_csv_admin_t 
+    where  student_interest='Future Followup' and is_active=1 order by checkbox_save desc;
+2023-06-18 00:05:48 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:05:48 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:05:48 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:05:48 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:05:48 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:05:48 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:05:48 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:05:48 [32minfo[39m: 	/notification_display
+2023-06-18 00:05:48 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-18 00:05:48 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:05:48 [32minfo[39m: 	/roles
+2023-06-18 00:05:48 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=1  and name=1 order by s.id desc;
+2023-06-18 00:05:48 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-18 00:05:48 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:05:48 [32minfo[39m: 	/admin_reverted_list_get
+2023-06-18 00:05:48 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=4 and is_active=1;
+2023-06-18 00:05:48 [32minfo[39m: 	SELECT * FROM roles_table where status=1;
+2023-06-18 00:05:48 [32minfo[39m: 	SELECT * FROM reverted_stud_csv_admin_t 
+    where  student_interest='Future Followup' and is_active=1 order by checkbox_save desc;
+2023-06-18 00:05:50 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:05:50 [32minfo[39m: 	/student_upload_get
+2023-06-18 00:05:50 [32minfo[39m: 	select u.payment_mode,s.* from student_dtl_t as s
+  join users_dtl_t as u on u.id=s.c_by
+  where s.c_by='139'
+2023-06-18 00:06:19 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:06:19 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:06:19 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:06:19 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:06:19 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-18 00:06:19 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-18 00:06:19 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:06:19 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:06:19 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=4 and is_active=1;
+2023-06-18 00:06:19 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:06:19 [32minfo[39m: 	/roles
+2023-06-18 00:06:19 [32minfo[39m: 	SELECT * FROM roles_table where status=1;
+2023-06-18 00:06:19 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:06:19 [32minfo[39m: 	/notification_display
+2023-06-18 00:06:19 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:06:19 [32minfo[39m: 	/admin_reverted_list_get
+2023-06-18 00:06:19 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=1  and name=1 order by s.id desc;
+2023-06-18 00:06:19 [32minfo[39m: 	SELECT * FROM reverted_stud_csv_admin_t 
+    where  student_interest='Future Followup' and is_active=1 order by checkbox_save desc;
+2023-06-18 00:06:21 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:06:21 [32minfo[39m: 	/notification_display
+2023-06-18 00:06:21 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=4  and name=139 order by s.id desc;
+2023-06-18 00:06:21 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:06:21 [32minfo[39m: 	/student_profile_get
+2023-06-18 00:06:21 [32minfo[39m: 	SELECT us.email,us.phone_no,r.country_interested,us.passed_year,
+  TOFEL_SCORE,IELTS_SCORE,GPA_SCORE,DULINGO_SCORE,GRE_SCORE,us.c_by,
+  r.assigned_to as assign_consultant,r.assigned_by as assigned_advisor
+  FROM users_dtl_t as us
+  join reverted_stud_csv_admin_t as r on r.email_id=us.email
+  left join student_dtl_t as s on s.c_by=us.id
+  where us.email="Lekha.charispathway@gmail.com";
+2023-06-18 00:06:21 [31merror[39m: 	uncaughtException: Cannot read properties of undefined (reading 'assign_consultant')
+TypeError: Cannot read properties of undefined (reading 'assign_consultant')
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:1614:22
+    at Query.<anonymous> (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\utils\dbutils.js:26:23)
+    at Query.<anonymous> (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\Connection.js:526:10)
+    at Query._callback (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\Connection.js:488:16)
+    at Sequence.end (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Query._handleFinalResultPacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Query.js:149:8)
+    at Query.EofPacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Query.js:133:8)
+    at Protocol._parsePacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Parser.js:43:10)
+2023-06-18 00:06:25 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:06:25 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:06:25 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-18 00:06:25 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:06:25 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:06:25 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:06:25 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:06:25 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-18 00:06:25 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=4 and is_active=1;
+2023-06-18 00:06:26 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:06:26 [32minfo[39m: 	/roles
+2023-06-18 00:06:26 [32minfo[39m: 	SELECT * FROM roles_table where status=1;
+2023-06-18 00:06:26 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:06:26 [32minfo[39m: 	/notification_display
+2023-06-18 00:06:26 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:06:26 [32minfo[39m: 	/admin_reverted_list_get
+2023-06-18 00:06:26 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=1  and name=1 order by s.id desc;
+2023-06-18 00:06:26 [32minfo[39m: 	SELECT * FROM reverted_stud_csv_admin_t 
+    where  student_interest='Future Followup' and is_active=1 order by checkbox_save desc;
+2023-06-18 00:06:53 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:06:53 [32minfo[39m: 	/notification_display
+2023-06-18 00:06:53 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:06:53 [32minfo[39m: 	/student_profile_get
+2023-06-18 00:06:53 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=4  and name=139 order by s.id desc;
+2023-06-18 00:06:53 [32minfo[39m: 	SELECT us.email,us.phone_no,r.country_interested,us.passed_year,
+  TOFEL_SCORE,IELTS_SCORE,GPA_SCORE,DULINGO_SCORE,GRE_SCORE,us.c_by,
+  r.assigned_to as assign_consultant,r.assigned_by as assigned_advisor
+  FROM users_dtl_t as us
+  join reverted_stud_csv_admin_t as r on r.email_id=us.email
+  left join student_dtl_t as s on s.c_by=us.id
+  where us.email="Lekha.charispathway@gmail.com";
+2023-06-18 00:06:53 [31merror[39m: 	uncaughtException: Cannot read properties of undefined (reading 'assign_consultant')
+TypeError: Cannot read properties of undefined (reading 'assign_consultant')
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:1614:22
+    at Query.<anonymous> (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\utils\dbutils.js:26:23)
+    at Query.<anonymous> (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\Connection.js:526:10)
+    at Query._callback (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\Connection.js:488:16)
+    at Sequence.end (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Query._handleFinalResultPacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Query.js:149:8)
+    at Query.EofPacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Query.js:133:8)
+    at Protocol._parsePacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Parser.js:43:10)
+2023-06-18 00:06:57 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:06:57 [32minfo[39m: 	/student_upload_get
+2023-06-18 00:06:57 [32minfo[39m: 	select u.payment_mode,s.* from student_dtl_t as s
+  join users_dtl_t as u on u.id=s.c_by
+  where s.c_by='139'
+2023-06-18 00:07:00 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:07:00 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:07:00 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-18 00:07:00 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:07:00 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:07:00 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-18 00:07:00 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:07:00 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:07:00 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:07:00 [32minfo[39m: 	/roles
+2023-06-18 00:07:00 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=4 and is_active=1;
+2023-06-18 00:07:00 [32minfo[39m: 	SELECT * FROM roles_table where status=1;
+2023-06-18 00:07:00 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:07:00 [32minfo[39m: 	/notification_display
+2023-06-18 00:07:00 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:07:00 [32minfo[39m: 	/admin_reverted_list_get
+2023-06-18 00:07:00 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=1  and name=1 order by s.id desc;
+2023-06-18 00:07:00 [32minfo[39m: 	SELECT * FROM reverted_stud_csv_admin_t 
+    where  student_interest='Future Followup' and is_active=1 order by checkbox_save desc;
+2023-06-18 00:07:01 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:07:01 [32minfo[39m: 	/student_upload_get
+2023-06-18 00:07:01 [32minfo[39m: 	select u.payment_mode,s.* from student_dtl_t as s
+  join users_dtl_t as u on u.id=s.c_by
+  where s.c_by='139'
+2023-06-18 00:07:04 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:07:04 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:07:04 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:07:04 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:07:04 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:07:04 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:07:04 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-18 00:07:04 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-18 00:07:04 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=4 and is_active=1;
+2023-06-18 00:07:04 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:07:04 [32minfo[39m: 	/roles
+2023-06-18 00:07:04 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:07:04 [32minfo[39m: 	/notification_display
+2023-06-18 00:07:04 [32minfo[39m: 	SELECT * FROM roles_table where status=1;
+2023-06-18 00:07:04 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:07:04 [32minfo[39m: 	/admin_reverted_list_get
+2023-06-18 00:07:04 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=1  and name=1 order by s.id desc;
+2023-06-18 00:07:04 [32minfo[39m: 	SELECT * FROM reverted_stud_csv_admin_t 
+    where  student_interest='Future Followup' and is_active=1 order by checkbox_save desc;
+2023-06-18 00:07:04 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:07:04 [32minfo[39m: 	/student_upload_get
+2023-06-18 00:07:04 [32minfo[39m: 	select u.payment_mode,s.* from student_dtl_t as s
+  join users_dtl_t as u on u.id=s.c_by
+  where s.c_by='139'
+2023-06-18 00:07:05 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:07:05 [32minfo[39m: 	/student_upload_get
+2023-06-18 00:07:05 [32minfo[39m: 	select u.payment_mode,s.* from student_dtl_t as s
+  join users_dtl_t as u on u.id=s.c_by
+  where s.c_by='139'
+2023-06-18 00:07:11 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:07:11 [32minfo[39m: 	/notification_display
+2023-06-18 00:07:11 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=4  and name=139 order by s.id desc;
+2023-06-18 00:07:11 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:07:11 [32minfo[39m: 	/student_profile_get
+2023-06-18 00:07:11 [32minfo[39m: 	SELECT us.email,us.phone_no,r.country_interested,us.passed_year,
+  TOFEL_SCORE,IELTS_SCORE,GPA_SCORE,DULINGO_SCORE,GRE_SCORE,us.c_by,
+  r.assigned_to as assign_consultant,r.assigned_by as assigned_advisor
+  FROM users_dtl_t as us
+  join reverted_stud_csv_admin_t as r on r.email_id=us.email
+  left join student_dtl_t as s on s.c_by=us.id
+  where us.email="Lekha.charispathway@gmail.com";
+2023-06-18 00:07:11 [31merror[39m: 	uncaughtException: Cannot read properties of undefined (reading 'assign_consultant')
+TypeError: Cannot read properties of undefined (reading 'assign_consultant')
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:1614:22
+    at Query.<anonymous> (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\utils\dbutils.js:26:23)
+    at Query.<anonymous> (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\Connection.js:526:10)
+    at Query._callback (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\Connection.js:488:16)
+    at Sequence.end (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Query._handleFinalResultPacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Query.js:149:8)
+    at Query.EofPacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Query.js:133:8)
+    at Protocol._parsePacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Parser.js:43:10)
+2023-06-18 00:07:12 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:07:12 [32minfo[39m: 	/student_upload_get
+2023-06-18 00:07:12 [32minfo[39m: 	select u.payment_mode,s.* from student_dtl_t as s
+  join users_dtl_t as u on u.id=s.c_by
+  where s.c_by='139'
+2023-06-18 00:07:35 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:07:35 [32minfo[39m: 	/notification_display
+2023-06-18 00:07:35 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:07:35 [32minfo[39m: 	/student_profile_get
+2023-06-18 00:07:35 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=4  and name=139 order by s.id desc;
+2023-06-18 00:07:35 [32minfo[39m: 	SELECT us.email,us.phone_no,r.country_interested,us.passed_year,
+  TOFEL_SCORE,IELTS_SCORE,GPA_SCORE,DULINGO_SCORE,GRE_SCORE,us.c_by,
+  r.assigned_to as assign_consultant,r.assigned_by as assigned_advisor
+  FROM users_dtl_t as us
+  join reverted_stud_csv_admin_t as r on r.email_id=us.email
+  left join student_dtl_t as s on s.c_by=us.id
+  where us.email="Lekha.charispathway@gmail.com";
+2023-06-18 00:07:35 [31merror[39m: 	uncaughtException: Cannot read properties of undefined (reading 'assign_consultant')
+TypeError: Cannot read properties of undefined (reading 'assign_consultant')
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:1614:22
+    at Query.<anonymous> (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\utils\dbutils.js:26:23)
+    at Query.<anonymous> (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\Connection.js:526:10)
+    at Query._callback (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\Connection.js:488:16)
+    at Sequence.end (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Query._handleFinalResultPacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Query.js:149:8)
+    at Query.EofPacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Query.js:133:8)
+    at Protocol._parsePacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Parser.js:43:10)
+2023-06-18 00:07:39 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:07:39 [32minfo[39m: 	/student_upload_get
+2023-06-18 00:07:39 [32minfo[39m: 	select u.payment_mode,s.* from student_dtl_t as s
+  join users_dtl_t as u on u.id=s.c_by
+  where s.c_by='139'
+2023-06-18 00:07:42 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:07:42 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:07:42 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:07:42 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:07:42 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-18 00:07:42 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-18 00:07:42 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:07:42 [32minfo[39m: 	/roles
+2023-06-18 00:07:42 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:07:42 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:07:42 [32minfo[39m: 	SELECT * FROM roles_table where status=1;
+2023-06-18 00:07:42 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:07:42 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:07:42 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=4 and is_active=1;
+2023-06-18 00:07:42 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:07:42 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:07:42 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:07:42 [32minfo[39m: 	/names_basedon_role
+2023-06-18 00:07:42 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:07:42 [32minfo[39m: 	/notification_display
+2023-06-18 00:07:42 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=3 and is_active=1;
+2023-06-18 00:07:42 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=4 and is_active=1;
+2023-06-18 00:07:42 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:07:42 [32minfo[39m: 	/admin_reverted_list_get
+2023-06-18 00:07:42 [32minfo[39m: 	SELECT id,user_name,email FROM users_dtl_t where role=2 and is_active=1;
+2023-06-18 00:07:42 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:07:42 [32minfo[39m: 	/notification_display
+2023-06-18 00:07:42 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=1  and name=1 order by s.id desc;
+2023-06-18 00:07:42 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:07:42 [32minfo[39m: 	/roles
+2023-06-18 00:07:42 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=1  and name=1 order by s.id desc;
+2023-06-18 00:07:42 [32minfo[39m: 	SELECT * FROM reverted_stud_csv_admin_t 
+    where  student_interest='Future Followup' and is_active=1 order by checkbox_save desc;
+2023-06-18 00:07:42 [32minfo[39m: 	SELECT * FROM roles_table where status=1;
+2023-06-18 00:07:42 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:07:42 [32minfo[39m: 	/admin_reverted_list_get
+2023-06-18 00:07:42 [32minfo[39m: 	SELECT * FROM reverted_stud_csv_admin_t 
+    where  student_interest='Future Followup' and is_active=1 order by checkbox_save desc;
+2023-06-18 00:07:56 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:07:56 [32minfo[39m: 	/notification_display
+2023-06-18 00:07:56 [32minfo[39m: 	select s.message,u.user_name as createdby,s.c_ts as createdtime,s.created_by as reciever_id,u.role as roleid from send_message_dtl_t as s 
+join users_dtl_t as u on u.id=s.created_by
+ where role_id=4  and name=139 order by s.id desc;
+2023-06-18 00:07:56 [32minfo[39m: 	Requested URL : 
+2023-06-18 00:07:56 [32minfo[39m: 	/student_profile_get
+2023-06-18 00:07:57 [32minfo[39m: 	SELECT us.email,us.phone_no,r.country_interested,us.passed_year,
+  TOFEL_SCORE,IELTS_SCORE,GPA_SCORE,DULINGO_SCORE,GRE_SCORE,us.c_by,
+  r.assigned_to as assign_consultant,r.assigned_by as assigned_advisor
+  FROM users_dtl_t as us
+  join reverted_stud_csv_admin_t as r on r.email_id=us.email
+  left join student_dtl_t as s on s.c_by=us.id
+  where us.email="Lekha.charispathway@gmail.com";
+2023-06-18 00:07:57 [31merror[39m: 	uncaughtException: Cannot read properties of undefined (reading 'assign_consultant')
+TypeError: Cannot read properties of undefined (reading 'assign_consultant')
+    at D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\model\adminModel.js:1614:22
+    at Query.<anonymous> (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\utils\dbutils.js:26:23)
+    at Query.<anonymous> (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\Connection.js:526:10)
+    at Query._callback (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\Connection.js:488:16)
+    at Sequence.end (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Query._handleFinalResultPacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Query.js:149:8)
+    at Query.EofPacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\sequences\Query.js:133:8)
+    at Protocol._parsePacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (D:\Projects\cpath_all\chrispathway_backendcode_node_express-main (1)\chrispathway_backendcode_node_express-main\node_modules\mysql\lib\protocol\Parser.js:43:10)

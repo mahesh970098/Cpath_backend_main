@@ -101,26 +101,17 @@ router.post("/convet_to_track_progress", adminRoutes.convet_to_track_progress);
 // student
 router.post(
   "/student_upload_submit",
-  upload.fields([
-    {
-      name: "fileupload",
-      maxCount: 1,
-    },
-  ]),
+  upload.fields([{ name: "fileupload", maxCount: 1 }]),
   adminRoutes.student_upload_submit
 );
-
 router.post("/student_upload_get", adminRoutes.student_upload_get);
 router.post("/student_profile_get", adminRoutes.student_profile_get);
 router.post("/student_profile_edit", adminRoutes.student_profile_edit);
-
 router.post("/login_new", adminRoutes.login_new);
-
 router.post(
   "/consultant_track_progress_button",
   adminRoutes.consultant_track_progress_button
 );
-
 router.get("/track_progress_get", adminRoutes.track_progress_get);
 router.post("/track_progress_save", adminRoutes.track_progress_save);
 router.post(
@@ -129,4 +120,10 @@ router.post(
 );
 router.get("/admin_trackprocess_get", adminRoutes.admin_trackprocess_get);
 router.post("/student_payment_mode", adminRoutes.student_payment_mode);
+router.post(
+  "/payment_base_ddown_studProfile",
+  adminRoutes.payment_base_ddown_studProfile
+);
+router.post("/apply_leave", adminRoutes.apply_leave);
+router.get("/get_apply_leaves", adminRoutes.get_apply_leaves);
 module.exports = router;
